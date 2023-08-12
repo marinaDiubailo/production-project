@@ -1,0 +1,16 @@
+.counter {
+	display: flex;
+	width: 30%;
+	align-items: center;
+	margin: 50px auto;
+	flex-direction: column;
+	padding: 10px;
+	background-color: rgb(219, 188, 188);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+}
+.button-container {
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+}
