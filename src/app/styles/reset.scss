@@ -3,18 +3,14 @@
 	margin: 0;
 	border: 0;
 }
+
 *,
-*:before,
-*:after {
+*::before,
+*::after {
 	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 }
+
 :focus,
-:active {
-	outline: none;
-}
-a:focus,
 :active {
 	outline: none;
 }
@@ -32,26 +28,38 @@ textarea,
 select {
 	font: inherit;
 }
+
 input::-ms-clear {
 	display: none;
 }
+
 button {
 	cursor: pointer;
 }
+
 button::-moz-focus-inner {
 	padding: 0;
 	border: 0;
 }
+
 a,
 a:visited {
 	text-decoration: none;
 }
+
 a:hover {
 	text-decoration: none;
 }
+
+a:focus,
+:active {
+	outline: none;
+}
+
 ul li {
 	list-style: none;
 }
+
 img {
 	vertical-align: top;
 }
