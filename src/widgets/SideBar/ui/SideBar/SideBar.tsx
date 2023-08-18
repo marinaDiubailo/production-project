@@ -12,7 +12,7 @@ export const SideBar: FC<SideBarProps> = ({ className }) => {
 	const [collapsed, setCollapsed] = useState(false);
 
 	const toggleHandler = () => {
-		setCollapsed(prevState => !prevState);
+		setCollapsed((prevState) => !prevState);
 	};
 
 	return (
@@ -21,7 +21,12 @@ export const SideBar: FC<SideBarProps> = ({ className }) => {
 				className,
 			])}
 		>
-			<button onClick={toggleHandler}>toggle</button>
+			<button
+				type='button'
+				onClick={toggleHandler}
+			>
+				toggle
+			</button>
 			<div className={cls.switchers}>
 				<ThemeSwitcher />
 				<LangSwitcher className={cls.lang} />
