@@ -26,3 +26,21 @@
 .lang {
 	margin-left: 20px;
 }
+
+.arrow {
+	margin: 20px 0 0 20px;
+}
+
+.arrow-left,
+.arrow-right {
+	color: var(--bg-color);
+	font-size: 2rem;
+}
+
+.arrow-left::after {
+	content: "\276E";
+}
+
+.arrow-right::after {
+	content: "\276F";
+}

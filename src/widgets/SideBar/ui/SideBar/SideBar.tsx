@@ -2,8 +2,6 @@ import { FC, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import LeftArrow from 'shared/assets/icons/left.png';
-import RightArrow from 'shared/assets/icons/right.png';
 import { Button } from 'shared/ui/Button/Button';
 import cls from './SideBar.module.scss';
 
@@ -27,12 +25,9 @@ export const SideBar: FC<SideBarProps> = ({ className }) => {
 			<Button
 				type='button'
 				onClick={toggleHandler}
+				className={cls.arrow}
 			>
-				<img
-					src={`${collapsed ? RightArrow : LeftArrow}`}
-					// eslint-disable-next-line i18next/no-literal-string
-					alt='arrow'
-				/>
+				<span className={collapsed ? cls['arrow-right'] : cls['arrow-left']} />
 			</Button>
 			<div className={cls.switchers}>
 				<ThemeSwitcher />
