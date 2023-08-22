@@ -42,7 +42,10 @@ module.exports = {
 		'arrow-body-style': 'off',
 		'react/jsx-curly-brace-presence': 'off',
 		'arrow-parens': 'off',
-		'i18next/no-literal-string': ['error', { markupOnly: true }],
+		'i18next/no-literal-string': [
+			'error',
+			{ markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
+		],
 		'max-len': ['error', { ignoreComments: true, code: 100 }],
 		'react/jsx-wrap-multilines': 'off',
 		'no-trailing-spaces': [
@@ -53,4 +56,12 @@ module.exports = {
 	globals: {
 		__IS_DEV__: true,
 	},
+	overrides: [
+		{
+			files: ['**/src/**/*.test.{ts,tsx}'],
+			rules: {
+				'i18next/no-literal-string': 'off',
+			},
+		},
+	],
 };
