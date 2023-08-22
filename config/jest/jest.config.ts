@@ -1,19 +1,9 @@
-/**
- * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/configuration
- */
+export default {
+	// Automatically clear mock calls, instances and results before every test
+	clearMocks: true,
 
-import type { Config } from 'jest';
-
-const config: Config = {
 	// The glob patterns Jest uses to detect test files
 	testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
-
-	// The root directory that Jest should scan for tests and modules within
-	rootDir: '../../',
-
-	// Automatically clear mock calls, instances, contexts and results before every test
-	clearMocks: true,
 
 	// The test environment that will be used for testing
 	testEnvironment: 'jsdom',
@@ -25,16 +15,10 @@ const config: Config = {
 	moduleDirectories: ['node_modules'],
 
 	// An array of file extensions your modules use
-	moduleFileExtensions: [
-		'js',
-		'mjs',
-		'cjs',
-		'jsx',
-		'ts',
-		'tsx',
-		'json',
-		'node',
-	],
+	moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+
+	// The root directory that Jest should scan for tests and modules within
+	rootDir: '../../',
 
 	// All imported modules in your tests should be mocked automatically
 	// automock: false,
@@ -44,9 +28,6 @@ const config: Config = {
 
 	// The directory where Jest should store its cached dependency information
 	// cacheDirectory: "C:\\Users\\PussyMonsta\\AppData\\Local\\Temp\\jest",
-
-	// A list of reporter names that Jest uses when writing coverage reports
-	// coverageReporters: ['json', 'text', 'lcov', 'clover'],
 
 	// Indicates whether the coverage information should be collected while executing the test
 	// collectCoverage: false,
@@ -60,6 +41,14 @@ const config: Config = {
 	// Indicates which provider should be used to instrument code for coverage
 	// coverageProvider: "babel",
 
+	// A list of reporter names that Jest uses when writing coverage reports
+	// coverageReporters: [
+	//   "json",
+	//   "text",
+	//   "lcov",
+	//   "clover"
+	// ],
+
 	// An object that configures minimum threshold enforcement for coverage results
 	// coverageThreshold: undefined,
 
@@ -68,11 +57,6 @@ const config: Config = {
 
 	// Make calling deprecated APIs throw helpful error messages
 	// errorOnDeprecated: false,
-
-	// The default configuration for fake timers
-	// fakeTimers: {
-	//   "enableGlobally": false
-	// },
 
 	// Force coverage collection from ignored files using an array of glob patterns
 	// forceCoverageMatch: [],
@@ -162,6 +146,12 @@ const config: Config = {
 	// This option allows use of a custom test runner
 	// testRunner: "jest-circus/runner",
 
+	// This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
+	// testURL: "http://localhost",
+
+	// Setting this value to "fake" allows the use of fake timers for functions such as "setTimeout"
+	// timers: "real",
+
 	// A map from regular expressions to paths to transformers
 	// transform: undefined,
 
@@ -183,5 +173,3 @@ const config: Config = {
 	// Whether to use watchman for file crawling
 	// watchman: true,
 };
-
-export default config;
