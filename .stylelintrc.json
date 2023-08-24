@@ -1,6 +1,7 @@
 {
 	"extends": "stylelint-config-standard-scss",
 	"rules": {
-		"scss/at-import-partial-extension-whitelist": ["scss"]
+		"scss/at-import-partial-extension-whitelist": ["scss"],
+		"color-function-notation": ["legacy"]
 	}
 }
