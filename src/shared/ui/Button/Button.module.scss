@@ -3,6 +3,9 @@
 	outline: none;
 	background: none;
 	text-align: center;
+}
+
+.clear {
 	color: var(--primary-color);
 }
 
@@ -10,4 +13,8 @@
 	padding: 10px;
 	border: 1px solid var(--primary-color);
 	color: var(--primary-color);
+}
+
+.clear-inverted {
+	color: var(--inverted-primary-color);
 }

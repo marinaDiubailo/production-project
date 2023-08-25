@@ -1,8 +1,10 @@
-import { FC } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+// import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
+
+import { Modal } from 'shared/ui/Modal/Modal';
 
 import cls from './NavBar.module.scss';
 
@@ -11,25 +13,28 @@ interface NavbarProps {
 }
 
 export const NavBar: FC<NavbarProps> = ({ className }) => {
+	const [isAuthOpen, setIsAuthOpen] = useState(false);
 	const { t } = useTranslation();
+
+	const onToggleModal = useCallback(() => {
+		setIsAuthOpen((prevState) => !prevState);
+	}, []);
 
 	return (
 		<div className={classNames(cls.navbar, {}, [className])}>
-			<div className={cls.links}>
-				<AppLink
-					theme={AppLinkTheme.SECONDARY}
-					className={cls['main-link']}
-					to={RoutePath.main}
-				>
-					{t('Главная')}
-				</AppLink>
-				<AppLink
-					theme={AppLinkTheme.SECONDARY}
-					to={RoutePath.about}
-				>
-					{t('О сайте')}
-				</AppLink>
-			</div>
+			<Button
+				theme={ThemeButton.CLEAR_INVERTED}
+				className={cls.links}
+				onClick={onToggleModal}
+			>
+				{t('Войти')}
+			</Button>
+			<Modal
+				isOpen={isAuthOpen}
+				onClose={onToggleModal}
+			>
+				{''}
+			</Modal>
 		</div>
 	);
 };
