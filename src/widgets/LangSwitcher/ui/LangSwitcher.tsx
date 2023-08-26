@@ -4,23 +4,23 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 
 interface LangSwitcherProps {
-	className?: string;
+    className?: string;
 }
 
 export const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
-	const { t, i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
 
-	const toggleHandler = async () => {
-		i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-	};
+    const toggleHandler = async () => {
+        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    };
 
-	return (
-		<Button
-			className={classNames('', {}, [className])}
-			theme={ThemeButton.CLEAR_INVERTED}
-			onClick={toggleHandler}
-		>
-			{t('Язык')}
-		</Button>
-	);
+    return (
+        <Button
+            className={classNames('', {}, [className])}
+            theme={ThemeButton.CLEAR_INVERTED}
+            onClick={toggleHandler}
+        >
+            {t('Язык')}
+        </Button>
+    );
 };

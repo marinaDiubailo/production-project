@@ -11,54 +11,58 @@ import HomeIcon from 'shared/assets/icons/home.svg';
 import cls from './SideBar.module.scss';
 
 interface SideBarProps {
-	className?: string;
+    className?: string;
 }
 
 export const SideBar: FC<SideBarProps> = ({ className }) => {
-	const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(false);
 
-	const toggleHandler = () => {
-		setCollapsed((prevState) => !prevState);
-	};
+    const toggleHandler = () => {
+        setCollapsed((prevState) => !prevState);
+    };
 
-	return (
-		<div
-			data-testid='sidebar'
-			className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
-				className,
-			])}
-		>
-			<Button
-				data-testid='sidebar-toggle'
-				type='button'
-				onClick={toggleHandler}
-				className={cls.arrow}
-			>
-				<span className={collapsed ? cls['arrow-right'] : cls['arrow-left']} />
-			</Button>
-			<div className={cls.items}>
-				<AppLink
-					theme={AppLinkTheme.SECONDARY}
-					to={RoutePath.main}
-					className={cls.item}
-				>
-					<HomeIcon className={cls.icon} />
-					<span className={cls.link}>{t('Главная')}</span>
-				</AppLink>
+    return (
+        <div
+            data-testid='sidebar'
+            className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
+                className,
+            ])}
+        >
+            <Button
+                data-testid='sidebar-toggle'
+                type='button'
+                onClick={toggleHandler}
+                className={cls.arrow}
+            >
+                <span
+                    className={
+                        collapsed ? cls['arrow-right'] : cls['arrow-left']
+                    }
+                />
+            </Button>
+            <div className={cls.items}>
+                <AppLink
+                    theme={AppLinkTheme.SECONDARY}
+                    to={RoutePath.main}
+                    className={cls.item}
+                >
+                    <HomeIcon className={cls.icon} />
+                    <span className={cls.link}>{t('Главная')}</span>
+                </AppLink>
 
-				<AppLink
-					theme={AppLinkTheme.SECONDARY}
-					to={RoutePath.about}
-					className={cls.item}
-				>
-					<AboutIcon className={cls.icon} />
-					<span className={cls.link}>{t('О сайте')}</span>
-				</AppLink>
-			</div>
-			<div className={cls.switchers}>
-				<ThemeSwitcher />
-				<LangSwitcher className={cls.lang} />
-			</div>
-		</div>
-	);
+                <AppLink
+                    theme={AppLinkTheme.SECONDARY}
+                    to={RoutePath.about}
+                    className={cls.item}
+                >
+                    <AboutIcon className={cls.icon} />
+                    <span className={cls.link}>{t('О сайте')}</span>
+                </AppLink>
+            </div>
+            <div className={cls.switchers}>
+                <ThemeSwitcher />
+                <LangSwitcher className={cls.lang} />
+            </div>
+        </div>
+    );
 };

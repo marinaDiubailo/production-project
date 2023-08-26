@@ -6,19 +6,19 @@ import { SideBar } from 'widgets/SideBar';
 import { AppRouter } from './providers/Router';
 
 const App = () => {
-	const { theme } = useTheme();
+    const { theme } = useTheme();
 
-	return (
-		<div className={classNames('app', {}, [theme])}>
-			<Suspense fallback=''>
-				<NavBar />
-				<div className='content-page'>
-					<SideBar />
-					<AppRouter />
-				</div>
-			</Suspense>
-		</div>
-	);
+    return (
+        <div className={classNames('app', {}, [theme])}>
+            <Suspense fallback=''>
+                <NavBar />
+                <div className='content-page'>
+                    <SideBar />
+                    <AppRouter />
+                </div>
+            </Suspense>
+        </div>
+    );
 };
 
 export default App;

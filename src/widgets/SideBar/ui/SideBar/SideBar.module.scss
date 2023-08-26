@@ -1,91 +1,91 @@
 .sidebar {
-	height: calc(100vh - var(--navbar-height));
-	width: var(--sidebar-width);
-	background: var(--inverted-bg-color);
-	position: relative;
-	transition: width 0.3s ease 0s;
+    height: calc(100vh - var(--navbar-height));
+    width: var(--sidebar-width);
+    background: var(--inverted-bg-color);
+    position: relative;
+    transition: width 0.3s ease 0s;
 
-	img {
-		width: 50px;
-		height: 50px;
-	}
+    img {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .items {
-	margin: 70px 20px 0;
-	display: flex;
-	flex-direction: column;
+    margin: 70px 20px 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .link {
-	display: block;
-	margin-left: 10px;
-	opacity: 1;
+    display: block;
+    margin-left: 10px;
+    opacity: 1;
 }
 
 .item {
-	display: flex;
-	align-items: center;
-	padding: 5px;
-	margin-top: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-top: 5px;
 
-	&:hover {
-		transform: scale(1.01);
-	}
+    &:hover {
+        transform: scale(1.01);
+    }
 }
 
 .icon {
-	fill: var(--inverted-primary-color);
+    fill: var(--inverted-primary-color);
 }
 
 .switchers {
-	position: absolute;
-	bottom: 20px;
-	display: flex;
-	justify-content: center;
-	width: 100%;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .lang {
-	margin-left: 20px;
+    margin-left: 20px;
 }
 
 .collapsed {
-	width: var(--sidebar-width-collapsed);
+    width: var(--sidebar-width-collapsed);
 
-	.switchers {
-		flex-direction: column;
-		align-items: center;
-	}
+    .switchers {
+        flex-direction: column;
+        align-items: center;
+    }
 
-	.lang {
-		margin-left: 0;
-	}
+    .lang {
+        margin-left: 0;
+    }
 
-	.link {
-		opacity: 0;
-		transition: opacity 0.2s ease 0s;
-		width: 0;
-		margin-left: 0;
-	}
+    .link {
+        opacity: 0;
+        transition: opacity 0.2s ease 0s;
+        width: 0;
+        margin-left: 0;
+    }
 }
 
 .arrow {
-	position: absolute;
-	right: 40px;
-	top: 30px;
+    position: absolute;
+    right: 40px;
+    top: 30px;
 }
 
 .arrow-left,
 .arrow-right {
-	color: var(--bg-color);
-	font-size: var(--font-line-l);
+    color: var(--bg-color);
+    font-size: var(--font-line-l);
 }
 
 .arrow-left::after {
-	content: "\276E";
+    content: "\276E";
 }
 
 .arrow-right::after {
-	content: "\276F";
+    content: "\276F";
 }

@@ -9,13 +9,13 @@ import 'app/styles/index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	<StoreProvider>
-		<BrowserRouter>
-			<ErrorBoundary>
-				<ThemeProvider>
-					<App />
-				</ThemeProvider>
-			</ErrorBoundary>
-		</BrowserRouter>
-	</StoreProvider>
+    <StoreProvider>
+        <BrowserRouter>
+            <ErrorBoundary>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </ErrorBoundary>
+        </BrowserRouter>
+    </StoreProvider>
 );
