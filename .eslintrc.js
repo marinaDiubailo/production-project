@@ -62,7 +62,9 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        'react/jsx-one-expression-per-line': 'off',
         'implicit-arrow-linebreak': 'off',
+        'no-param-reassign': [1, { props: false }],
     },
     globals: {
         __IS_DEV__: true,
