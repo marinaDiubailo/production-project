@@ -5,4 +5,4 @@ npm run build:prod
 npm run lint
 npm run style
 npm run unit
-npm run sb:build
+

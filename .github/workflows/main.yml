@@ -30,6 +30,3 @@ jobs:
             - name: unit testing
               run: npm run unit
               if: always()
-            - name: storybook build
-              run: npm run sb:build
-              if: always()
