@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
-export enum ThemeButton {
+export enum ButtonTheme {
     CLEAR = 'clear',
     CLEAR_INVERTED = 'clear-inverted',
     OUTLINE = 'outline',
@@ -10,16 +10,22 @@ export enum ThemeButton {
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
-    theme?: ThemeButton;
+    theme?: ButtonTheme;
+    disabled?: boolean;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
-    const { className, children, theme, ...otherProps } = props;
+    const { className, children, theme, disabled, ...otherProps } = props;
+
+    const mods: Record<string, boolean> = {
+        [cls.disabled]: disabled,
+    };
 
     return (
         <button
             type='button'
-            className={classNames(cls.button, {}, [className, cls[theme]])}
+            className={classNames(cls.button, mods, [className, cls[theme]])}
+            disabled={disabled}
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...otherProps}
         >

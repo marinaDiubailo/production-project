@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Button, ThemeButton } from './Button';
+import { Button, ButtonTheme } from './Button';
 
 const meta = {
     title: 'ui/Button',
@@ -17,14 +17,14 @@ type Story = StoryObj<typeof Button>;
 export const Clear: Story = {
     args: {
         children: 'TEXT',
-        theme: ThemeButton.CLEAR,
+        theme: ButtonTheme.CLEAR,
     },
 };
 
 export const OutlineDark: Story = {
     args: {
         children: 'TEXT',
-        theme: ThemeButton.OUTLINE,
+        theme: ButtonTheme.OUTLINE,
     },
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
@@ -32,13 +32,21 @@ OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
 export const Outline: Story = {
     args: {
         children: 'TEXT',
-        theme: ThemeButton.OUTLINE,
+        theme: ButtonTheme.OUTLINE,
     },
 };
 
 export const ClearInverted: Story = {
     args: {
         children: 'TEXT',
-        theme: ThemeButton.CLEAR_INVERTED,
+        theme: ButtonTheme.CLEAR_INVERTED,
+    },
+};
+
+export const Disabled: Story = {
+    args: {
+        children: 'TEXT',
+        theme: ButtonTheme.CLEAR_INVERTED,
+        disabled: true,
     },
 };
