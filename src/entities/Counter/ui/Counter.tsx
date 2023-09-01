@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { counterActions } from '../model/slice/counterSlice';
 
@@ -22,14 +22,14 @@ export const Counter: FC = () => {
             <h1 data-testid='value-title'>Count: {counterValue}</h1>
             <Button
                 data-testid='increment-btn'
-                theme={ThemeButton.OUTLINE}
+                theme={ButtonTheme.OUTLINE}
                 onClick={increment}
             >
                 increment
             </Button>
             <Button
                 data-testid='decrement-btn'
-                theme={ThemeButton.OUTLINE}
+                theme={ButtonTheme.OUTLINE}
                 onClick={decrement}
             >
                 decrement

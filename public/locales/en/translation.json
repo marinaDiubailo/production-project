@@ -7,6 +7,9 @@
     "Ошибка": "An error occured",
     "Обновить страницу": "Reload page",
     "Войти": "SignIn",
+    "Выйти": "Logout",
     "username": "Username",
-    "password": "Password"
+    "password": "Password",
+    "Форма авторизации": "Authorization Form",
+    "Неверный логин или пароль": "Incorrect login or password"
 }
