@@ -50,7 +50,10 @@ module.exports = {
         'arrow-parens': 'off',
         'i18next/no-literal-string': [
             'error',
-            { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
+            {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid', 'to', 'name'],
+            },
         ],
         'max-len': ['error', { ignoreComments: true, code: 120 }],
         'react/jsx-wrap-multilines': 'off',
@@ -65,6 +68,7 @@ module.exports = {
         'react/jsx-one-expression-per-line': 'off',
         'implicit-arrow-linebreak': 'off',
         'no-param-reassign': [1, { props: false }],
+        'react/jsx-no-useless-fragment': [1, { allowExpressions: true }],
     },
     globals: {
         __IS_DEV__: true,
