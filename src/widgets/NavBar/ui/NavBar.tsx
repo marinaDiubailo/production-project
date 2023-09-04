@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 // import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -12,7 +12,7 @@ interface NavbarProps {
     className?: string;
 }
 
-export const NavBar: FC<NavbarProps> = ({ className }) => {
+export const NavBar = memo(({ className }: NavbarProps) => {
     const [isAuthOpen, setIsAuthOpen] = useState(false);
     const { t } = useTranslation();
     const authData = useSelector(getUserAuthData);
@@ -61,4 +61,4 @@ export const NavBar: FC<NavbarProps> = ({ className }) => {
             )}
         </div>
     );
-};
+});
