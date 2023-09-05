@@ -1,4 +1,4 @@
-import { FC, memo, useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -27,7 +27,7 @@ const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginForm: FC = memo(({ className, onSuccess }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
 

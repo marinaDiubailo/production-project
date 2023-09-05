@@ -7,15 +7,22 @@ import { ThemeProvider } from './app/providers/ThemeProvider';
 import App from './app/App';
 import 'app/styles/index.scss';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const container = document.getElementById('root');
+
+if (!container) {
+    throw new Error(
+        'Контейнер root не найден. НЕ удалось вмонтировать реакт приложение'
+    );
+}
+const root = ReactDOM.createRoot(container);
 root.render(
-    <StoreProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+        <StoreProvider>
             <ErrorBoundary>
                 <ThemeProvider>
                     <App />
                 </ThemeProvider>
             </ErrorBoundary>
-        </BrowserRouter>
-    </StoreProvider>
+        </StoreProvider>
+    </BrowserRouter>
 );

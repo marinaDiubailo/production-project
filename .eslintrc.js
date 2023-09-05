@@ -32,6 +32,7 @@ module.exports = {
         'linebreak-style': [2, 'windows'],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
+        'no-undef': 'off',
         'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': 'warn',
         'react/require-default-props': 'off',
@@ -73,6 +74,7 @@ module.exports = {
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
     overrides: [
         {

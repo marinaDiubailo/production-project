@@ -5,8 +5,9 @@ import React, {
     useRef,
     useEffect,
     useCallback,
+    MutableRefObject,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -25,7 +26,9 @@ export const Modal: FC<ModalProps> = (props) => {
 
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef() as MutableRefObject<
+        ReturnType<typeof setTimeout>
+    >;
 
     useEffect(() => {
         if (isOpen) {
@@ -33,7 +36,7 @@ export const Modal: FC<ModalProps> = (props) => {
         }
     }, [isOpen]);
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls['is-closing']]: isClosing,
     };
