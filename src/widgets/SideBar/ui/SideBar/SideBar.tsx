@@ -1,10 +1,10 @@
-import { memo, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import cls from './SideBar.module.scss';
-import { SidebarItemsList } from '../../model/items';
+import { SideBarItemsList } from '../../model/items';
 import SideBarItem from '../SideBarItem/SideBarItem';
 
 interface SideBarProps {
@@ -18,6 +18,18 @@ export const SideBar = memo(({ className }: SideBarProps) => {
         setCollapsed((prevState) => !prevState);
     };
 
+    const itemsList = useMemo(
+        () =>
+            SideBarItemsList.map((item) => (
+                <SideBarItem
+                    item={item}
+                    collapsed={collapsed}
+                    key={item.path}
+                />
+            )),
+        [collapsed]
+    );
+
     return (
         <div
             data-testid='sidebar'
@@ -30,6 +42,7 @@ export const SideBar = memo(({ className }: SideBarProps) => {
                 type='button'
                 onClick={toggleHandler}
                 className={cls.arrow}
+                theme={ButtonTheme.CLEAR}
             >
                 <span
                     className={
@@ -37,15 +50,7 @@ export const SideBar = memo(({ className }: SideBarProps) => {
                     }
                 />
             </Button>
-            <div className={cls.items}>
-                {SidebarItemsList.map((item) => (
-                    <SideBarItem
-                        key={item.path}
-                        item={item}
-                        collapsed={collapsed}
-                    />
-                ))}
-            </div>
+            <div className={cls.items}>{itemsList}</div>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} />
