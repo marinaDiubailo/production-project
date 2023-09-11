@@ -38,6 +38,7 @@ export default async (): Promise<Config> => {
         globals: {
             __IS_DEV__: true,
             __API__: '',
+            __PROJECT: 'jest',
         },
 
         // All imported modules in your tests should be mocked automatically

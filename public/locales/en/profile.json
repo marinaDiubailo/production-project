@@ -13,5 +13,10 @@
     "Попробуйте обновить страницу": "Try to reload page",
     "Имя пользователя": "Username",
     "Аватар": "Avatar link",
-    "Валюта": "Currency"
+    "Валюта": "Currency",
+    "Серверная ошибка": "Server Error",
+    "Укажите имя и фамилию": "Please enter your first and last name",
+    "Некорректный возраст": "Incorrect age",
+    "Выберите страну": "Choose a country",
+    "Данные не указаны": "Data not provided"
 }
