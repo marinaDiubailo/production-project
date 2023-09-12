@@ -13,7 +13,7 @@ interface SideBarItemProps {
 }
 
 const SideBarItem = memo(({ item, collapsed }: SideBarItemProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation');
     const isAuth = useSelector(getUserAuthData);
 
     if (item.authOnly && !isAuth) {
