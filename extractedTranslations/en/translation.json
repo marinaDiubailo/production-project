@@ -1,5 +1,7 @@
 {
+  "An error occured": "An error occured",
   "Article details page": "Article details page",
+  "Article not found": "Article not found",
   "Articles page": "Articles page",
   "password": "password",
   "username": "username",
@@ -27,6 +29,7 @@
   "Редактировать": "Редактировать",
   "Серверная ошибка": "Серверная ошибка",
   "Сохранить": "Сохранить",
+  "Статья не найдена": "Статья не найдена",
   "Страна": "Страна",
   "Страница не найдена": "Страница не найдена",
   "Укажите имя и фамилию": "Укажите имя и фамилию",
