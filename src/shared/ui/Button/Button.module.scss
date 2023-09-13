@@ -3,6 +3,12 @@
     outline: none;
     background: none;
     text-align: center;
+
+    &:hover {
+        opacity: 0.8;
+        fill-opacity: 0.8;
+        stroke-opacity: 0.8;
+    }
 }
 
 .clear {

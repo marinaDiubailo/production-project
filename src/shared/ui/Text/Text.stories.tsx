@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Text, TextTheme } from './Text';
+import { Text, TextSize, TextTheme } from './Text';
 
 const meta = {
     title: 'ui/Text',
@@ -18,6 +18,14 @@ export const Light: Story = {
     args: {
         title: 'Title',
         text: 'text',
+    },
+};
+
+export const SizeL: Story = {
+    args: {
+        title: 'Title',
+        text: 'text',
+        size: TextSize.L,
     },
 };
 

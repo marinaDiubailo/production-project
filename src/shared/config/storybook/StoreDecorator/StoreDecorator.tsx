@@ -1,6 +1,7 @@
 /* eslint-disable indent */
 import { Decorator } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
+import { articleReducer } from 'entities/Article/model/slice/articleSlice';
 import { profileReducer } from 'entities/Profile';
 import { loginReducer } from 'features/AuthByUserName/model/slice/loginSlice';
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -8,6 +9,7 @@ import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicM
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
+    article: articleReducer,
 };
 
 export const StoreDecorator =

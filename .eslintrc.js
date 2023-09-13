@@ -28,7 +28,7 @@ module.exports = {
             2,
             { extensions: ['.js', '.jsx', '.tsx'] },
         ],
-        indent: [2, 4],
+        indent: [2, 4, { SwitchCase: 1 }],
         'linebreak-style': [2, 'windows'],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
@@ -50,13 +50,13 @@ module.exports = {
         'react/jsx-curly-brace-presence': 'off',
         'arrow-parens': 'off',
         'i18next/no-literal-string': [
-            'error',
+            2,
             {
                 markupOnly: true,
                 ignoreAttribute: ['data-testid', 'to', 'name'],
             },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 120 }],
+        'max-len': [2, { ignoreComments: true, code: 120 }],
         'react/jsx-wrap-multilines': 'off',
         'no-trailing-spaces': [
             'warn',
