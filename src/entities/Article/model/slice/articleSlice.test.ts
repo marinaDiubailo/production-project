@@ -1,23 +1,17 @@
+/* eslint-disable max-len */
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
-import { ArticleBlockType, ArticleSchema, ArticleType } from '../types/article';
+import { ArticleSchema, ArticleType } from '../types/article';
 import { articleReducer } from './articleSlice';
 
 const data = {
     id: '1',
-    title: 'title',
-    subtitle: 'subtitle',
+    title: 'JavaScript news',
+    subtitle: 'Что нового в JS за 2023 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1023,
     createdAt: '12.09.2023',
     type: [ArticleType.IT, ArticleType.SCIENCE],
-    blocks: [
-        {
-            id: '1',
-            type: ArticleBlockType.TEXT,
-            title: 'Заголовок этого блока',
-            paragraphs: ['Программа'],
-        },
-    ],
+    blocks: [],
 };
 describe('articleSlice.test', () => {
     test('test fetch article by id service pending', () => {
