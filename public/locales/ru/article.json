@@ -1,6 +1,8 @@
 {
-    "Article details page": "Детали статьи",
-    "Articles page": "Все статьи",
-    "Article not found": "Статья не найдена",
-    "An error occured": "Произошла ошибка при загруке статьи"
+  "Article details page": "Детали статьи",
+  "Articles page": "Все статьи",
+  "Article not found": "Статья не найдена",
+  "An error occured": "Произошла ошибка при загруке статьи",
+  "Comments": "Комментарии",
+  "No comments": "Комментариев пока нет. Оставьте свой первый комментарий!"
 }

@@ -93,13 +93,13 @@
             "id": "2",
             "text": "some comment 2",
             "articleId": "1",
-            "userId": "1"
+            "userId": "2"
         },
         {
             "id": "3",
             "text": "some comment 3",
             "articleId": "1",
-            "userId": "1"
+            "userId": "3"
         }
     ],
 
@@ -107,7 +107,23 @@
         {
             "id": "1",
             "username": "admin",
-            "password": "123"
+            "password": "123",
+            "role": "ADMIN",
+            "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+        },
+        {
+            "id": "2",
+            "username": "Anna Kiseleva",
+            "password": "123",
+            "role": "USER",
+            "avatar": "https://images.freeimages.com/variants/yHT3ZpHYhn9CeeGAdw5Hcqn5/f4a36f6589a0e50e702740b15352bc00e4bfaf6f58bd4db850e167794d05993d?fmt=webp&w=350"
+        },
+        {
+            "id": "3",
+            "username": "Kiril Strogonov",
+            "password": "123",
+            "role": "USER",
+            "avatar": "https://images.freeimages.com/variants/CNtsSoFF5JRuJ781QTWmFXXr/f4a36f6589a0e50e702740b15352bc00e4bfaf6f58bd4db850e167794d05993d?fmt=webp&w=350"
         }
     ],
     "profile": {
