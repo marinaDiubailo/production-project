@@ -20,7 +20,7 @@ import {
     getArticleIsLoading,
 } from '../../model/selectors/getArticle';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { articleReducer } from '../../model/slice/articleSlice';
+import { articleReducer } from '../../model/slices/articleSlice';
 import { ArticleBlockType, AtricleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';

@@ -3,9 +3,9 @@ export {
     ProfileSchema,
     ValidateProfileError,
 } from './model/types/profile';
-export { profileActions, profileReducer } from './model/slice/profileSlice';
-export { fetchProfileData } from './model/service/fetchProfileData/fetchProfileData';
-export { updateProfileData } from './model/service/updateProfileData/updateProfileData';
+export { profileActions, profileReducer } from './model/slices/profileSlice';
+export { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData';
+export { updateProfileData } from './model/services/updateProfileData/updateProfileData';
 export { ProfileCard } from './ui/ProfileCard/ProfileCard';
 export { getProfileData } from './model/selectors/getProfileData/getProfileData';
 export { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading';

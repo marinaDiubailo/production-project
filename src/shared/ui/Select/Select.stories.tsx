@@ -17,6 +17,11 @@ type Story = StoryObj<typeof Select>;
 export const Light: Story = {
     args: {
         label: 'Country',
+        options: [
+            { value: '1', content: 'Беларусь' },
+            { value: '2', content: 'Россия' },
+            { value: '3', content: 'Украина' },
+        ],
     },
 };
 
@@ -24,10 +29,22 @@ export const Dark: Story = {
     args: {
         label: 'Country',
         options: [
-            { value: '123', content: 'Беларусь' },
-            { value: '1234', content: 'Россия' },
-            { value: '1235', content: 'Украина' },
+            { value: '1', content: 'Беларусь' },
+            { value: '2', content: 'Россия' },
+            { value: '3', content: 'Украина' },
         ],
     },
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Orange: Story = {
+    args: {
+        label: 'Country',
+        options: [
+            { value: '1', content: 'Беларусь' },
+            { value: '2', content: 'Россия' },
+            { value: '3', content: 'Украина' },
+        ],
+    },
+};
+Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

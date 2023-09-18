@@ -1,26 +1,31 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo } from 'react';
 import { IComment } from 'entities/Comment/model/types/comment';
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './CommentCard.module.scss';
 
 interface CommentCardProps {
     className?: string;
-    comment: IComment;
+    comment?: IComment;
     isLoading?: boolean;
 }
 
 export const CommentCard = memo((props: CommentCardProps) => {
     const { className, comment, isLoading } = props;
-    const { t } = useTranslation();
 
     if (isLoading) {
         return (
-            <div className={classNames(cls['comment-card'], {}, [className])}>
+            <div
+                className={classNames(cls['comment-card'], {}, [
+                    className,
+                    cls.loading,
+                ])}
+            >
                 <div className={cls['comment-header']}>
                     <Skeleton
                         width={30}
@@ -42,9 +47,14 @@ export const CommentCard = memo((props: CommentCardProps) => {
         );
     }
 
+    if (!comment) return null;
+
     return (
         <div className={classNames(cls['comment-card'], {}, [className])}>
-            <div className={cls['comment-header']}>
+            <AppLink
+                to={`${RoutePath.profile}${comment.user.id}`}
+                className={cls['comment-header']}
+            >
                 {comment.user.avatar ? (
                     <Avatar
                         size={30}
@@ -55,7 +65,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
                     title={comment.user.username}
                     className={cls.username}
                 />
-            </div>
+            </AppLink>
             <Text
                 text={comment.text}
                 className={cls.text}

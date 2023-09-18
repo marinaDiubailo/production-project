@@ -20,10 +20,10 @@ body {
 
 .page-wrapper {
     flex-grow: 1;
+    flex-shrink: 100;
     padding: 20px;
     height: calc(100vh - var(--navbar-height));
     overflow-y: auto;
-    width: 100%;
 
     // &::-webkit-scrollbar-track {
     //     box-shadow: inset 0 0 6px var(--inverted-secondary-color);
