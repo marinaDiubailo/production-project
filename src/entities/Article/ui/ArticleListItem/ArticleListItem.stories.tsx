@@ -1,42 +1,38 @@
 /* eslint-disable max-len */
 import type { Meta, StoryObj } from '@storybook/react';
-// import { Theme } from 'app/providers/ThemeProvider';
-import { Article } from 'entities/Article';
-import {
-    ArticleType,
-    ArticleBlockType,
-} from 'entities/Article/model/types/article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-// import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import ArticleDetailsPage from './ArticleDetailsPage';
+import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Article, ArticleViewType } from '../../model/types/article';
+import { ArticleListItem } from './ArticleListItem';
 
 const meta = {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
+    title: 'entities/ArticleListItem',
+    component: ArticleListItem,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as Meta<typeof ArticleDetailsPage>;
+} as Meta<typeof ArticleListItem>;
 
 export default meta;
-type Story = StoryObj<typeof ArticleDetailsPage>;
+type Story = StoryObj<typeof ArticleListItem>;
 
-const article: Article = {
+const article = {
     id: '1',
+    title: 'Javascript news',
+    subtitle: 'Что нового в JS за 2022 год?',
+    img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+    views: 1022,
+    createdAt: '18.09.2023',
     user: {
         id: '1',
         username: 'admin',
+        avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
     },
-    title: 'JavaScript news',
-    subtitle: 'Что нового в JS за 2023 год?',
-    img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
-    views: 1023,
-    createdAt: '12.09.2023',
-    type: [ArticleType.IT, ArticleType.SCIENCE],
+    type: ['IT', 'SCIENCE', 'POLITICS', 'ECONOMICS'],
     blocks: [
         {
             id: '1',
-            type: ArticleBlockType.TEXT,
+            type: 'TEXT',
             title: 'Заголовок этого блока',
             paragraphs: [
                 'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
@@ -46,12 +42,12 @@ const article: Article = {
         },
         {
             id: '4',
-            type: ArticleBlockType.CODE,
+            type: 'CODE',
             code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
         },
         {
             id: '5',
-            type: ArticleBlockType.TEXT,
+            type: 'TEXT',
             title: 'Заголовок этого блока',
             paragraphs: [
                 'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
@@ -60,18 +56,18 @@ const article: Article = {
         },
         {
             id: '2',
-            type: ArticleBlockType.IMAGE,
+            type: 'IMAGE',
             src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
             title: 'Рисунок 1 - скриншот сайта',
         },
         {
             id: '3',
-            type: ArticleBlockType.CODE,
+            type: 'CODE',
             code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
         },
         {
             id: '7',
-            type: ArticleBlockType.TEXT,
+            type: 'TEXT',
             title: 'Заголовок этого блока',
             paragraphs: [
                 'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
@@ -80,28 +76,63 @@ const article: Article = {
         },
         {
             id: '8',
-            type: ArticleBlockType.IMAGE,
+            type: 'IMAGE',
             src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
             title: 'Рисунок 1 - скриншот сайта',
         },
         {
             id: '9',
-            type: ArticleBlockType.TEXT,
+            type: 'TEXT',
             title: 'Заголовок этого блока',
             paragraphs: [
                 'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
             ],
         },
     ],
+} as Article;
+
+export const LightBig: Story = {
+    args: {
+        article,
+        view: ArticleViewType.BIG,
+    },
 };
 
-export const Light: Story = {
-    args: {},
+export const DarkBig: Story = {
+    args: {
+        article,
+        view: ArticleViewType.BIG,
+    },
 };
-Light.decorators = [
-    StoreDecorator({
-        article: {
-            data: article,
-        },
-    }),
-];
+DarkBig.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OrangeBig: Story = {
+    args: {
+        article,
+        view: ArticleViewType.BIG,
+    },
+};
+OrangeBig.decorators = [ThemeDecorator(Theme.ORANGE)];
+
+export const LightSmall: Story = {
+    args: {
+        article,
+        view: ArticleViewType.SMALL,
+    },
+};
+
+export const DarkSmall: Story = {
+    args: {
+        article,
+        view: ArticleViewType.SMALL,
+    },
+};
+DarkSmall.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OrangeSmall: Story = {
+    args: {
+        article,
+        view: ArticleViewType.SMALL,
+    },
+};
+OrangeSmall.decorators = [ThemeDecorator(Theme.ORANGE)];

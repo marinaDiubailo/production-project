@@ -5,6 +5,11 @@ import { articleReducer } from './articleSlice';
 
 const data = {
     id: '1',
+    user: {
+        id: '1',
+        username: 'admin',
+        avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
+    },
     title: 'JavaScript news',
     subtitle: 'Что нового в JS за 2023 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',

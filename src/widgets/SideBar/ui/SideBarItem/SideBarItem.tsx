@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { getUserAuthData } from 'entities/User';
-import { SideBarItemType } from '../../model/items';
+import { SideBarItemType } from '../../model/types/sidebar';
 import cls from './SideBarItem.module.scss';
 
 interface SideBarItemProps {

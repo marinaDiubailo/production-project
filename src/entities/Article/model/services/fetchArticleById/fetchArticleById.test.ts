@@ -7,6 +7,11 @@ describe('fetchArticleById.test', () => {
     test('sucess article fetching', async () => {
         const data = {
             id: '1',
+            user: {
+                id: '1',
+                username: 'admin',
+                avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
+            },
             title: 'title',
             subtitle: 'subtitle',
             img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
