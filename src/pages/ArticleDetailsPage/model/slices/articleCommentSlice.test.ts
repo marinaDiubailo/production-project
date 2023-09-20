@@ -35,7 +35,6 @@ describe('articleCommentSlice.test', () => {
     test('test fetch comments by article id fulfilled', () => {
         const state: DeepPartial<ArticleCommentsSchema> = {
             isLoading: true,
-            error: undefined,
         };
         expect(
             articleCommentsReducer(
@@ -45,7 +44,7 @@ describe('articleCommentSlice.test', () => {
         ).toEqual({
             isLoading: false,
             error: undefined,
-            ids: ['1', '2'],
+            ids: [comment1.id, comment2.id],
             entities: {
                 [comment1.id]: comment1,
                 [comment2.id]: comment2,

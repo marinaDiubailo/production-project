@@ -8,9 +8,9 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Page } from 'shared/ui/Page/Page';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList';
 import {
     articlesPageActions,
     articlesPageReducer,
@@ -21,6 +21,8 @@ import {
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from '../../model/selectors/getArticlesPageSelectors';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -38,9 +40,17 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
     const view = useSelector(getArticlesPageView);
     // const error = useSelector(getArticlesPageError);
 
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlesPage());
+    }, [dispatch]);
+
     useInitialEffect(() => {
-        dispatch(fetchArticlesList());
         dispatch(articlesPageActions.initState());
+        dispatch(
+            fetchArticlesList({
+                page: 1,
+            })
+        );
     });
 
     const onChangeView = useCallback(
@@ -52,7 +62,10 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls['articles-page'], {}, [className])}>
+            <Page
+                onScrollEnd={onLoadNextPart}
+                className={classNames(cls['articles-page'], {}, [className])}
+            >
                 <ArticleViewSelector
                     view={view}
                     onViewClick={onChangeView}
@@ -62,7 +75,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
                     view={view}
                     articles={articles}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 });

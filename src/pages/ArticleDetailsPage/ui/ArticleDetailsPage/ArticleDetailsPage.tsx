@@ -10,6 +10,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AddNewCommentForm } from 'features/AddNewComment';
 import { Button } from 'shared/ui/Button/Button';
+import { Page } from 'shared/ui/Page/Page';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import {
     DynamicModuleLoader,
@@ -59,13 +60,13 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div
+            <Page
                 className={classNames(cls['article-details-page'], {}, [
                     className,
                 ])}
             >
                 {t('Article not found')}
-            </div>
+            </Page>
         );
     }
 
@@ -74,7 +75,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
             reducers={reducers}
             removeAfterUnmount
         >
-            <div
+            <Page
                 className={classNames(cls['article-details-page'], {}, [
                     className,
                 ])}
@@ -90,7 +91,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
                     isLoading={isLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 });

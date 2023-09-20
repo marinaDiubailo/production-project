@@ -6,7 +6,7 @@ import {
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Article, ArticleViewType } from 'entities/Article';
 import { ARTICLE_VIEW_LOCALESTORAGE_KEY } from 'shared/const/localStorage';
-import { fetchArticlesList } from '../services/fetchArticlesList';
+import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ArticlesPageSchema } from '../types/articlePage';
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -23,6 +23,8 @@ export const articlesPageSlice = createSlice({
         isLoading: false,
         error: undefined,
         view: ArticleViewType.SMALL,
+        page: 1,
+        hasMore: true,
         ids: [],
         entities: {},
     }),
@@ -34,10 +36,15 @@ export const articlesPageSlice = createSlice({
                 action.payload
             );
         },
+        setPage: (state, action: PayloadAction<number>) => {
+            state.page = action.payload;
+        },
         initState: (state) => {
-            state.view = localStorage.getItem(
+            const view = localStorage.getItem(
                 ARTICLE_VIEW_LOCALESTORAGE_KEY
             ) as ArticleViewType;
+            state.view = view;
+            state.limit = view === ArticleViewType.BIG ? 4 : 9;
         },
     },
     extraReducers: (builder) => {
@@ -50,7 +57,8 @@ export const articlesPageSlice = createSlice({
                 fetchArticlesList.fulfilled,
                 (state, action: PayloadAction<Array<Article>>) => {
                     state.isLoading = false;
-                    articlesAdapter.setAll(state, action.payload);
+                    articlesAdapter.addMany(state, action.payload);
+                    state.hasMore = action.payload.length > 0;
                 }
             )
             .addCase(fetchArticlesList.rejected, (state, action) => {

@@ -17,6 +17,7 @@ import {
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Page } from 'shared/ui/Page/Page';
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -148,7 +149,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
             reducers={reducers}
             removeAfterUnmount
         >
-            <div className={classNames('', {}, [className])}>
+            <Page className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
                 {validateErrors?.length &&
                     validateErrors.map((err) => (
@@ -172,7 +173,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
                     onChangeUsername={onChangeUsername}
                     onChangeAvatar={onChangeAvatar}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

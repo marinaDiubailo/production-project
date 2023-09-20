@@ -17,28 +17,3 @@ body {
 .content-page {
     display: flex;
 }
-
-.page-wrapper {
-    flex-grow: 1;
-    flex-shrink: 100;
-    padding: 20px;
-    height: calc(100vh - var(--navbar-height));
-    overflow-y: auto;
-
-    // &::-webkit-scrollbar-track {
-    //     box-shadow: inset 0 0 6px var(--inverted-secondary-color);
-    //     border-radius: 10px;
-    //     background-color: var(--bg-color);
-    // }
-
-    // &::-webkit-scrollbar {
-    //     width: 12px;
-    //     background-color: var(--bg-color);
-    // }
-
-    // &::-webkit-scrollbar-thumb {
-    //     border-radius: 10px;
-    //     box-shadow: inset 0 0 6px var(--inverted-primary-color);
-    //     background-color: var(--inverted-bg-color);
-    // }
-}

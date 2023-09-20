@@ -18,7 +18,7 @@ import {
     getArticleData,
     getArticleError,
     getArticleIsLoading,
-} from '../../model/selectors/getArticle';
+} from '../../model/selectors/getArticleSelectors';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleReducer } from '../../model/slices/articleSlice';
 import { ArticleBlockType, AtricleBlock } from '../../model/types/article';
