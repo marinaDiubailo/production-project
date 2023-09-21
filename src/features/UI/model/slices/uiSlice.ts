@@ -16,12 +16,6 @@ export const uiSlice = createSlice({
             state.scroll[payload.path] = payload.position;
         },
     },
-    // extraReducers: (builder) => {
-    //     builder
-    //         .addCase(.pending, (state) => {})
-    //         .addCase(.fulfilled, (state,state, action: PayloadAction<>) => {})
-    //         .addCase(.rejected, (state, action) => {});
-    // },
 });
 
 export const { actions: uiActions } = uiSlice;
