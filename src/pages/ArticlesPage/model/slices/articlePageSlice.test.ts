@@ -54,13 +54,14 @@ describe('articlePageSlice.test', () => {
         const view = ArticleViewType.SMALL;
         const state: DeepPartial<ArticlesPageSchema> = {
             view,
+            _inited: false,
         };
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
                 articlesPageActions.initState()
             )
-        ).toEqual({ limit: 9, view });
+        ).toEqual({ limit: 9, view, _inited: true });
     });
 
     test('test fetch articles list pending', () => {

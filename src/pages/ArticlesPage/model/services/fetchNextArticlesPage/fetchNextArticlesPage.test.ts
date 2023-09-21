@@ -5,7 +5,7 @@ import { fetchNextArticlesPage } from './fetchNextArticlesPage';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');
 describe('fetchNextArticlesPage.test', () => {
-    test('sucess next page fetching', async () => {
+    test('sucсess next page fetching', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
             articlesPage: {
                 page: 2,
@@ -14,6 +14,7 @@ describe('fetchNextArticlesPage.test', () => {
                 limit: 5,
                 isLoading: false,
                 hasMore: true,
+                _inited: true,
             },
         });
 
@@ -32,6 +33,7 @@ describe('fetchNextArticlesPage.test', () => {
                 limit: 5,
                 isLoading: false,
                 hasMore: false,
+                _inited: true,
             },
         });
 
@@ -50,6 +52,7 @@ describe('fetchNextArticlesPage.test', () => {
                 limit: 5,
                 isLoading: true,
                 hasMore: true,
+                _inited: true,
             },
         });
 

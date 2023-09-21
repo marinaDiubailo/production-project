@@ -22,7 +22,7 @@ import {
     getArticlesPageView,
 } from '../../model/selectors/getArticlesPageSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -45,12 +45,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(articlesPageActions.initState());
-        dispatch(
-            fetchArticlesList({
-                page: 1,
-            })
-        );
+        dispatch(initArticlesPage());
     });
 
     const onChangeView = useCallback(
@@ -61,7 +56,10 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
     );
 
     return (
-        <DynamicModuleLoader reducers={reducers}>
+        <DynamicModuleLoader
+            reducers={reducers}
+            removeAfterUnmount={false}
+        >
             <Page
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls['articles-page'], {}, [className])}
