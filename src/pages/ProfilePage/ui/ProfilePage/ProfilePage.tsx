@@ -17,7 +17,7 @@ import {
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/ui/Page';
 import {
     DynamicModuleLoader,
     ReducersList,

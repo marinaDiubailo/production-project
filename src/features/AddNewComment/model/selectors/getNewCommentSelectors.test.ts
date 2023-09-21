@@ -12,14 +12,16 @@ describe('getNewCommentSelectors.test', () => {
                 text,
             },
         };
-        expect(getAddNewCommentText(state as StateSchema)).toBe('');
+        expect(getAddNewCommentText(state as StateSchema)).toBe(
+            'Hello, world!'
+        );
     });
 
     test('should work with empty state', () => {
         const state: DeepPartial<StateSchema> = {
             addNewComment: {},
         };
-        expect(getAddNewCommentText(state as StateSchema)).toBe(undefined);
+        expect(getAddNewCommentText(state as StateSchema)).toBe('');
     });
 
     test('should return error', () => {
