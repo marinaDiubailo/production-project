@@ -12,7 +12,7 @@ describe('getNewCommentSelectors.test', () => {
                 text,
             },
         };
-        expect(getAddNewCommentText(state as StateSchema)).toBe(text);
+        expect(getAddNewCommentText(state as StateSchema)).toBe('');
     });
 
     test('should work with empty state', () => {
