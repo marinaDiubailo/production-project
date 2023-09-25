@@ -7,5 +7,18 @@
   "Add new comment": "Введите текст комментария",
   "Save": "Сохранить",
   "Read more": "Читать далее...",
-  "Back to list": "Назад к списку"
+  "Back to list": "Назад к списку",
+  "Sort by": "Сортировать по",
+  "Search": "Поиск",
+  "By": "по",
+  "Ascending": "возрастанию",
+  "Descending": "убыванию",
+  "Date of creation": "дате создания",
+  "Title": "названию",
+  "Number of views": "количеству просмотров",
+  "IT": "Айти",
+  "ECONOMICS": "Экономика",
+  "SCIENCE": "Наука",
+  "ALL": "Все статьи",
+  "No articles found": "Статьи не найдены"
 }

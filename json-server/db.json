@@ -18,8 +18,8 @@
             "title": "JavaScript news",
             "subtitle": "Что нового в JS за 2023 год?",
             "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
+            "views": 10,
+            "createdAt": "10.09.2023",
             "type": ["IT", "SCIENCE"],
             "blocks": [
                 {
@@ -85,10 +85,10 @@
         {
             "id": "2",
             "userId": "2",
-            "title": "Программа, которую по традиции называют «Hello, world!»",
+            "title": " JavaScript«Hello, world!»",
             "subtitle": "Что нового в JS за 2023 год?",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/800px-Unofficial_JavaScript_logo_2.svg.png",
-            "views": 1023,
+            "views": 189,
             "createdAt": "12.09.2023",
             "type": ["IT", "SCIENCE"],
             "blocks": [
@@ -155,11 +155,11 @@
         {
             "id": "3",
             "userId": "3",
-            "title": "JavaScript — это язык, программы на котором можно выполнять в разных средах",
+            "title": "JavaScript strings and numbers",
             "subtitle": "Что нового в JS за 2023 год?",
             "img": "https://miro.medium.com/v2/resize:fit:1200/1*yUNfohs9jA6GCDmyCYJTvA@2x.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
+            "views": 13,
+            "createdAt": "11.09.2023",
             "type": ["IT", "SCIENCE"],
             "blocks": [
                 {
@@ -225,11 +225,11 @@
         {
             "id": "4",
             "userId": "1",
-            "title": "Существуют и другие способы запуска JS-кода в браузере",
+            "title": "JavaScript array methods",
             "subtitle": "Что нового в JS за 2023 год?",
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqYfbaJ3eCkft5cB1BjSSN8pwLqODTGLTqOXQyIUhvWQSVSPgyG6bI5iH4S3mCVPdIV7w&usqp=CAU",
-            "views": 1023,
-            "createdAt": "12.09.2023",
+            "views": 23,
+            "createdAt": "22.07.2023",
             "type": ["IT", "SCIENCE"],
             "blocks": [
                 {
@@ -295,11 +295,11 @@
         {
             "id": "5",
             "userId": "2",
-            "title": "Подробности о теге script можно посмотреть на сайте w3school.com.",
+            "title": "JavaScript Objects",
             "subtitle": "Что нового в JS за 2023 год?",
             "img": "https://www.akademus.es/blog/wp-content/uploads/2018/07/java.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
+            "views": 2028,
+            "createdAt": "31.12.2022",
             "type": ["IT", "SCIENCE"],
             "blocks": [
                 {
@@ -365,11 +365,11 @@
         {
             "id": "6",
             "userId": "2",
-            "title": "Подробности о теге script можно посмотреть на сайте w3school.com.",
-            "subtitle": "Что нового в JS за 2023 год?",
-            "img": "https://www.akademus.es/blog/wp-content/uploads/2018/07/java.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
+            "title": "Python news",
+            "subtitle": "Что нового за 2023 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
+            "views": 123,
+            "createdAt": "18.06.2023",
             "type": ["IT", "SCIENCE"],
             "blocks": [
                 {
@@ -395,11 +395,11 @@
         {
             "id": "7",
             "userId": "2",
-            "title": "Подробности о теге script можно посмотреть на сайте w3school.com.",
-            "subtitle": "Что нового в JS за 2023 год?",
-            "img": "https://www.akademus.es/blog/wp-content/uploads/2018/07/java.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
+            "title": "Kotlin news",
+            "subtitle": "Что нового за 2023 год?",
+            "img": "https://developer.okta.com/assets-jekyll/blog/tutorial-kotlin-beginners-guide/kotlin-logo-social-21c8518b19eb96d96f35e0057bb92b7e1281a24820e0fa09e39c42f184bd7faa.png",
+            "views": 483,
+            "createdAt": "27.04.2023",
             "type": ["IT", "SCIENCE"],
             "blocks": [
                 {
@@ -425,11 +425,11 @@
         {
             "id": "8",
             "userId": "2",
-            "title": "Подробности о теге script можно посмотреть на сайте w3school.com.",
-            "subtitle": "Что нового в JS за 2023 год?",
-            "img": "https://www.akademus.es/blog/wp-content/uploads/2018/07/java.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
+            "title": "Java news",
+            "subtitle": "Что нового за 2023 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/39/Java_logo.svg/800px-Java_logo.svg.png",
+            "views": 218,
+            "createdAt": "18.02.2023",
             "type": ["IT", "SCIENCE"],
             "blocks": [
                 {
@@ -455,11 +455,11 @@
         {
             "id": "9",
             "userId": "2",
-            "title": "Подробности о теге script можно посмотреть на сайте w3school.com.",
-            "subtitle": "Что нового в JS за 2023 год?",
-            "img": "https://www.akademus.es/blog/wp-content/uploads/2018/07/java.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
+            "title": "PHP news",
+            "subtitle": "Что нового за 2023 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png",
+            "views": 539,
+            "createdAt": "24.05.2023",
             "type": ["IT", "SCIENCE"],
             "blocks": [
                 {
@@ -485,11 +485,11 @@
         {
             "id": "10",
             "userId": "2",
-            "title": "Подробности о теге script можно посмотреть на сайте w3school.com.",
-            "subtitle": "Что нового в JS за 2023 год?",
-            "img": "https://www.akademus.es/blog/wp-content/uploads/2018/07/java.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
+            "title": "TypeScript news",
+            "subtitle": "Что нового за 2023 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+            "views": 588,
+            "createdAt": "17.08.2023",
             "type": ["IT", "SCIENCE"],
             "blocks": [
                 {
@@ -515,11 +515,11 @@
         {
             "id": "11",
             "userId": "2",
-            "title": "Подробности о теге script можно посмотреть на сайте w3school.com.",
-            "subtitle": "Что нового в JS за 2023 год?",
-            "img": "https://www.akademus.es/blog/wp-content/uploads/2018/07/java.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
+            "title": "С# news",
+            "subtitle": "Что нового за 2023 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/C_Sharp_wordmark.svg/1200px-C_Sharp_wordmark.svg.png",
+            "views": 675,
+            "createdAt": "28.03.2023",
             "type": ["IT", "SCIENCE"],
             "blocks": [
                 {
@@ -545,11 +545,11 @@
         {
             "id": "12",
             "userId": "2",
-            "title": "Подробности о теге script можно посмотреть на сайте w3school.com.",
-            "subtitle": "Что нового в JS за 2023 год?",
-            "img": "https://www.akademus.es/blog/wp-content/uploads/2018/07/java.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
+            "title": "Ruby news",
+            "subtitle": "Что нового за 2022 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/1200px-Ruby_logo.svg.png",
+            "views": 2893,
+            "createdAt": "01.09.2022",
             "type": ["IT", "SCIENCE"],
             "blocks": [
                 {
@@ -575,12 +575,12 @@
         {
             "id": "13",
             "userId": "2",
-            "title": "Подробности о теге script можно посмотреть на сайте w3school.com.",
-            "subtitle": "Что нового в JS за 2023 год?",
-            "img": "https://www.akademus.es/blog/wp-content/uploads/2018/07/java.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
-            "type": ["IT", "SCIENCE"],
+            "title": "Swift news",
+            "subtitle": "Что нового за 2022 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/en/thumb/9/96/App_Store_icon_for_Swift_Playgrounds.png/220px-App_Store_icon_for_Swift_Playgrounds.png",
+            "views": 1589,
+            "createdAt": "15.07.2022",
+            "type": ["SCIENCE"],
             "blocks": [
                 {
                     "id": "1",
@@ -605,11 +605,11 @@
         {
             "id": "14",
             "userId": "2",
-            "title": "Подробности о теге script можно посмотреть на сайте w3school.com.",
-            "subtitle": "Что нового в JS за 2023 год?",
+            "title": "JavaScript news today",
+            "subtitle": "Что нового в JS за 2021 год?",
             "img": "https://www.akademus.es/blog/wp-content/uploads/2018/07/java.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
+            "views": 3589,
+            "createdAt": "14.06.2021",
             "type": ["IT", "SCIENCE"],
             "blocks": [
                 {
@@ -635,12 +635,12 @@
         {
             "id": "15",
             "userId": "2",
-            "title": "Подробности о теге script можно посмотреть на сайте w3school.com.",
+            "title": "JavaScript news today",
             "subtitle": "Что нового в JS за 2023 год?",
             "img": "https://www.akademus.es/blog/wp-content/uploads/2018/07/java.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
-            "type": ["IT", "SCIENCE"],
+            "views": 1001,
+            "createdAt": "01.04.2023",
+            "type": ["SCIENCE"],
             "blocks": [
                 {
                     "id": "1",
@@ -665,12 +665,12 @@
         {
             "id": "16",
             "userId": "2",
-            "title": "Подробности о теге script можно посмотреть на сайте w3school.com.",
-            "subtitle": "Что нового в JS за 2023 год?",
+            "title": "JavaScript news today",
+            "subtitle": "Что нового в JS за 2022 год?",
             "img": "https://www.akademus.es/blog/wp-content/uploads/2018/07/java.png",
-            "views": 1023,
-            "createdAt": "12.09.2023",
-            "type": ["IT", "SCIENCE"],
+            "views": 8965,
+            "createdAt": "12.09.2022",
+            "type": ["SCIENCE"],
             "blocks": [
                 {
                     "id": "1",

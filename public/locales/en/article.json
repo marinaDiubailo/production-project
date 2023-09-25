@@ -7,5 +7,18 @@
   "Add new comment": "Add new comment here",
   "Save": "Save",
   "Read more": "Read more...",
-  "Back to list": "Back to list"
+  "Back to list": "Back to list",
+  "Sort by": "Sort by",
+  "Search": "Search",
+  "By": "Sort",
+  "Ascending": "ascending",
+  "Descending": "descending",
+  "Date of creation": "date of creation",
+  "Title": "title",
+  "Number of views": "number of views",
+  "IT": "IT",
+  "ECONOMICS": "Economics",
+  "SCIENCE": "Science",
+  "ALL": "All ",
+  "No articles found": "No articles found"
 }

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Text } from '../Text/Text';
-import { Card } from './Card';
+import { Card, CardTheme } from './Card';
 
 const meta = {
     title: 'ui/Card',
@@ -50,3 +50,41 @@ export const Orange: Story = {
     },
 };
 Orange.decorators = [ThemeDecorator(Theme.ORANGE)];
+
+export const LightOutlined: Story = {
+    args: {
+        children: (
+            <Text
+                text='Hello, vorld!'
+                title='HELLO'
+            />
+        ),
+        theme: CardTheme.OUTLINED,
+    },
+};
+
+export const DarkOutlined: Story = {
+    args: {
+        children: (
+            <Text
+                text='Hello, world!'
+                title='HELLO'
+            />
+        ),
+        theme: CardTheme.OUTLINED,
+    },
+};
+DarkOutlined.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OrangeOutlined: Story = {
+    args: {
+        children: (
+            <Text
+                text='Hello, world!'
+                title='HELLO'
+            />
+        ),
+        theme: CardTheme.OUTLINED,
+    },
+};
+OrangeOutlined.decorators = [ThemeDecorator(Theme.ORANGE)];

@@ -1,5 +1,9 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { ArticleViewType } from 'entities/Article';
+import {
+    ArticleSortField,
+    ArticleType,
+    ArticleViewType,
+} from 'entities/Article';
 import {
     getArticlesPageIsLoading,
     getArticlesPageError,
@@ -8,6 +12,10 @@ import {
     getArticlesPageNum,
     getArticlesPageHasMore,
     getArticlesPageInited,
+    getArticlesPageOrder,
+    getArticlesPageSort,
+    getArticlesPageSearch,
+    getArticlesPageType,
 } from './getArticlesPageSelectors';
 
 describe('getArticlesPageSelectors.test', () => {
@@ -108,5 +116,68 @@ describe('getArticlesPageSelectors.test', () => {
     test('should work with empty state', () => {
         const state: DeepPartial<StateSchema> = {};
         expect(getArticlesPageInited(state as StateSchema)).toBe(undefined);
+    });
+
+    test('should return articles page order', () => {
+        const state: DeepPartial<StateSchema> = {
+            articlesPage: {
+                order: 'desc',
+            },
+        };
+        expect(getArticlesPageOrder(state as StateSchema)).toBe('desc');
+    });
+
+    test('should work with empty state', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(getArticlesPageOrder(state as StateSchema)).toBe('asc');
+    });
+
+    test('should return articles page sort', () => {
+        const state: DeepPartial<StateSchema> = {
+            articlesPage: {
+                sort: ArticleSortField.TITLE,
+            },
+        };
+        expect(getArticlesPageSort(state as StateSchema)).toEqual(
+            ArticleSortField.TITLE
+        );
+    });
+
+    test('should work with empty state', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(getArticlesPageSort(state as StateSchema)).toEqual(
+            ArticleSortField.CREATED
+        );
+    });
+    test('should return articles page search', () => {
+        const state: DeepPartial<StateSchema> = {
+            articlesPage: {
+                search: 'some search',
+            },
+        };
+        expect(getArticlesPageSearch(state as StateSchema)).toBe('some search');
+    });
+
+    test('should work with empty state', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(getArticlesPageSearch(state as StateSchema)).toBe('');
+    });
+
+    test('should return articles page type', () => {
+        const state: DeepPartial<StateSchema> = {
+            articlesPage: {
+                type: ArticleType.ECONOMICS,
+            },
+        };
+        expect(getArticlesPageType(state as StateSchema)).toEqual(
+            ArticleType.ECONOMICS
+        );
+    });
+
+    test('should work with empty state', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(getArticlesPageType(state as StateSchema)).toEqual(
+            ArticleType.ALL
+        );
     });
 });

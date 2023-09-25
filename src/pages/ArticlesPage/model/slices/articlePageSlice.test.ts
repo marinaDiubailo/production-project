@@ -1,4 +1,8 @@
-import { ArticleViewType } from 'entities/Article';
+import {
+    ArticleSortField,
+    ArticleType,
+    ArticleViewType,
+} from 'entities/Article';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ArticlesPageSchema } from '../types/articlePage';
 import { articlesPageActions, articlesPageReducer } from './articlesPageSlice';
@@ -24,6 +28,8 @@ const articles = new Array(3).fill(0).map((_, index) => {
 const entities = Object.fromEntries(
     articles.map((article) => [[article.id], { ...article }])
 );
+const ids = Object.keys(entities);
+
 describe('articlePageSlice.test', () => {
     test('test set view', () => {
         const viewType = ArticleViewType.SMALL;
@@ -38,7 +44,7 @@ describe('articlePageSlice.test', () => {
         ).toEqual({ view: viewType });
     });
 
-    test('test get page', () => {
+    test('test set page', () => {
         const state: DeepPartial<ArticlesPageSchema> = {
             page: 3,
         };
@@ -48,6 +54,51 @@ describe('articlePageSlice.test', () => {
                 articlesPageActions.setPage(4)
             )
         ).toEqual({ page: 4 });
+    });
+    test('test set order', () => {
+        const state: DeepPartial<ArticlesPageSchema> = {
+            order: 'asc',
+        };
+        expect(
+            articlesPageReducer(
+                state as ArticlesPageSchema,
+                articlesPageActions.setOrder('desc')
+            )
+        ).toEqual({ order: 'desc' });
+    });
+
+    test('test set sort', () => {
+        const state: DeepPartial<ArticlesPageSchema> = {
+            sort: ArticleSortField.TITLE,
+        };
+        expect(
+            articlesPageReducer(
+                state as ArticlesPageSchema,
+                articlesPageActions.setSort(ArticleSortField.VIEWS)
+            )
+        ).toEqual({ sort: ArticleSortField.VIEWS });
+    });
+    test('test set search', () => {
+        const state: DeepPartial<ArticlesPageSchema> = {
+            search: '',
+        };
+        expect(
+            articlesPageReducer(
+                state as ArticlesPageSchema,
+                articlesPageActions.setSearch('search')
+            )
+        ).toEqual({ search: 'search' });
+    });
+    test('test set type', () => {
+        const state: DeepPartial<ArticlesPageSchema> = {
+            type: ArticleType.ALL,
+        };
+        expect(
+            articlesPageReducer(
+                state as ArticlesPageSchema,
+                articlesPageActions.setType(ArticleType.ECONOMICS)
+            )
+        ).toEqual({ type: ArticleType.ECONOMICS });
     });
 
     test('test init state', () => {
@@ -72,7 +123,7 @@ describe('articlePageSlice.test', () => {
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
-                fetchArticlesList.pending
+                fetchArticlesList.pending('', { replace: false })
             )
         ).toEqual({ isLoading: true, error: undefined });
     });
@@ -85,12 +136,13 @@ describe('articlePageSlice.test', () => {
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
-                fetchArticlesList.fulfilled(articles, '', { page: 1 })
+                fetchArticlesList.fulfilled(articles, '', { replace: true })
             )
         ).toEqual({
-            hasMore: true,
+            hasMore: false,
             isLoading: false,
             entities,
+            ids,
         });
     });
 });
