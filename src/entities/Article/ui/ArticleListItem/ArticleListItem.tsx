@@ -1,5 +1,4 @@
-import { memo, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Icon } from 'shared/ui/Icon/Icon';
@@ -9,6 +8,7 @@ import EyeIcon from 'shared/assets/icons/eye.svg';
 import { Card } from 'shared/ui/Card/Card';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import {
     Article,
     ArticleBlockType,
@@ -22,16 +22,12 @@ interface ArticleListiIemProps {
     className?: string;
     article: Article;
     view: ArticleViewType;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = memo((props: ArticleListiIemProps) => {
-    const { className, article, view } = props;
+    const { className, article, view, target } = props;
     const { t } = useTranslation('article');
-    const navigate = useNavigate();
-
-    const openArticleHandler = useCallback(() => {
-        navigate(RoutePath.article_details + article.id);
-    }, [article.id, navigate]);
 
     const types = (
         <Text
@@ -94,9 +90,12 @@ export const ArticleListItem = memo((props: ArticleListiIemProps) => {
                         />
                     )}
                     <div className={cls.footer}>
-                        <Button onClick={openArticleHandler}>
-                            {t('Read more')}
-                        </Button>
+                        <AppLink
+                            to={RoutePath.article_details + article.id}
+                            target={target}
+                        >
+                            <Button>{t('Read more')}</Button>
+                        </AppLink>
                         {views}
                     </div>
                 </Card>
@@ -105,13 +104,15 @@ export const ArticleListItem = memo((props: ArticleListiIemProps) => {
     }
 
     return (
-        <div
+        <AppLink
+            target={target}
+            to={RoutePath.article_details + article.id}
             className={classNames(cls['article-list-item'], {}, [
                 className,
                 cls[view],
             ])}
         >
-            <Card onClick={openArticleHandler}>
+            <Card>
                 <div className={cls['image-wrapper']}>
                     <img
                         src={article.img}
@@ -132,6 +133,6 @@ export const ArticleListItem = memo((props: ArticleListiIemProps) => {
                     className={cls.title}
                 />
             </Card>
-        </div>
+        </AppLink>
     );
 });

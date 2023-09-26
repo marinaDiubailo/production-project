@@ -7,8 +7,10 @@ import {
 describe('getArticleCommentsSelectors.test', () => {
     test('should return isLoading true', () => {
         const state: DeepPartial<StateSchema> = {
-            articleComments: {
-                isLoading: true,
+            articleDetailsPage: {
+                comments: {
+                    isLoading: true,
+                },
             },
         };
 
@@ -25,8 +27,10 @@ describe('getArticleCommentsSelectors.test', () => {
 
     test('should return error', () => {
         const state: DeepPartial<StateSchema> = {
-            articleComments: {
-                error: 'error',
+            articleDetailsPage: {
+                comments: {
+                    error: 'error',
+                },
             },
         };
 
@@ -35,7 +39,9 @@ describe('getArticleCommentsSelectors.test', () => {
 
     test('should work with empty state error', () => {
         const state: DeepPartial<StateSchema> = {
-            articleComments: {},
+            articleDetailsPage: {
+                comments: {},
+            },
         };
 
         expect(getArticleCommentsError(state as StateSchema)).toBe(undefined);

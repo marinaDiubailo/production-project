@@ -54,10 +54,10 @@ module.exports = {
             2,
             {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to', 'name'],
+                ignoreAttribute: ['data-testid', 'to', 'name', 'target'],
             },
         ],
-        'max-len': [2, { ignoreComments: true, code: 120 }],
+        'max-len': [2, { ignoreComments: true, code: 125 }],
         'react/jsx-wrap-multilines': 'off',
         'no-trailing-spaces': [
             'warn',
