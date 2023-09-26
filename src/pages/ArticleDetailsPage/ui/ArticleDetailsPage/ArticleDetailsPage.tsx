@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleDetails, ArticleList } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
@@ -9,9 +9,7 @@ import { Text, TextSize } from 'shared/ui/Text/Text';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AddNewCommentForm } from 'features/AddNewComment';
-import { Button } from 'shared/ui/Button/Button';
 import { Page } from 'widgets/Page/ui/Page';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -25,6 +23,7 @@ import { getArticleDetailsRecommendationsIsLoading } from '../../model/selectors
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsReducer } from '../../model/slices';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -38,7 +37,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{ id: string }>();
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
+
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsisLoading);
     const recommendations = useSelector(
@@ -55,10 +54,6 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
         },
         [dispatch]
     );
-
-    const backToListHandler = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -87,7 +82,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
                     className,
                 ])}
             >
-                <Button onClick={backToListHandler}>{t('Back to list')}</Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text
                     className={cls['comment-title']}

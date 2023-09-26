@@ -6,6 +6,9 @@ import { LoginModal } from 'features/AuthByUserName';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { getUserAuthData, userActions } from 'entities/User';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './NavBar.module.scss';
 
 interface NavbarProps {
@@ -14,7 +17,7 @@ interface NavbarProps {
 
 export const NavBar = memo(({ className }: NavbarProps) => {
     const [isAuthOpen, setIsAuthOpen] = useState(false);
-    const { t } = useTranslation();
+    const { t } = useTranslation('rtanslation');
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
 
@@ -33,12 +36,23 @@ export const NavBar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.navbar, {}, [className])}>
+                <Text
+                    title={t('Front-end blog')}
+                    className={cls['app-name']}
+                    theme={TextTheme.INVERTED}
+                />
+                <AppLink
+                    to={RoutePath.article_create}
+                    theme={AppLinkTheme.SECONDARY}
+                >
+                    {t('Create new')}
+                </AppLink>
                 <Button
                     theme={ButtonTheme.CLEAR_INVERTED}
                     className={cls.links}
                     onClick={onLogout}
                 >
-                    {t('Выйти')}
+                    {t('Log out')}
                 </Button>
             </header>
         );
@@ -51,7 +65,7 @@ export const NavBar = memo(({ className }: NavbarProps) => {
                 className={cls.links}
                 onClick={onShowModal}
             >
-                {t('Войти')}
+                {t('Log in')}
             </Button>
             {isAuthOpen && (
                 <LoginModal
