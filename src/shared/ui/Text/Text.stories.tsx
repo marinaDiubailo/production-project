@@ -21,6 +21,22 @@ export const Light: Story = {
     },
 };
 
+export const SizeS: Story = {
+    args: {
+        title: 'Title',
+        text: 'text',
+        size: TextSize.S,
+    },
+};
+
+export const SizeM: Story = {
+    args: {
+        title: 'Title',
+        text: 'text',
+        size: TextSize.M,
+    },
+};
+
 export const SizeL: Story = {
     args: {
         title: 'Title',
