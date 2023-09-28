@@ -4,6 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { VStack } from 'shared/ui/Stack';
 import SideBarItem from '../SideBarItem/SideBarItem';
 import { getSideBarItems } from '../../model/selectors/getSideBarItems';
 import cls from './SideBar.module.scss';
@@ -52,7 +53,12 @@ export const SideBar = memo(({ className }: SideBarProps) => {
                     }
                 />
             </Button>
-            <div className={cls.items}>{itemsList}</div>
+            <VStack
+                className={cls.items}
+                gap='8'
+            >
+                {itemsList}
+            </VStack>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} />

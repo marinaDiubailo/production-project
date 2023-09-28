@@ -18,7 +18,13 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+        'react-hooks',
+        'eslint-correct-paths-plugin',
+    ],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
@@ -54,7 +60,16 @@ module.exports = {
             2,
             {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to', 'name', 'target'],
+                ignoreAttribute: [
+                    'data-testid',
+                    'to',
+                    'name',
+                    'target',
+                    'direction',
+                    'align',
+                    'gap',
+                    'justify',
+                ],
             },
         ],
         'max-len': [2, { ignoreComments: true, code: 125 }],
@@ -73,6 +88,7 @@ module.exports = {
         'react/jsx-no-useless-fragment': [1, { allowExpressions: true }],
         'lines-between-class-members': 'off',
         'function-paren-newline': 'off',
+        'eslint-correct-paths-plugin/path-checker': 'warn',
     },
     globals: {
         __IS_DEV__: true,

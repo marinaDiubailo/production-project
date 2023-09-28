@@ -8,6 +8,7 @@ import { CommentList } from 'entities/Comment';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from 'shared/ui/Stack';
 import { AddNewCommentForm } from 'features/AddNewComment';
 import { Page } from 'widgets/Page/ui/Page';
 import {
@@ -82,29 +83,34 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
                     className,
                 ])}
             >
-                <ArticleDetailsPageHeader />
-                <ArticleDetails id={id} />
-                <Text
-                    className={cls['comment-title']}
-                    title={t('Recommendations')}
-                    size={TextSize.L}
-                />
-                <ArticleList
-                    articles={recommendations}
-                    isLoading={recommendationsIsLoading}
-                    className={cls.recommendations}
-                    target='_blank'
-                />
-                <Text
-                    className={cls['comment-title']}
-                    title={t('Comments')}
-                    size={TextSize.L}
-                />
-                <AddNewCommentForm onSendComment={onSendComment} />
-                <CommentList
-                    isLoading={commentsIsLoading}
-                    comments={comments}
-                />
+                <VStack
+                    gap='16'
+                    max
+                >
+                    <ArticleDetailsPageHeader />
+                    <ArticleDetails id={id} />
+                    <Text
+                        className={cls['comment-title']}
+                        title={t('Recommendations')}
+                        size={TextSize.L}
+                    />
+                    <ArticleList
+                        articles={recommendations}
+                        isLoading={recommendationsIsLoading}
+                        className={cls.recommendations}
+                        target='_blank'
+                    />
+                    <Text
+                        className={cls['comment-title']}
+                        title={t('Comments')}
+                        size={TextSize.L}
+                    />
+                    <AddNewCommentForm onSendComment={onSendComment} />
+                    <CommentList
+                        isLoading={commentsIsLoading}
+                        comments={comments}
+                    />
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     );

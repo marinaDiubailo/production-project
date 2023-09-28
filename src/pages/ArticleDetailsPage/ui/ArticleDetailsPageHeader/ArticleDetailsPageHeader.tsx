@@ -6,8 +6,8 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 import { getArticleData } from 'entities/Article';
+import { HStack } from 'shared/ui/Stack';
 import { getCanEditArticle } from '../../model/selectors/getCanEditArticle';
-import cls from './ArticleDetailsPageHeader.module.scss';
 
 interface ArticleDetailsPageHeaerProps {
     className?: string;
@@ -29,21 +29,16 @@ export const ArticleDetailsPageHeader = memo(
         }, [navigate, article?.id]);
 
         return (
-            <div
-                className={classNames(cls['article-details-page-header'], {}, [
-                    className,
-                ])}
+            <HStack
+                justify='between'
+                max
+                className={classNames('', {}, [className])}
             >
                 <Button onClick={backToListHandler}>{t('Back to list')}</Button>
                 {canEdit && (
-                    <Button
-                        className={cls['edit-btn']}
-                        onClick={editArticleHandler}
-                    >
-                        {t('Edit')}
-                    </Button>
+                    <Button onClick={editArticleHandler}>{t('Edit')}</Button>
                 )}
-            </div>
+            </HStack>
         );
     }
 );

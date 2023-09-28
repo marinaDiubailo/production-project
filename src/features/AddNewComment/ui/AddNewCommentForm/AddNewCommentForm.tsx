@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { HStack } from 'shared/ui/Stack';
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -50,7 +51,9 @@ const AddNewCommentForm = memo(
 
         return (
             <DynamicModuleLoader reducers={reducers}>
-                <div
+                <HStack
+                    justify='between'
+                    max
                     className={classNames(cls['add-new-comment-form'], {}, [
                         className,
                     ])}
@@ -67,7 +70,7 @@ const AddNewCommentForm = memo(
                     >
                         {t('Save')}
                     </Button>
-                </div>
+                </HStack>
             </DynamicModuleLoader>
         );
     }
