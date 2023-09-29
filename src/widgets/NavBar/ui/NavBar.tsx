@@ -9,6 +9,8 @@ import { getUserAuthData, userActions } from 'entities/User';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './NavBar.module.scss';
 
 interface NavbarProps {
@@ -17,7 +19,7 @@ interface NavbarProps {
 
 export const NavBar = memo(({ className }: NavbarProps) => {
     const [isAuthOpen, setIsAuthOpen] = useState(false);
-    const { t } = useTranslation('rtanslation');
+    const { t } = useTranslation('translation');
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
 
@@ -47,13 +49,26 @@ export const NavBar = memo(({ className }: NavbarProps) => {
                 >
                     {t('Create new')}
                 </AppLink>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    className={cls.links}
-                    onClick={onLogout}
-                >
-                    {t('Log out')}
-                </Button>
+                <Dropdown
+                    className={cls.dropdown}
+                    direction='bottom left'
+                    items={[
+                        {
+                            content: t('Profile'),
+                            href: RoutePath.profile + authData.id,
+                        },
+                        {
+                            content: t('Log out'),
+                            onClick: onLogout,
+                        },
+                    ]}
+                    trigger={
+                        <Avatar
+                            size={30}
+                            src={authData.avatar}
+                        />
+                    }
+                />
             </header>
         );
     }

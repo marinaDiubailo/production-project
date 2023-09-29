@@ -18,5 +18,9 @@
     "Укажите имя и фамилию": "Please enter your first and last name",
     "Некорректный возраст": "Incorrect age",
     "Выберите страну": "Choose a country",
-    "Данные не указаны": "Data not provided"
+    "Данные не указаны": "Data not provided",
+    "Russia": "Russia",
+    "Belarus": "Belarus",
+    "Ukraine": "Ukraine",
+    "Kazakhstan": "Kazakhstan"
 }
