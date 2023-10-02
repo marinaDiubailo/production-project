@@ -42,7 +42,7 @@ export default async (): Promise<Config> => {
                 {
                     publicPath: '<rootDir>/reports/unit',
                     filename: 'report.html',
-                    openReport: true,
+                    // openReport: true,
                     inlineSource: true,
                 },
             ],
@@ -52,7 +52,7 @@ export default async (): Promise<Config> => {
         globals: {
             __IS_DEV__: true,
             __API__: '',
-            __PROJECT: 'jest',
+            __PROJECT__: 'jest',
         },
 
         // All imported modules in your tests should be mocked automatically
