@@ -22,5 +22,6 @@
   "ALL": "All ",
   "No articles found": "No articles found",
   "Recommendations": "Recommendations",
-  "Edit": "Edit"
+  "Edit": "Edit",
+  "Error loading articles": "Error loading articles"
 }

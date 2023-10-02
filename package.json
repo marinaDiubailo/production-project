@@ -16,7 +16,8 @@
         "style:fix": "npx stylelint \"**/*.scss\" --fix",
         "sb": "storybook dev -p 6006 -c ./config/storybook",
         "sb:build": "storybook build -c ./config/storybook",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "generate": "node ./scripts/createSlice/index.js"
     },
     "keywords": [],
     "author": "",

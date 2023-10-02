@@ -1,6 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
 import { Fragment, memo, ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Menu } from '@headlessui/react';
 import { DropdownDirection } from '../../types/ui';
 import { classNames } from '../../lib/classNames/classNames';
@@ -30,7 +29,6 @@ interface DropdownProps {
 
 export const Dropdown = memo((props: DropdownProps) => {
     const { className, items, trigger, direction = 'bottom right' } = props;
-    const { t } = useTranslation();
 
     const menuClasses = [mapDirectionClass[direction]];
 
