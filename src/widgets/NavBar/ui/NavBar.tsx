@@ -12,6 +12,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { HStack } from 'shared/ui/Stack';
 import { NotificationButton } from 'features/NotificationButton';
 import { AvatarDropdown } from 'features/AvatarDropdown';
+
 import cls from './NavBar.module.scss';
 
 interface NavbarProps {
