@@ -1,8 +1,8 @@
-.dropdown {
+.popup {
     position: relative;
 }
 
-.btn {
+.trigger {
     background: none;
     border: none;
     outline: none;
@@ -11,28 +11,8 @@
     cursor: pointer;
 }
 
-.menu {
-    background: var(--card-bg);
-    position: absolute;
-    z-index: 10000;
-    border-radius: 8px;
-    border: 1px solid var(--primary-color);
-    display: flex;
-    flex-direction: column;
-}
-
-.menu-item {
-    padding: 10px 25px;
-    width: 100%;
-    background: none;
-    border: none;
-    outline: none;
-    color: var(--primary-color);
-    cursor: pointer;
-}
-
 .active {
-    background: var(--inverted-primary-color);
+    background: var(--secondary-color);
 
     &:first-child {
         border-radius: 8px 8px 0 0;
@@ -45,6 +25,10 @@
     &:only-child {
         border-radius: 8px;
     }
+}
+
+.disabled {
+    opacity: 0.7;
 }
 
 .options-bottom-right {

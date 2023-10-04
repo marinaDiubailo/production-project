@@ -1,10 +1,12 @@
 /* eslint-disable i18next/no-literal-string */
 import { Fragment, memo, ReactNode } from 'react';
 import { Menu } from '@headlessui/react';
-import { DropdownDirection } from '../../types/ui';
-import { classNames } from '../../lib/classNames/classNames';
+import { DropdownDirection } from '../../../../types/ui';
+import { classNames } from '../../../../lib/classNames/classNames';
+import { AppLink } from '../../../AppLink/AppLink';
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/popup.module.scss';
 import cls from './Dropdown.module.scss';
-import { AppLink } from '../AppLink/AppLink';
 
 export interface DropdownItem {
     disabled?: boolean;
@@ -12,13 +14,6 @@ export interface DropdownItem {
     onClick?: () => void;
     href?: string;
 }
-
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'bottom left': cls['options-bottom-left'],
-    'bottom right': cls['options-bottom-right'],
-    'top right': cls['options-top-right'],
-    'top left': cls['options-top-left'],
-};
 
 interface DropdownProps {
     className?: string;
@@ -35,9 +30,9 @@ export const Dropdown = memo((props: DropdownProps) => {
     return (
         <Menu
             as='div'
-            className={classNames(cls.dropdown, {}, [className])}
+            className={classNames('', {}, [className, popupCls.popup])}
         >
-            <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
+            <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map((item) => {
                     const content = ({ active }: { active: boolean }) => (
@@ -46,7 +41,7 @@ export const Dropdown = memo((props: DropdownProps) => {
                             disabled={item.disabled}
                             type='button'
                             className={classNames(cls['menu-item'], {
-                                [cls.active]: active,
+                                [popupCls.active]: active,
                             })}
                         >
                             {item.content}

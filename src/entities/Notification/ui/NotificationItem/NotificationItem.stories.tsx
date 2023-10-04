@@ -1,28 +1,18 @@
-/* eslint-disable i18next/no-literal-string */
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Button } from '../Button/Button';
-import { Dropdown } from './Dropdown';
+import { NotificationItem } from './NotificationItem';
 
 const meta = {
-    title: 'ui/Dropdown',
-    component: Dropdown,
+    title: 'entities/NotificationItem',
+    component: NotificationItem,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    args: {
-        trigger: <Button>Open!</Button>,
-        items: [
-            { content: 'first' },
-            { content: 'second' },
-            { content: 'third' },
-        ],
-    },
-} as Meta<typeof Dropdown>;
+} as Meta<typeof NotificationItem>;
 
 export default meta;
-type Story = StoryObj<typeof Dropdown>;
+type Story = StoryObj<typeof NotificationItem>;
 
 export const Light: Story = {
     args: {},

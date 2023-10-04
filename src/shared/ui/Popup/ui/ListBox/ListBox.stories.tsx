@@ -4,7 +4,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { ListBox } from './ListBox';
 
 const meta = {
-    title: 'ui/ListBox',
+    title: 'ui/Popup/ListBox',
     component: ListBox,
     argTypes: {
         backgroundColor: { control: 'color' },

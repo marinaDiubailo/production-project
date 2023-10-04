@@ -693,6 +693,40 @@
             ]
         }
     ],
+    "notifications": [
+        {
+            "id": "1",
+            "title": "Уведомление 1",
+            "description": "Произошло какое-то событие",
+            "userId": "1"
+        },
+        {
+            "id": "2",
+            "title": "Уведомление 2",
+            "description": "Произошло какое-то событие",
+            "userId": "1",
+            "href": "http://localhost:3000/admin"
+        },
+        {
+            "id": "3",
+            "title": "Уведомление 3",
+            "description": "Произошло какое-то событие",
+            "userId": "1",
+            "href": "http://localhost:3000/admin"
+        },
+        {
+            "id": "4",
+            "title": "Уведомление 4",
+            "description": "Произошло какое-то событие",
+            "userId": "1"
+        },
+        {
+            "id": "5",
+            "title": "Уведомление 5",
+            "description": "Произошло какое-то событие",
+            "userId": "2"
+        }
+    ],
     "comments": [
         {
             "id": "1",
@@ -802,8 +836,8 @@
             "first": "Marina",
             "last": "Diubailo",
             "age": 34,
-            "currency": "BYN",
-            "country": "Belarus",
+            "currency": "USD",
+            "country": "Kazakhstan",
             "city": "Mogilev",
             "username": "admin",
             "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"

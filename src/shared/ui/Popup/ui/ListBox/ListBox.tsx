@@ -1,11 +1,13 @@
 import { Fragment, memo, ReactNode } from 'react';
 import { Listbox as HListbox } from '@headlessui/react';
-import { classNames } from '../../lib/classNames/classNames';
-import CheckIcon from '../../assets/icons/check-mark.svg';
-import { DropdownDirection } from '../../types/ui';
-import { Button } from '../Button/Button';
-import { HStack } from '../Stack';
-import { Icon } from '../Icon/Icon';
+import { classNames } from '../../../../lib/classNames/classNames';
+import CheckIcon from '../../../../assets/icons/check-mark.svg';
+import { DropdownDirection } from '../../../../types/ui';
+import { Button } from '../../../Button/Button';
+import { HStack } from '../../../Stack';
+import { Icon } from '../../../Icon/Icon';
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/popup.module.scss';
 import cls from './ListBox.module.scss';
 
 export interface ListBoxItem {
@@ -13,13 +15,6 @@ export interface ListBoxItem {
     content: ReactNode;
     disabled?: boolean;
 }
-
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'bottom left': cls['options-bottom-left'],
-    'bottom right': cls['options-bottom-right'],
-    'top right': cls['options-top-right'],
-    'top left': cls['options-top-left'],
-};
 
 interface ListBoxProps {
     className?: string;
@@ -50,11 +45,11 @@ export const ListBox = memo((props: ListBoxProps) => {
         <HStack gap='4'>
             {label && <span>{`${label}>`}</span>}
             <HListbox
+                className={classNames('', {}, [className, popupCls.popup])}
                 disabled={readonly}
                 as={'div'}
                 value={value}
                 onChange={onChange}
-                className={classNames(cls.listbox, {}, [className])}
             >
                 <HListbox.Button className={cls.trigger}>
                     <Button disabled={readonly}>{value ?? defaulValue}</Button>
@@ -72,8 +67,8 @@ export const ListBox = memo((props: ListBoxProps) => {
                             {({ active, selected }) => (
                                 <li
                                     className={classNames(cls.option, {
-                                        [cls.active]: active,
-                                        [cls.disabled]: item.disabled,
+                                        [popupCls.active]: active,
+                                        [popupCls.disabled]: item.disabled,
                                     })}
                                 >
                                     {item.content}

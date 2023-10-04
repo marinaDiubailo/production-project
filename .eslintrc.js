@@ -71,6 +71,7 @@ module.exports = {
                     'justify',
                     'role',
                     'as',
+                    'border',
                 ],
             },
         ],
