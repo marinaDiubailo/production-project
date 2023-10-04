@@ -1,6 +1,8 @@
 {
   "ALL": "ALL",
   "Add new comment": "Add new comment",
+  "Admin": "Admin",
+  "Admin panel": "Admin panel",
   "An error occured": "An error occured",
   "Article details page": "Article details page",
   "Article not found": "Article not found",
@@ -19,6 +21,7 @@
   "IT": "IT",
   "Log in": "Log in",
   "Log out": "Log out",
+  "No access": "No access",
   "No articles found": "No articles found",
   "No comments": "No comments",
   "No profile found": "No profile found",

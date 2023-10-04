@@ -20,9 +20,10 @@ import {
     getArticleError,
     getArticleIsLoading,
 } from '../../model/selectors/getArticleSelectors';
-import { ArticleBlockType, AtricleBlock } from '../../model/types/article';
+import { AtricleBlock } from '../../model/types/article';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleReducer } from '../../model/slices/articleSlice';
+import { ArticleBlockType } from '../../model/consts/consts';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
@@ -30,7 +31,7 @@ import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {
@@ -158,6 +159,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         >
             <VStack
                 gap='16'
+                max
                 className={classNames(cls.article, {}, [className])}
             >
                 {content}

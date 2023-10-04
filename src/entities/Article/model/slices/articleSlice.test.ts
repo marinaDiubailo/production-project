@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
+import { ArticleType } from '../consts/consts';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
-import { ArticleSchema, ArticleType } from '../types/article';
+import { ArticleSchema } from '../types/article';
 import { articleReducer } from './articleSlice';
 
 const data = {

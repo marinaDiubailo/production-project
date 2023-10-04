@@ -1,10 +1,10 @@
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
+export type { Article, ArticleSchema } from './model/types/article';
+export { getArticleData } from './model/selectors/getArticleSelectors';
+export { ArticleList } from './ui/ArticleList/ArticleList';
 export {
-    Article,
-    ArticleSchema,
     ArticleViewType,
     ArticleSortField,
     ArticleType,
-} from './model/types/article';
-export { getArticleData } from './model/selectors/getArticleSelectors';
-export { ArticleList } from './ui/ArticleList/ArticleList';
+    ArticleBlockType,
+} from './model/consts/consts';

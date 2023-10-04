@@ -1,11 +1,7 @@
 /* eslint-disable max-len */
 import type { Meta, StoryObj } from '@storybook/react';
 // import { Theme } from 'app/providers/ThemeProvider';
-import { Article } from 'entities/Article';
-import {
-    ArticleType,
-    ArticleBlockType,
-} from 'entities/Article/model/types/article';
+import { Article, ArticleType, ArticleBlockType } from 'entities/Article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 // import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';

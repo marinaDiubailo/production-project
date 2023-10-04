@@ -23,7 +23,7 @@ import {
     profileActions,
     profileReducer,
 } from '../../model/slices/profileSlice';
-import { ValidateProfileError } from '../../model/types/editableProfileCard';
+import { ValidateProfileError } from '../../model/consts/consts';
 import { EditableProfileCardHeader } from '../EditablePfrofileCardHeader/EditableProfileCardHeader';
 
 const reducers: ReducersList = {
@@ -31,7 +31,7 @@ const reducers: ReducersList = {
 };
 interface EditableProfileCardProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {

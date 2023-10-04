@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { ArticleType, ArticleBlockType } from '../../types/article';
+import { ArticleType, ArticleBlockType } from '../../consts/consts';
 import { fetchArticleById } from './fetchArticleById';
 
 describe('fetchArticleById.test', () => {

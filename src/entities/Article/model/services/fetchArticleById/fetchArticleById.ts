@@ -9,9 +9,9 @@ export const fetchArticleById = createAsyncThunk<
 >('article/fetchArticleById', async (articleId, thunkApi) => {
     const { rejectWithValue, extra } = thunkApi;
 
-    if (!articleId) throw new Error('');
-
     try {
+        if (!articleId) throw new Error('');
+
         const response = await extra.api.get<Article>(
             `/articles/${articleId}`,
             {
@@ -20,11 +20,11 @@ export const fetchArticleById = createAsyncThunk<
                 },
             }
         );
+
         if (!response.data) throw new Error();
+
         return response.data;
     } catch (error) {
-        // eslint-disable-next-line no-console
-        console.log(error);
         return rejectWithValue('error');
     }
 });
