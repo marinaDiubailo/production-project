@@ -32,6 +32,7 @@ export default async (): Promise<Config> => {
         moduleNameMapper: {
             '\\.s?css$': 'identity-obj-proxy',
             '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+            '^@/(.*)$': '<rootDir>/src/$1',
         },
 
         // Use this configuration option to add custom reporters to Jest
