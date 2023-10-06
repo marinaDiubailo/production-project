@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ListBox } from 'shared/ui/Popup';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ListBox } from '@/shared/ui/Popup';
 // import { Select } from 'shared/ui/Select/Select';
 import { Currency } from '../../model/types/currency';
 

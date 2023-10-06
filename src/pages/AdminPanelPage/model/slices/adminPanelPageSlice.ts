@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { AdminPanelPageSchema } from '../types/adminPanelPage';
 
 const initialState: AdminPanelPageSchema = {};
@@ -7,7 +7,7 @@ export const adminPanelPageSlice = createSlice({
     name: 'adminPanelPage',
     initialState,
     reducers: {
-        template: (state, action: PayloadAction<string>) => {},
+        // template: (state, action: PayloadAction<string>) => {},
     },
     // extraReducers: (builder) => {
     //     builder

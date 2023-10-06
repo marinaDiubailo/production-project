@@ -1,8 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Page } from 'widgets/Page/ui/Page';
+// import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Page } from '@/widgets/Page/ui/Page';
 // import cls from './AdminPanelPage.module.scss';
 
 interface AdminPanelPageProps {
@@ -11,7 +11,7 @@ interface AdminPanelPageProps {
 
 const AdminPanelPage = memo((props: AdminPanelPageProps) => {
     const { className } = props;
-    const { t } = useTranslation();
+    // const { t } = useTranslation();
 
     return <Page className={classNames('', {}, [className])}>Admin panel</Page>;
 });

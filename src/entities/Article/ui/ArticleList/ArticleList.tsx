@@ -1,8 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text/Text';
 import { Article } from '../../model/types/article';
 import { ArticleViewType } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';

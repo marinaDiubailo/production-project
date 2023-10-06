@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text, TextAlign } from 'shared/ui/Text/Text';
-import { Page } from 'widgets/Page/ui/Page';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text, TextAlign } from '@/shared/ui/Text/Text';
+import { Page } from '@/widgets/Page/ui/Page';
 
 interface ForbiddenPageProps {
     className?: string;

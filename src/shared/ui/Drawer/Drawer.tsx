@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { memo, ReactNode, useCallback, useEffect } from 'react';
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { classNames } from '@/shared/lib/classNames/classNames';
 // import { useModal } from 'shared/lib/hooks/useModal/useModal';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';

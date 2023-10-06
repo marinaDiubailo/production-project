@@ -1,15 +1,15 @@
 /* eslint-disable max-len */
 import type { Meta, StoryObj } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme } from '@/app/providers/ThemeProvider';
 import {
     Article,
     ArticleSortField,
     ArticleType,
     ArticleViewType,
-} from 'entities/Article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import Avatar from 'shared/assets/tests/storybook.jpg';
+} from '@/entities/Article';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import Avatar from '@/shared/assets/tests/storybook.jpg';
 import ArticlesPage from './ArticlesPage';
 
 const article = {

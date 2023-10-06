@@ -2,7 +2,7 @@ import {
     ArticleSortField,
     ArticleType,
     ArticleViewType,
-} from 'entities/Article';
+} from '@/entities/Article';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ArticlesPageSchema } from '../types/articlePage';
 import { articlesPageActions, articlesPageReducer } from './articlesPageSlice';
