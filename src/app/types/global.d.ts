@@ -10,6 +10,7 @@ declare module '*.jpg';
 declare module '*.jpeg';
 
 declare module '*.svg' {
+    import React from 'react';
     const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
     export default content;
 }
@@ -27,3 +28,5 @@ type DeepPartial<T> = T extends object
 type OptionalRecord<K extends keyof any, T> = {
     [P in K]?: T;
 };
+
+/// <reference types="vite-plugin-svgr/client" />

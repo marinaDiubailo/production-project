@@ -2,8 +2,8 @@
     "compilerOptions": {
         "outDir": "./dist/",
         "noImplicitAny": true,
-        "module": "esnext",
-        "target": "es5",
+        "module": "ESNext",
+        "target": "ESNext",
         "jsx": "react-jsx",
         "allowJs": true,
         "moduleResolution": "node",
@@ -14,7 +14,8 @@
         "isolatedModules": true,
         "paths": {
             "@/*": ["./src/*"]
-        }
+        },
+        "types": ["vite/client", "vitest/globals", "vite-plugin-svgr/client"]
     },
 
     "ts-node": {
