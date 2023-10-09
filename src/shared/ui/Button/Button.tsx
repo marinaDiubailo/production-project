@@ -9,11 +9,19 @@ export enum ButtonTheme {
     OUTLINE_RED = 'outline-red',
 }
 
+export enum ButtonSize {
+    M = 'size-m',
+    L = 'size-l',
+    XL = 'size-xl',
+}
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ButtonTheme;
     disabled?: boolean;
+    size?: ButtonSize;
     children?: ReactNode;
+    fullWidth?: boolean;
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -22,17 +30,24 @@ export const Button = memo((props: ButtonProps) => {
         children,
         theme = ButtonTheme.OUTLINE,
         disabled,
+        fullWidth,
+        size = ButtonSize.M,
         ...otherProps
     } = props;
 
     const mods: Mods = {
         [cls.disabled]: disabled,
+        [cls['full-width']]: fullWidth,
     };
 
     return (
         <button
             type='button'
-            className={classNames(cls.button, mods, [className, cls[theme]])}
+            className={classNames(cls.button, mods, [
+                className,
+                cls[theme],
+                cls[size],
+            ])}
             disabled={disabled}
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...otherProps}

@@ -34,3 +34,19 @@
 .disabled {
     opacity: 0.7;
 }
+
+.size-m {
+    font: var(--font-m);
+}
+
+.size-l {
+    font: var(--font-l);
+}
+
+.size-xl {
+    font: var(--font-xl);
+}
+
+.full-width {
+    width: 100%;
+}

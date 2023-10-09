@@ -14,8 +14,7 @@
         "isolatedModules": true,
         "paths": {
             "@/*": ["./src/*"]
-        },
-        "types": ["vite/client", "vitest/globals", "vite-plugin-svgr/client"]
+        }
     },
 
     "ts-node": {
