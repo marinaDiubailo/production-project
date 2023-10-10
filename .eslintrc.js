@@ -91,7 +91,18 @@ module.exports = {
         'react/jsx-no-useless-fragment': [1, { allowExpressions: true }],
         'lines-between-class-members': 'off',
         'function-paren-newline': 'off',
-        'eslint-correct-paths-plugin/path-checker': 'warn',
+        'eslint-correct-paths-plugin/path-checker': [2, { alias: '@' }],
+        'eslint-correct-paths-plugin/imports-from-public-api': [
+            2,
+            {
+                alias: '@',
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreDecorator.tsx',
+                ],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
