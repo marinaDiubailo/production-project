@@ -92,6 +92,13 @@ module.exports = {
         'lines-between-class-members': 'off',
         'function-paren-newline': 'off',
         'eslint-correct-paths-plugin/path-checker': [2, { alias: '@' }],
+        'eslint-correct-paths-plugin/layer-imports': [
+            2,
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
         'eslint-correct-paths-plugin/imports-from-public-api': [
             2,
             {

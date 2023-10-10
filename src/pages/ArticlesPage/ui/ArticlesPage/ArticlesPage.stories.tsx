@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import type { Meta, StoryObj } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
 import {
     Article,
     ArticleSortField,
@@ -9,6 +8,7 @@ import {
 } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 import Avatar from '@/shared/assets/tests/storybook.jpg';
 import ArticlesPage from './ArticlesPage';
 

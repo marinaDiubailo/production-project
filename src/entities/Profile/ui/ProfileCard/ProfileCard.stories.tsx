@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 import AvatarImg from '@/shared/assets/tests/storybook.jpg';
 import { ProfileCard } from './ProfileCard';
 

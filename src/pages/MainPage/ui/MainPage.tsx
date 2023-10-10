@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { BugButton } from '@/app/providers/ErrorBoundary';
 import { Counter } from '@/entities/Counter';
 import { Page } from '@/widgets/Page';
 import { StarRating } from '@/shared/ui/StarRating/StarRating';
@@ -9,7 +8,6 @@ const MainPage = () => {
 
     return (
         <Page>
-            <BugButton />
             {t('Главная страница')}
             <Counter />
             <StarRating />

@@ -4,7 +4,7 @@ import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDec
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
-import { Theme } from '../../src/app/providers/ThemeProvider';
+import { Theme } from '../../src/shared/const/theme';
 import i18n from '../../src/shared/config/i18n/i18n';
 
 initialize();
