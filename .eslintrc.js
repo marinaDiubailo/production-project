@@ -24,6 +24,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'eslint-correct-paths-plugin',
+        'unused-imports',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -40,7 +41,17 @@ module.exports = {
         'import/prefer-default-export': 'off',
         'no-undef': 'off',
         'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': 'warn',
+        '@typescript-eslint/no-unused-vars': 'off',
+        'unused-imports/no-unused-imports': 'error',
+        'unused-imports/no-unused-vars': [
+            1,
+            {
+                vars: 'all',
+                varsIgnorePattern: '^_',
+                args: 'after-used',
+                argsIgnorePattern: '^_',
+            },
+        ],
         'react/require-default-props': 'off',
         'react/no-array-index-key': 'off',
         'react/react-in-jsx-scope': 'off',
@@ -78,7 +89,7 @@ module.exports = {
         'max-len': [2, { ignoreComments: true, code: 125 }],
         'react/jsx-wrap-multilines': 'off',
         'no-trailing-spaces': [
-            'warn',
+            1,
             { ignoreComments: true, skipBlankLines: true },
         ],
         'jsx-a11y/no-static-element-interactions': 'off',
