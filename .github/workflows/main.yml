@@ -4,9 +4,20 @@ on:
         branches: [main]
     pull_request:
         branches: [main]
+permissions:
+    contents: write
+    pages: write
+    id-token: write
+concurrency:
+    group: 'pages'
+    cancel-in-progress: true
 jobs:
     pipeline:
         runs-on: windows-latest
+        concurrency: ci-${{ github.ref }}
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
         strategy:
             matrix:
                 node-version: [17.x]
@@ -17,7 +28,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
             - name: install modules
-              run: npm install
+              run: npm ci
             - name: build production project
               run: npm run build:prod
               if: always()
@@ -30,3 +41,10 @@ jobs:
             - name: unit testing
               run: npm run unit
               if: always()
+            - name: Setup Pages
+              uses: actions/configure-pages@v2
+              if: always()
+            - name: Deploy to GitHub Pages
+              id: deployment
+              if: always()
+              uses: actions/deploy-pages@v1
