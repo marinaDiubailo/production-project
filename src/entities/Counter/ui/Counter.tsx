@@ -1,20 +1,19 @@
 /* eslint-disable i18next/no-literal-string */
 import { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
-import { counterActions } from '../model/slice/counterSlice';
+import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
+import { useCounterActions } from '../model/slice/counterSlice';
 
 export const Counter: FC = () => {
-    const dispatch = useDispatch();
-    const counterValue = useSelector(getCounterValue);
+    const counterValue = useCounterValue();
+    const { increment, decrement } = useCounterActions();
 
-    const increment = () => {
-        dispatch(counterActions.increment());
+    const incrementHandler = () => {
+        increment();
     };
 
-    const decrement = () => {
-        dispatch(counterActions.decrement());
+    const decrementHandler = () => {
+        decrement();
     };
 
     return (
@@ -23,14 +22,14 @@ export const Counter: FC = () => {
             <Button
                 data-testid='increment-btn'
                 theme={ButtonTheme.OUTLINE}
-                onClick={increment}
+                onClick={incrementHandler}
             >
                 increment
             </Button>
             <Button
                 data-testid='decrement-btn'
                 theme={ButtonTheme.OUTLINE}
-                onClick={decrement}
+                onClick={decrementHandler}
             >
                 decrement
             </Button>

@@ -4,11 +4,13 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Icon } from '@/shared/ui/Icon';
 import { Button } from '@/shared/ui/Button';
 import { Text } from '@/shared/ui/Text';
-import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/AppLink';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleViewType, ArticleBlockType } from '../../model/consts/consts';
@@ -74,7 +76,13 @@ export const ArticleListItem = memo((props: ArticleListiIemProps) => {
                         className={cls.title}
                     />
                     {types}
-                    <img
+                    <AppImage
+                        fallback={
+                            <Skeleton
+                                width='100%'
+                                height={250}
+                            />
+                        }
                         src={article.img}
                         alt={article.title}
                         className={cls.image}
@@ -87,7 +95,7 @@ export const ArticleListItem = memo((props: ArticleListiIemProps) => {
                     )}
                     <div className={cls.footer}>
                         <AppLink
-                            to={RoutePath.article_details + article.id}
+                            to={getRouteArticleDetails(article.id)}
                             target={target}
                         >
                             <Button>{t('Read more')}</Button>
@@ -102,7 +110,7 @@ export const ArticleListItem = memo((props: ArticleListiIemProps) => {
     return (
         <AppLink
             target={target}
-            to={RoutePath.article_details + article.id}
+            to={getRouteArticleDetails(article.id)}
             className={classNames(cls['article-list-item'], {}, [
                 className,
                 cls[view],
@@ -110,7 +118,13 @@ export const ArticleListItem = memo((props: ArticleListiIemProps) => {
         >
             <Card>
                 <div className={cls['image-wrapper']}>
-                    <img
+                    <AppImage
+                        fallback={
+                            <Skeleton
+                                width={200}
+                                height={200}
+                            />
+                        }
                         src={article.img}
                         alt={article.title}
                         className={cls.image}

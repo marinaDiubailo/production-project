@@ -11,7 +11,7 @@ import {
     getIsManager,
     getUserAuthData,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -43,13 +43,13 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
                     ? [
                           {
                               content: t('Admin panel'),
-                              href: RoutePath.admin_panel,
+                              href: getRouteAdmin(),
                           },
                       ]
                     : []),
                 {
                     content: t('Profile'),
-                    href: RoutePath.profile + authData.id,
+                    href: getRouteProfile(authData.id),
                 },
                 {
                     content: t('Log out'),
@@ -58,6 +58,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
             ]}
             trigger={
                 <Avatar
+                    fallbackInverted
                     size={30}
                     src={authData.avatar}
                 />
