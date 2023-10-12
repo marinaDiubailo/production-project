@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
+import { TestProps } from '@/shared/types/tests';
 
 export enum TextTheme {
     PRIMARY = 'primary',
@@ -19,14 +20,13 @@ export enum TextSize {
     L = 'size-l',
 }
 
-interface TextProps {
+interface TextProps extends TestProps {
     className?: string;
     title?: string;
     text?: string;
     theme?: TextTheme;
     align?: TextAlign;
     size?: TextSize;
-    'data-testid'?: string;
 }
 
 type HeaderTagType = 'h1' | 'h2' | 'h3';

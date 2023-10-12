@@ -13,7 +13,10 @@ const ForbiddenPage = memo((props: ForbiddenPageProps) => {
     const { t } = useTranslation('translation');
 
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page
+            data-testid='ForbiddenPage'
+            className={classNames('', {}, [className])}
+        >
             <Text
                 title={t('No access')}
                 align={TextAlign.CENTER}
