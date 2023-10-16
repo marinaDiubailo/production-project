@@ -34,5 +34,5 @@ export const ArticleInfiniteList = memo(
                 className={classNames('', {}, [className])}
             />
         );
-    }
+    },
 );

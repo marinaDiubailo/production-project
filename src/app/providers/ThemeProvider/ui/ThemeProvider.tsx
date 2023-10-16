@@ -20,7 +20,7 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
             theme,
             setTheme,
         }),
-        [theme]
+        [theme],
     );
 
     return (

@@ -6,16 +6,15 @@ import { Theme } from '@/shared/const/theme';
 
 export const ThemeDecorator =
     (theme: Theme): Decorator =>
-    (Story) =>
-        (
-            <ThemeProvider initialTheme={theme}>
-                <div
-                    className={`app ${theme}`}
-                    style={{
-                        color: 'var(--primary-color)',
-                    }}
-                >
-                    <Story />
-                </div>
-            </ThemeProvider>
-        );
+    (Story) => (
+        <ThemeProvider initialTheme={theme}>
+            <div
+                className={`app ${theme}`}
+                style={{
+                    color: 'var(--primary-color)',
+                }}
+            >
+                <Story />
+            </div>
+        </ThemeProvider>
+    );

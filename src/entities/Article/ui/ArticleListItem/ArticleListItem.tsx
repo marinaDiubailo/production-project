@@ -27,31 +27,23 @@ export const ArticleListItem = memo((props: ArticleListiIemProps) => {
     const { className, article, view, target } = props;
     const { t } = useTranslation('article');
 
-    const types = (
-        <Text
-            text={article.type.join(', ')}
-            className={cls.types}
-        />
-    );
+    const types = <Text text={article.type.join(', ')} className={cls.types} />;
 
     const views = (
         <>
-            <Text
-                text={String(article.views)}
-                className={cls.views}
-            />
+            <Text text={String(article.views)} className={cls.views} />
             <Icon Svg={EyeIcon} />
         </>
     );
 
     if (view === ArticleViewType.BIG) {
         const textBlock = article.blocks.find(
-            (block) => block.type === ArticleBlockType.TEXT
+            (block) => block.type === ArticleBlockType.TEXT,
         ) as ArticleTextBlock;
 
         return (
             <div
-                data-testid='ArticleListItem'
+                data-testid="ArticleListItem"
                 className={classNames(cls['article-list-item'], {}, [
                     className,
                     cls[view],
@@ -59,31 +51,17 @@ export const ArticleListItem = memo((props: ArticleListiIemProps) => {
             >
                 <Card>
                     <div className={cls.header}>
-                        <Avatar
-                            size={30}
-                            src={article.user.avatar}
-                        />
+                        <Avatar size={30} src={article.user.avatar} />
                         <Text
                             text={article.user.username}
                             className={cls.username}
                         />
-                        <Text
-                            text={article.createdAt}
-                            className={cls.date}
-                        />
+                        <Text text={article.createdAt} className={cls.date} />
                     </div>
-                    <Text
-                        title={article.title}
-                        className={cls.title}
-                    />
+                    <Text title={article.title} className={cls.title} />
                     {types}
                     <AppImage
-                        fallback={
-                            <Skeleton
-                                width='100%'
-                                height={250}
-                            />
-                        }
+                        fallback={<Skeleton width="100%" height={250} />}
                         src={article.img}
                         alt={article.title}
                         className={cls.image}
@@ -110,7 +88,7 @@ export const ArticleListItem = memo((props: ArticleListiIemProps) => {
 
     return (
         <AppLink
-            data-testid='ArticleListItem'
+            data-testid="ArticleListItem"
             target={target}
             to={getRouteArticleDetails(article.id)}
             className={classNames(cls['article-list-item'], {}, [
@@ -121,29 +99,18 @@ export const ArticleListItem = memo((props: ArticleListiIemProps) => {
             <Card>
                 <div className={cls['image-wrapper']}>
                     <AppImage
-                        fallback={
-                            <Skeleton
-                                width={200}
-                                height={200}
-                            />
-                        }
+                        fallback={<Skeleton width={200} height={200} />}
                         src={article.img}
                         alt={article.title}
                         className={cls.image}
                     />
-                    <Text
-                        text={article.createdAt}
-                        className={cls.date}
-                    />
+                    <Text text={article.createdAt} className={cls.date} />
                 </div>
                 <div className={cls['info-wrapper']}>
                     {types}
                     {views}
                 </div>
-                <Text
-                    text={article.title}
-                    className={cls.title}
-                />
+                <Text text={article.title} className={cls.title} />
             </Card>
         </AppLink>
     );

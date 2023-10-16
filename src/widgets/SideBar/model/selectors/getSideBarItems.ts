@@ -39,7 +39,7 @@ export const getSideBarItems = createSelector(getUserAuthData, (userData) => {
                 Icon: ArticleIcon,
                 text: 'Статьи',
                 authOnly: true,
-            }
+            },
         );
     }
 

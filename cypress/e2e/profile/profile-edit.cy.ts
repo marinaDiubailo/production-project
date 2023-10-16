@@ -24,11 +24,11 @@ describe('user open profile page', () => {
         cy.updateProfile(newFirstname, newLastname);
         cy.getByTestId('ProfileCard.Firstname').should(
             'have.value',
-            newFirstname
+            newFirstname,
         );
         cy.getByTestId('ProfileCard.Lastname').should(
             'have.value',
-            newLastname
+            newLastname,
         );
     });
 });

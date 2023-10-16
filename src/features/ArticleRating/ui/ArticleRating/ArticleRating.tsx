@@ -39,30 +39,25 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
                 console.log(error);
             }
         },
-        [rateArticleMutation, articleId, userData?.id]
+        [rateArticleMutation, articleId, userData?.id],
     );
 
     const onCancel = useCallback(
         (starsCount: number) => {
             rateArticleHandler(starsCount);
         },
-        [rateArticleHandler]
+        [rateArticleHandler],
     );
 
     const onAccept = useCallback(
         (starsCount: number, feedback?: string) => {
             rateArticleHandler(starsCount, feedback);
         },
-        [rateArticleHandler]
+        [rateArticleHandler],
     );
 
     if (isLoading) {
-        return (
-            <Skeleton
-                width='100%'
-                height={120}
-            />
-        );
+        return <Skeleton width="100%" height={120} />;
     }
     return (
         <RatingCard

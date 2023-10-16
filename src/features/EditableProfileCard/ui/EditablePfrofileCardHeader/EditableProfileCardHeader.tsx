@@ -39,7 +39,7 @@ export const EditableProfileCardHeader = memo(
 
         return (
             <HStack
-                justify='between'
+                justify="between"
                 max
                 className={classNames('', {}, [className])}
             >
@@ -50,23 +50,23 @@ export const EditableProfileCardHeader = memo(
                             <Button
                                 theme={ButtonTheme.OUTLINE}
                                 onClick={onEdit}
-                                data-testid='EditableProfileCardHeader.EditButton'
+                                data-testid="EditableProfileCardHeader.EditButton"
                             >
                                 {t('Редактировать')}
                             </Button>
                         ) : (
-                            <HStack gap='8'>
+                            <HStack gap="8">
                                 <Button
                                     theme={ButtonTheme.OUTLINE_RED}
                                     onClick={onCancelEdit}
-                                    data-testid='EditableProfileCardHeader.CancelButton'
+                                    data-testid="EditableProfileCardHeader.CancelButton"
                                 >
                                     {t('Отменить')}
                                 </Button>
                                 <Button
                                     theme={ButtonTheme.OUTLINE}
                                     onClick={onSaveChanges}
-                                    data-testid='EditableProfileCardHeader.SaveButton'
+                                    data-testid="EditableProfileCardHeader.SaveButton"
                                 >
                                     {t('Сохранить')}
                                 </Button>
@@ -76,5 +76,5 @@ export const EditableProfileCardHeader = memo(
                 )}
             </HStack>
         );
-    }
+    },
 );

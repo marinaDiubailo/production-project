@@ -28,7 +28,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
         (value: string) => {
             onChange?.(value as Country);
         },
-        [onChange]
+        [onChange],
     );
 
     return (
@@ -39,7 +39,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
             value={value}
             defaulValue={t('Страна')}
             readonly={readonly}
-            direction='top right'
+            direction="top right"
             label={t('Страна')}
         />
     );

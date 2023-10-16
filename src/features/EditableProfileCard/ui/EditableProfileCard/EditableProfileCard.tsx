@@ -61,10 +61,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             dispatch(
                 profileActions.updateProfile({
                     first: value || '',
-                })
+                }),
             );
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeLastname = useCallback(
@@ -72,10 +72,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             dispatch(
                 profileActions.updateProfile({
                     last: value || '',
-                })
+                }),
             );
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeAge = useCallback(
@@ -83,10 +83,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             dispatch(
                 profileActions.updateProfile({
                     age: Number(value || 0),
-                })
+                }),
             );
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeCity = useCallback(
@@ -94,10 +94,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             dispatch(
                 profileActions.updateProfile({
                     city: value || '',
-                })
+                }),
             );
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeCurrency = useCallback(
@@ -105,10 +105,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             dispatch(
                 profileActions.updateProfile({
                     currency,
-                })
+                }),
             );
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeCountry = useCallback(
@@ -116,10 +116,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             dispatch(
                 profileActions.updateProfile({
                     country,
-                })
+                }),
             );
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeUsername = useCallback(
@@ -127,29 +127,25 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             dispatch(
                 profileActions.updateProfile({
                     username: value || '',
-                })
+                }),
             );
         },
-        [dispatch]
+        [dispatch],
     );
     const onChangeAvatar = useCallback(
         (value?: string) => {
             dispatch(
                 profileActions.updateProfile({
                     avatar: value || '',
-                })
+                }),
             );
         },
-        [dispatch]
+        [dispatch],
     );
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <VStack
-                gap='16'
-                max
-                className={classNames('', {}, [className])}
-            >
+            <VStack gap="16" max className={classNames('', {}, [className])}>
                 <EditableProfileCardHeader />
                 {validateErrors?.length &&
                     validateErrors.map((err) => (
@@ -157,7 +153,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                             theme={TextTheme.ERROR}
                             text={validateErrorTranslates[err]}
                             key={err}
-                            data-testid='EditableProfileCard.Error'
+                            data-testid="EditableProfileCard.Error"
                         />
                     ))}
                 <ProfileCard

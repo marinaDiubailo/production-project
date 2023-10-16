@@ -40,14 +40,14 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         (value: string) => {
             dispatch(loginActions.setUsername(value));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangePassword = useCallback(
         (value: string) => {
             dispatch(loginActions.setPassword(value));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onConfirm = useCallback(async () => {
@@ -58,10 +58,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     }, [onSuccess, dispatch, username, password]);
 
     return (
-        <DynamicModuleLoader
-            reducers={initialReducers}
-            removeAfterUnmount
-        >
+        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames(cls['login-form'], {}, [className])}>
                 <Text title={t('Форма авторизации')} />
                 {error && (
@@ -71,7 +68,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     />
                 )}
                 <Input
-                    type='text'
+                    type="text"
                     className={cls['login-input']}
                     placeholder={t('username')}
                     autofocus
@@ -79,7 +76,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     value={username}
                 />
                 <Input
-                    type='text'
+                    type="text"
                     className={cls['login-input']}
                     placeholder={t('password')}
                     onChange={onChangePassword}

@@ -5,7 +5,7 @@ const pathToCacheFolder = path.resolve(
     __dirname,
     '..',
     'node_modules',
-    '.cache'
+    '.cache',
 );
 
 if (fs.existsSync(pathToCacheFolder)) {

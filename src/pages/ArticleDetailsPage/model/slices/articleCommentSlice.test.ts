@@ -24,8 +24,8 @@ describe('articleCommentSlice.test', () => {
         expect(
             articleCommentsReducer(
                 state as ArticleCommentsSchema,
-                fetchCommentsByArticleId.pending
-            )
+                fetchCommentsByArticleId.pending,
+            ),
         ).toEqual({
             isLoading: true,
             error: undefined,
@@ -39,8 +39,8 @@ describe('articleCommentSlice.test', () => {
         expect(
             articleCommentsReducer(
                 state as ArticleCommentsSchema,
-                fetchCommentsByArticleId.fulfilled(comments, '', '1')
-            )
+                fetchCommentsByArticleId.fulfilled(comments, '', '1'),
+            ),
         ).toEqual({
             isLoading: false,
             error: undefined,

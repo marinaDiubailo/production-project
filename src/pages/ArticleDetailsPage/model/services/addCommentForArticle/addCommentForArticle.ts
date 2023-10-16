@@ -32,5 +32,5 @@ export const addCommentForArticle = createAsyncThunk<
         } catch (error) {
             return rejectWithValue('error');
         }
-    }
+    },
 );

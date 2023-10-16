@@ -32,7 +32,7 @@ export const ArticleDetailsPageHeader = memo(
 
         return (
             <HStack
-                justify='between'
+                justify="between"
                 max
                 className={classNames('', {}, [className])}
             >
@@ -42,5 +42,5 @@ export const ArticleDetailsPageHeader = memo(
                 )}
             </HStack>
         );
-    }
+    },
 );

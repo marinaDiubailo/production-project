@@ -46,10 +46,7 @@ export const NavBar = memo(({ className }: NavbarProps) => {
                 >
                     {t('Create new')}
                 </AppLink>
-                <HStack
-                    gap='16'
-                    className={cls.actions}
-                >
+                <HStack gap="16" className={cls.actions}>
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>
@@ -67,10 +64,7 @@ export const NavBar = memo(({ className }: NavbarProps) => {
                 {t('Log in')}
             </Button>
             {isAuthOpen && (
-                <LoginModal
-                    isOpen={isAuthOpen}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpen={isAuthOpen} onClose={onCloseModal} />
             )}
         </header>
     );

@@ -18,16 +18,16 @@ export const Counter: FC = () => {
 
     return (
         <div>
-            <h1 data-testid='value-title'>Count: {counterValue}</h1>
+            <h1 data-testid="value-title">Count: {counterValue}</h1>
             <Button
-                data-testid='increment-btn'
+                data-testid="increment-btn"
                 theme={ButtonTheme.OUTLINE}
                 onClick={incrementHandler}
             >
                 increment
             </Button>
             <Button
-                data-testid='decrement-btn'
+                data-testid="decrement-btn"
                 theme={ButtonTheme.OUTLINE}
                 onClick={decrementHandler}
             >

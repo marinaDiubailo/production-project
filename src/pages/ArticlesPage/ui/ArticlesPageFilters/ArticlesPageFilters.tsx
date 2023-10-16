@@ -50,7 +50,7 @@ export const ArticlesPageFilters = memo(
             (view: ArticleViewType) => {
                 dispatch(articlesPageActions.setView(view));
             },
-            [dispatch]
+            [dispatch],
         );
 
         const onChangeOrder = useCallback(
@@ -59,7 +59,7 @@ export const ArticlesPageFilters = memo(
                 dispatch(articlesPageActions.setPage(1));
                 fetchData();
             },
-            [dispatch, fetchData]
+            [dispatch, fetchData],
         );
 
         const onChangeSort = useCallback(
@@ -68,7 +68,7 @@ export const ArticlesPageFilters = memo(
                 dispatch(articlesPageActions.setPage(1));
                 fetchData();
             },
-            [dispatch, fetchData]
+            [dispatch, fetchData],
         );
 
         const onChangeSearch = useCallback(
@@ -77,7 +77,7 @@ export const ArticlesPageFilters = memo(
                 dispatch(articlesPageActions.setPage(1));
                 debouncesFetchData();
             },
-            [dispatch, debouncesFetchData]
+            [dispatch, debouncesFetchData],
         );
         const onChangeType = useCallback(
             (value: ArticleType) => {
@@ -85,7 +85,7 @@ export const ArticlesPageFilters = memo(
                 dispatch(articlesPageActions.setPage(1));
                 fetchData();
             },
-            [dispatch, fetchData]
+            [dispatch, fetchData],
         );
 
         return (
@@ -113,11 +113,8 @@ export const ArticlesPageFilters = memo(
                         placeholder={t('Search')}
                     />
                 </Card>
-                <ArticleTypeTabs
-                    value={type}
-                    onChangeType={onChangeType}
-                />
+                <ArticleTypeTabs value={type} onChangeType={onChangeType} />
             </div>
         );
-    }
+    },
 );

@@ -24,13 +24,7 @@ export const Avatar = memo((props: AvatarProps) => {
         };
     }, [size]);
 
-    const fallback = (
-        <Skeleton
-            width={size}
-            height={size}
-            border='50%'
-        />
-    );
+    const fallback = <Skeleton width={size} height={size} border="50%" />;
 
     const errorFallback = (
         <Icon

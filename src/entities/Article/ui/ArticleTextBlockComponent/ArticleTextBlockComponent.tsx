@@ -14,10 +14,7 @@ export const ArticleTextBlockComponent = memo(
         return (
             <div className={classNames('', {}, [className])}>
                 {block.title && (
-                    <Text
-                        title={block.title}
-                        className={cls.title}
-                    />
+                    <Text title={block.title} className={cls.title} />
                 )}
                 {block.paragraphs.map((paragraph) => (
                     <Text
@@ -28,5 +25,5 @@ export const ArticleTextBlockComponent = memo(
                 ))}
             </div>
         );
-    }
+    },
 );

@@ -11,9 +11,9 @@ import { useDispatch } from 'react-redux';
 export const buildSlice = <
     State,
     CaseReducers extends SliceCaseReducers<State>,
-    Name extends string = string
+    Name extends string = string,
 >(
-    options: CreateSliceOptions<State, CaseReducers, Name>
+    options: CreateSliceOptions<State, CaseReducers, Name>,
 ) => {
     const slice = createSlice(options);
 
@@ -24,7 +24,7 @@ export const buildSlice = <
         return useMemo(
             // @ts-ignore
             () => bindActionCreators(slice.actions, dispatch),
-            [dispatch]
+            [dispatch],
         );
     };
 

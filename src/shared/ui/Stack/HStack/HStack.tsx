@@ -5,7 +5,7 @@ export type HStackProps = Omit<FlexProps, 'direction'>;
 export const HStack = (props: HStackProps) => {
     return (
         <Flex
-            direction='row'
+            direction="row"
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...props}
         />

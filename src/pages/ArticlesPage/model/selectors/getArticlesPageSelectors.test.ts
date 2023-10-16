@@ -66,14 +66,14 @@ describe('getArticlesPageSelectors.test', () => {
             },
         };
         expect(getArticlesPageView(state as StateSchema)).toEqual(
-            ArticleViewType.BIG
+            ArticleViewType.BIG,
         );
     });
 
     test('should work with empty state', () => {
         const state: DeepPartial<StateSchema> = {};
         expect(getArticlesPageView(state as StateSchema)).toEqual(
-            ArticleViewType.SMALL
+            ArticleViewType.SMALL,
         );
     });
     test('should return articles page number', () => {
@@ -139,14 +139,14 @@ describe('getArticlesPageSelectors.test', () => {
             },
         };
         expect(getArticlesPageSort(state as StateSchema)).toEqual(
-            ArticleSortField.TITLE
+            ArticleSortField.TITLE,
         );
     });
 
     test('should work with empty state', () => {
         const state: DeepPartial<StateSchema> = {};
         expect(getArticlesPageSort(state as StateSchema)).toEqual(
-            ArticleSortField.CREATED
+            ArticleSortField.CREATED,
         );
     });
     test('should return articles page search', () => {
@@ -170,14 +170,14 @@ describe('getArticlesPageSelectors.test', () => {
             },
         };
         expect(getArticlesPageType(state as StateSchema)).toEqual(
-            ArticleType.ECONOMICS
+            ArticleType.ECONOMICS,
         );
     });
 
     test('should work with empty state', () => {
         const state: DeepPartial<StateSchema> = {};
         expect(getArticlesPageType(state as StateSchema)).toEqual(
-            ArticleType.ALL
+            ArticleType.ALL,
         );
     });
 });

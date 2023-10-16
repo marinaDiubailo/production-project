@@ -14,13 +14,10 @@ const ForbiddenPage = memo((props: ForbiddenPageProps) => {
 
     return (
         <Page
-            data-testid='ForbiddenPage'
+            data-testid="ForbiddenPage"
             className={classNames('', {}, [className])}
         >
-            <Text
-                title={t('No access')}
-                align={TextAlign.CENTER}
-            />
+            <Text title={t('No access')} align={TextAlign.CENTER} />
         </Page>
     );
 });

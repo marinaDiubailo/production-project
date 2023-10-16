@@ -15,8 +15,8 @@ describe('uiSlice.test', () => {
         expect(
             uiReducer(
                 state as UISchema,
-                uiActions.setScrollPosition(scrollPosition)
-            )
+                uiActions.setScrollPosition(scrollPosition),
+            ),
         ).toEqual({
             scroll: { path: 200 },
         });

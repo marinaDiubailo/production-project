@@ -21,7 +21,7 @@ describe('getArticleCommentsSelectors.test', () => {
         const state: DeepPartial<StateSchema> = {};
 
         expect(getArticleCommentsisLoading(state as StateSchema)).toBe(
-            undefined
+            undefined,
         );
     });
 

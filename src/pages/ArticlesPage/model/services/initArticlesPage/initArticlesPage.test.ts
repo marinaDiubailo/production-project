@@ -41,7 +41,7 @@ describe('initArticlesPage.test', () => {
                 ['order', 'asc'],
                 ['sort', ArticleSortField.VIEWS],
                 ['type', ArticleType.IT],
-            ])
+            ]),
         );
 
         expect(thunk.dispatch).toBeCalledTimes(7);

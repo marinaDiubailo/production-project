@@ -29,7 +29,7 @@ export const Dropdown = memo((props: DropdownProps) => {
 
     return (
         <Menu
-            as='div'
+            as="div"
             className={classNames('', {}, [className, popupCls.popup])}
         >
             <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
@@ -39,7 +39,7 @@ export const Dropdown = memo((props: DropdownProps) => {
                         <button
                             onClick={item.onClick}
                             disabled={item.disabled}
-                            type='button'
+                            type="button"
                             className={classNames(cls['menu-item'], {
                                 [popupCls.active]: active,
                             })}
@@ -61,10 +61,7 @@ export const Dropdown = memo((props: DropdownProps) => {
                     }
 
                     return (
-                        <Menu.Item
-                            as={Fragment}
-                            disabled={item.disabled}
-                        >
+                        <Menu.Item as={Fragment} disabled={item.disabled}>
                             {content}
                         </Menu.Item>
                     );

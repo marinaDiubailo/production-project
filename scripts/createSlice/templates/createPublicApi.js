@@ -13,14 +13,14 @@ export { ${schemaName} } from './model/types/${firstCharLowerCase(sliceName)}';
     `
             : `export { ${sliceName} } from './ui/${sliceName}/${sliceName}';
 export type { ${schemaName} } from './model/types/${firstCharLowerCase(
-                  sliceName
+                  sliceName,
               )}';
     `;
 
     try {
         await fs.writeFile(
             resolveRoot('src', layer, sliceName, 'index.ts'),
-            content
+            content,
         );
     } catch (e) {
         console.log('Не удалось создать PUBLIC API');

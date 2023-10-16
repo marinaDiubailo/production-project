@@ -26,7 +26,7 @@ describe('articleSlice.test', () => {
             error: undefined,
         };
         expect(
-            articleReducer(state as ArticleSchema, fetchArticleById.pending)
+            articleReducer(state as ArticleSchema, fetchArticleById.pending),
         ).toEqual({
             isLoading: true,
             error: undefined,
@@ -40,8 +40,8 @@ describe('articleSlice.test', () => {
         expect(
             articleReducer(
                 state as ArticleSchema,
-                fetchArticleById.fulfilled(data, '', '1')
-            )
+                fetchArticleById.fulfilled(data, '', '1'),
+            ),
         ).toEqual({
             isLoading: false,
             data,

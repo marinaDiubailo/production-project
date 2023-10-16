@@ -22,7 +22,7 @@ describe('getUISelectors.test', () => {
             },
         };
         expect(getScrollPositionByPath(state as StateSchema, 'path')).toEqual(
-            100
+            100,
         );
     });
 });

@@ -18,7 +18,7 @@ export const fetchArticleById = createAsyncThunk<
                 params: {
                     _expand: 'user',
                 },
-            }
+            },
         );
 
         if (!response.data) throw new Error();

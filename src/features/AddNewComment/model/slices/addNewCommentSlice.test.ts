@@ -13,8 +13,8 @@ describe('addNewCommentSlice.test', () => {
         expect(
             addNewCommentReducer(
                 state as AddNewCommentSchema,
-                addNewCommentActions.setText(text)
-            )
+                addNewCommentActions.setText(text),
+            ),
         ).toEqual({ text });
     });
 });

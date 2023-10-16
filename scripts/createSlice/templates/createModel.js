@@ -18,7 +18,7 @@ module.exports = async (layer, sliceName) => {
         } catch (e) {
             console.log(
                 `Не удалось создать model сегмент для слайса ${sliceName}`,
-                e
+                e,
             );
         }
     };
@@ -28,9 +28,9 @@ module.exports = async (layer, sliceName) => {
             await fs.writeFile(
                 resolveModelPath(
                     'slices',
-                    `${firstCharLowerCase(sliceName)}Slice.ts`
+                    `${firstCharLowerCase(sliceName)}Slice.ts`,
                 ),
-                reduxSliceTemplate(sliceName)
+                reduxSliceTemplate(sliceName),
             );
         } catch (e) {
             console.log('Не удалось создать редакс слайс', e);
@@ -42,9 +42,9 @@ module.exports = async (layer, sliceName) => {
             await fs.writeFile(
                 resolveModelPath(
                     'types',
-                    `${firstCharLowerCase(sliceName)}.ts`
+                    `${firstCharLowerCase(sliceName)}.ts`,
                 ),
-                schemaTypeTemplate(sliceName)
+                schemaTypeTemplate(sliceName),
             );
         } catch (e) {
             console.log('Не удалось создать тип схемы стейта', e);

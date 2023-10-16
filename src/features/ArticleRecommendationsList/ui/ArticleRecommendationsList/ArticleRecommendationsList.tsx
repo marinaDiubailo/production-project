@@ -24,19 +24,13 @@ export const ArticleRecommendationsList = memo(
 
         return (
             <VStack
-                data-testid='ArticleRecommendationsList'
-                gap='8'
+                data-testid="ArticleRecommendationsList"
+                gap="8"
                 className={classNames('', {}, [className])}
             >
-                <Text
-                    title={t('Recommendations')}
-                    size={TextSize.L}
-                />
-                <ArticleList
-                    articles={articles}
-                    target='_blank'
-                />
+                <Text title={t('Recommendations')} size={TextSize.L} />
+                <ArticleList articles={articles} target="_blank" />
             </VStack>
         );
-    }
+    },
 );

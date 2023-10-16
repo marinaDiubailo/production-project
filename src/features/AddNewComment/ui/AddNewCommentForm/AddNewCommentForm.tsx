@@ -41,7 +41,7 @@ const AddNewCommentForm = memo(
             (value: string) => {
                 dispatch(addNewCommentActions.setText(value));
             },
-            [dispatch]
+            [dispatch],
         );
 
         const onSendHandler = useCallback(() => {
@@ -52,22 +52,22 @@ const AddNewCommentForm = memo(
         return (
             <DynamicModuleLoader reducers={reducers}>
                 <HStack
-                    data-testid='AddNewCommentForm'
-                    justify='between'
+                    data-testid="AddNewCommentForm"
+                    justify="between"
                     max
                     className={classNames(cls['add-new-comment-form'], {}, [
                         className,
                     ])}
                 >
                     <Input
-                        data-testid='AddNewCommentForm.Input'
+                        data-testid="AddNewCommentForm.Input"
                         placeholder={t('Add new comment')}
                         value={text}
                         onChange={onCommentTextChange}
                         className={cls.input}
                     />
                     <Button
-                        data-testid='AddNewCommentForm.Button'
+                        data-testid="AddNewCommentForm.Button"
                         theme={ButtonTheme.OUTLINE}
                         onClick={onSendHandler}
                     >
@@ -76,7 +76,7 @@ const AddNewCommentForm = memo(
                 </HStack>
             </DynamicModuleLoader>
         );
-    }
+    },
 );
 
 export default AddNewCommentForm;

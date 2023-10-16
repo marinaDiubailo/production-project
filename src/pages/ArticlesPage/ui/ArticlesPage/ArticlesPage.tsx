@@ -37,12 +37,9 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
     });
 
     return (
-        <DynamicModuleLoader
-            reducers={reducers}
-            removeAfterUnmount={false}
-        >
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page
-                data-testid='ArticlesPage'
+                data-testid="ArticlesPage"
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls['articles-page'], {}, [className])}
             >

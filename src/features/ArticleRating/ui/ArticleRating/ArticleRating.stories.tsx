@@ -30,7 +30,7 @@ const meta = {
                     `${__API__}/article-ratings?userId=1&articleId=1`,
                     (_req, res, ctx) => {
                         return res(ctx.status(200), ctx.json([{ rate: 4 }]));
-                    }
+                    },
                 ),
             ],
         },
@@ -61,7 +61,7 @@ const withoutRate = {
                 `${__API__}/article-ratings?userId=1&articleId=1`,
                 (_req, res, ctx) => {
                     return res(ctx.status(200), ctx.json([]));
-                }
+                },
             ),
         ],
     },

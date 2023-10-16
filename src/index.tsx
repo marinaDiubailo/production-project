@@ -11,7 +11,7 @@ const container = document.getElementById('root');
 
 if (!container) {
     throw new Error(
-        'Контейнер root не найден. НЕ удалось вмонтировать реакт приложение'
+        'Контейнер root не найден. НЕ удалось вмонтировать реакт приложение',
     );
 }
 const root = ReactDOM.createRoot(container);
@@ -24,5 +24,5 @@ root.render(
                 </ThemeProvider>
             </ErrorBoundary>
         </StoreProvider>
-    </BrowserRouter>
+    </BrowserRouter>,
 );

@@ -42,7 +42,7 @@ export const useModal = (props: UseModalProps) => {
                 close();
             }
         },
-        [close]
+        [close],
     );
 
     useEffect(() => {

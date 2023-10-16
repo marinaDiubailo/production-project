@@ -17,11 +17,7 @@ export const ArticleListItemSkeleton = memo(
                 <div className={classNames('', {}, [className, cls[view]])}>
                     <Card className={cls.card}>
                         <div className={cls.header}>
-                            <Skeleton
-                                width={30}
-                                height={30}
-                                border='50%'
-                            />
+                            <Skeleton width={30} height={30} border="50%" />
                             <Skeleton
                                 width={150}
                                 height={16}
@@ -38,15 +34,9 @@ export const ArticleListItemSkeleton = memo(
                             height={24}
                             className={cls.title}
                         />
-                        <Skeleton
-                            height={200}
-                            className={cls.image}
-                        />
+                        <Skeleton height={200} className={cls.image} />
                         <div className={cls.footer}>
-                            <Skeleton
-                                width={200}
-                                height={36}
-                            />
+                            <Skeleton width={200} height={36} />
                         </div>
                     </Card>
                 </div>
@@ -64,18 +54,11 @@ export const ArticleListItemSkeleton = memo(
                         />
                     </div>
                     <div className={cls['info-wrapper']}>
-                        <Skeleton
-                            width={130}
-                            height={16}
-                        />
+                        <Skeleton width={130} height={16} />
                     </div>
-                    <Skeleton
-                        width={150}
-                        height={16}
-                        className={cls.title}
-                    />
+                    <Skeleton width={150} height={16} className={cls.title} />
                 </Card>
             </div>
         );
-    }
+    },
 );

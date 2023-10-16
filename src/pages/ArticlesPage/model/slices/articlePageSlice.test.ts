@@ -26,7 +26,7 @@ const articles = new Array(3).fill(0).map((_, index) => {
 });
 
 const entities = Object.fromEntries(
-    articles.map((article) => [[article.id], { ...article }])
+    articles.map((article) => [[article.id], { ...article }]),
 );
 const ids = Object.keys(entities);
 
@@ -39,8 +39,8 @@ describe('articlePageSlice.test', () => {
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
-                articlesPageActions.setView(viewType)
-            )
+                articlesPageActions.setView(viewType),
+            ),
         ).toEqual({ view: viewType });
     });
 
@@ -51,8 +51,8 @@ describe('articlePageSlice.test', () => {
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
-                articlesPageActions.setPage(4)
-            )
+                articlesPageActions.setPage(4),
+            ),
         ).toEqual({ page: 4 });
     });
     test('test set order', () => {
@@ -62,8 +62,8 @@ describe('articlePageSlice.test', () => {
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
-                articlesPageActions.setOrder('desc')
-            )
+                articlesPageActions.setOrder('desc'),
+            ),
         ).toEqual({ order: 'desc' });
     });
 
@@ -74,8 +74,8 @@ describe('articlePageSlice.test', () => {
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
-                articlesPageActions.setSort(ArticleSortField.VIEWS)
-            )
+                articlesPageActions.setSort(ArticleSortField.VIEWS),
+            ),
         ).toEqual({ sort: ArticleSortField.VIEWS });
     });
     test('test set search', () => {
@@ -85,8 +85,8 @@ describe('articlePageSlice.test', () => {
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
-                articlesPageActions.setSearch('search')
-            )
+                articlesPageActions.setSearch('search'),
+            ),
         ).toEqual({ search: 'search' });
     });
     test('test set type', () => {
@@ -96,8 +96,8 @@ describe('articlePageSlice.test', () => {
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
-                articlesPageActions.setType(ArticleType.ECONOMICS)
-            )
+                articlesPageActions.setType(ArticleType.ECONOMICS),
+            ),
         ).toEqual({ type: ArticleType.ECONOMICS });
     });
 
@@ -110,8 +110,8 @@ describe('articlePageSlice.test', () => {
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
-                articlesPageActions.initState()
-            )
+                articlesPageActions.initState(),
+            ),
         ).toEqual({ limit: 9, view, _inited: true });
     });
 
@@ -123,8 +123,8 @@ describe('articlePageSlice.test', () => {
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
-                fetchArticlesList.pending('', { replace: false })
-            )
+                fetchArticlesList.pending('', { replace: false }),
+            ),
         ).toEqual({ isLoading: true, error: undefined });
     });
 
@@ -136,8 +136,8 @@ describe('articlePageSlice.test', () => {
         expect(
             articlesPageReducer(
                 state as ArticlesPageSchema,
-                fetchArticlesList.fulfilled(articles, '', { replace: true })
-            )
+                fetchArticlesList.fulfilled(articles, '', { replace: true }),
+            ),
         ).toEqual({
             hasMore: false,
             isLoading: false,

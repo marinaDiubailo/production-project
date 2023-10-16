@@ -6,7 +6,7 @@ export const VStack = (props: VStackProps) => {
     const { align = 'start' } = props;
     return (
         <Flex
-            direction='column'
+            direction="column"
             align={align}
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...props}

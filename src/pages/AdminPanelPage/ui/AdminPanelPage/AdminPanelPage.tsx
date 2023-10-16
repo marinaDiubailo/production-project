@@ -15,7 +15,7 @@ const AdminPanelPage = memo((props: AdminPanelPageProps) => {
 
     return (
         <Page
-            data-testid='AdminPanelPage'
+            data-testid="AdminPanelPage"
             className={classNames('', {}, [className])}
         >
             Admin panel

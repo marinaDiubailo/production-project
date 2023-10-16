@@ -19,10 +19,7 @@ export const PageError: FC<PageErrorProps> = ({ className }) => {
     return (
         <div className={classNames(cls['page-error'], {}, [className])}>
             <p>{t('Ошибка')}</p>
-            <Button
-                onClick={reloadPagehandler}
-                theme={ButtonTheme.CLEAR}
-            >
+            <Button onClick={reloadPagehandler} theme={ButtonTheme.CLEAR}>
                 {t('Обновить страницу')}
             </Button>
         </div>

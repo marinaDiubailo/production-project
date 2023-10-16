@@ -42,7 +42,7 @@ export const ListBox = memo((props: ListBoxProps) => {
     const optionsClasses = [mapDirectionClass[direction]];
 
     return (
-        <HStack gap='4'>
+        <HStack gap="4">
             {label && <span>{`${label}>`}</span>}
             <HListbox
                 className={classNames('', {}, [className, popupCls.popup])}

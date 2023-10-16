@@ -13,7 +13,7 @@ describe('getNewCommentSelectors.test', () => {
             },
         };
         expect(getAddNewCommentText(state as StateSchema)).toBe(
-            'Hello, world!'
+            'Hello, world!',
         );
     });
 

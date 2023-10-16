@@ -28,7 +28,7 @@ export default ({ config }: { config: Configuration }) => {
                 return { ...rule, exclude: /\.svg$/i };
             }
             return rule;
-        }
+        },
     );
 
     config!.module!.rules.push({
@@ -41,7 +41,7 @@ export default ({ config }: { config: Configuration }) => {
             __IS_DEV__: JSON.stringify(true),
             __API__: JSON.stringify('https://testapi.ru'),
             __PROJECT__: JSON.stringify('storybook'),
-        })
+        }),
     );
 
     return config;

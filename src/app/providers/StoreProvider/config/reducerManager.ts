@@ -7,7 +7,7 @@ import {
 import { StateSchema, StateSchemaKey, ReducerManager } from './StateSchema';
 
 export function createReducerManager(
-    initialReducers: ReducersMapObject<StateSchema>
+    initialReducers: ReducersMapObject<StateSchema>,
 ): ReducerManager {
     const reducers = { ...initialReducers };
     let combinedReducer = combineReducers(reducers);

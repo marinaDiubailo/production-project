@@ -8,7 +8,7 @@ describe('Counter', () => {
             initialState: { counter: { value: 10 } },
         });
         expect(screen.getByTestId('value-title')).toHaveTextContent(
-            'Count: 10'
+            'Count: 10',
         );
     });
     test('increment', () => {
@@ -17,7 +17,7 @@ describe('Counter', () => {
         });
         fireEvent.click(screen.getByTestId('increment-btn'));
         expect(screen.getByTestId('value-title')).toHaveTextContent(
-            'Count: 11'
+            'Count: 11',
         );
     });
     test('decrement', () => {

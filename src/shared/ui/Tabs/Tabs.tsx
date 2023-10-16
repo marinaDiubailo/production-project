@@ -22,7 +22,7 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
         (value: T) => () => {
             onTabClick(value);
         },
-        [onTabClick]
+        [onTabClick],
     );
 
     return (

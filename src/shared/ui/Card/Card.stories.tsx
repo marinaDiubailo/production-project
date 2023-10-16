@@ -18,59 +18,34 @@ type Story = StoryObj<typeof Card>;
 
 export const Light: Story = {
     args: {
-        children: (
-            <Text
-                text='Hello, vorld!'
-                title='HELLO'
-            />
-        ),
+        children: <Text text="Hello, vorld!" title="HELLO" />,
     },
 };
 
 export const Dark: Story = {
     args: {
-        children: (
-            <Text
-                text='Hello, world!'
-                title='HELLO'
-            />
-        ),
+        children: <Text text="Hello, world!" title="HELLO" />,
     },
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Orange: Story = {
     args: {
-        children: (
-            <Text
-                text='Hello, world!'
-                title='HELLO'
-            />
-        ),
+        children: <Text text="Hello, world!" title="HELLO" />,
     },
 };
 Orange.decorators = [ThemeDecorator(Theme.ORANGE)];
 
 export const LightOutlined: Story = {
     args: {
-        children: (
-            <Text
-                text='Hello, vorld!'
-                title='HELLO'
-            />
-        ),
+        children: <Text text="Hello, vorld!" title="HELLO" />,
         theme: CardTheme.OUTLINED,
     },
 };
 
 export const DarkOutlined: Story = {
     args: {
-        children: (
-            <Text
-                text='Hello, world!'
-                title='HELLO'
-            />
-        ),
+        children: <Text text="Hello, world!" title="HELLO" />,
         theme: CardTheme.OUTLINED,
     },
 };
@@ -78,12 +53,7 @@ DarkOutlined.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const OrangeOutlined: Story = {
     args: {
-        children: (
-            <Text
-                text='Hello, world!'
-                title='HELLO'
-            />
-        ),
+        children: <Text text="Hello, world!" title="HELLO" />,
         theme: CardTheme.OUTLINED,
     },
 };

@@ -29,19 +29,13 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     if (!id) return null;
 
     return (
-        <DynamicModuleLoader
-            reducers={reducers}
-            removeAfterUnmount
-        >
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page
                 className={classNames(cls['article-details-page'], {}, [
                     className,
                 ])}
             >
-                <VStack
-                    gap='16'
-                    max
-                >
+                <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
                     <ArticleRating articleId={id} />

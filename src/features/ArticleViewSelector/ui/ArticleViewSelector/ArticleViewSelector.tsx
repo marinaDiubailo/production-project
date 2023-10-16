@@ -43,7 +43,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                         className={classNames(
                             '',
                             { [cls['not-selected']]: viewType.view !== view },
-                            [className]
+                            [className],
                         )}
                     />
                 </Button>

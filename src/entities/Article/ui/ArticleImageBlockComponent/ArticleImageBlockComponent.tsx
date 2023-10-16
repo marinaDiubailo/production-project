@@ -13,18 +13,11 @@ export const ArticleImageBlockComponent = memo(
     ({ className, block }: ArticleImageBlockComponentProps) => {
         return (
             <div className={classNames('', {}, [className])}>
-                <img
-                    src={block.src}
-                    className={cls.image}
-                    alt={block.title}
-                />
+                <img src={block.src} className={cls.image} alt={block.title} />
                 {block.title && (
-                    <Text
-                        text={block.title}
-                        align={TextAlign.CENTER}
-                    />
+                    <Text text={block.title} align={TextAlign.CENTER} />
                 )}
             </div>
         );
-    }
+    },
 );

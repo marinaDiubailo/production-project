@@ -49,24 +49,15 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         switch (block.type) {
             case ArticleBlockType.CODE:
                 return (
-                    <ArticleCodeBlockComponent
-                        key={block.id}
-                        block={block}
-                    />
+                    <ArticleCodeBlockComponent key={block.id} block={block} />
                 );
             case ArticleBlockType.IMAGE:
                 return (
-                    <ArticleImageBlockComponent
-                        key={block.id}
-                        block={block}
-                    />
+                    <ArticleImageBlockComponent key={block.id} block={block} />
                 );
             case ArticleBlockType.TEXT:
                 return (
-                    <ArticleTextBlockComponent
-                        key={block.id}
-                        block={block}
-                    />
+                    <ArticleTextBlockComponent key={block.id} block={block} />
                 );
             default:
                 return null;
@@ -90,22 +81,10 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
                     height={200}
                     border={'50%'}
                 />
-                <Skeleton
-                    width={300}
-                    height={32}
-                />
-                <Skeleton
-                    width={600}
-                    height={24}
-                />
-                <Skeleton
-                    width={'100%'}
-                    height={200}
-                />
-                <Skeleton
-                    width={'100%'}
-                    height={200}
-                />
+                <Skeleton width={300} height={32} />
+                <Skeleton width={600} height={24} />
+                <Skeleton width={'100%'} height={200} />
+                <Skeleton width={'100%'} height={200} />
             </>
         );
     } else if (error) {
@@ -119,31 +98,24 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     } else {
         content = (
             <>
-                <HStack
-                    justify='center'
-                    max
-                >
+                <HStack justify="center" max>
                     <Avatar
                         size={200}
                         src={article?.img}
                         className={cls.avatar}
                     />
                 </HStack>
-                <VStack
-                    gap='4'
-                    max
-                    data-testid='ArticleDetails.Info'
-                >
+                <VStack gap="4" max data-testid="ArticleDetails.Info">
                     <Text
                         title={article?.title}
                         text={article?.subtitle}
                         size={TextSize.L}
                     />
-                    <HStack gap='8'>
+                    <HStack gap="8">
                         <Icon Svg={EyeIcon} />
                         <Text text={String(article?.views)} />
                     </HStack>
-                    <HStack gap='8'>
+                    <HStack gap="8">
                         <Icon Svg={CalendarIcon} />
                         <Text text={article?.createdAt} />
                     </HStack>
@@ -154,12 +126,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     }
 
     return (
-        <DynamicModuleLoader
-            reducers={reducers}
-            removeAfterUnmount
-        >
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <VStack
-                gap='16'
+                gap="16"
                 max
                 className={classNames(cls.article, {}, [className])}
             >

@@ -4,7 +4,7 @@ import { selectByTestId } from '../../helpers/selectByTestId';
 
 export const login = (
     username: string = 'testuser',
-    password: string = '123'
+    password: string = '123',
 ) => {
     return cy
         .request({
@@ -18,7 +18,7 @@ export const login = (
         .then(({ body }) => {
             window.localStorage.setItem(
                 USER_LOCALSTORAGE_KEY,
-                JSON.stringify(body)
+                JSON.stringify(body),
             );
             return body;
         });

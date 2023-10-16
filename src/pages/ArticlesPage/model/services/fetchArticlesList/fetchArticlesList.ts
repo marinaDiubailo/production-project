@@ -53,5 +53,5 @@ export const fetchArticlesList = createAsyncThunk<
         } catch (error) {
             return rejectWithValue('error');
         }
-    }
+    },
 );
