@@ -132,6 +132,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
                 <VStack
                     gap='4'
                     max
+                    data-testid='ArticleDetails.Info'
                 >
                     <Text
                         title={article?.title}

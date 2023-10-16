@@ -42,6 +42,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
             removeAfterUnmount={false}
         >
             <Page
+                data-testid='ArticlesPage'
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls['articles-page'], {}, [className])}
             >

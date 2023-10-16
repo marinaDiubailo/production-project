@@ -56,6 +56,7 @@ export const Flex = (props: FlexProps) => {
         direction = 'row',
         gap,
         max,
+        ...otherProps
     } = props;
 
     const classes = [
@@ -71,6 +72,12 @@ export const Flex = (props: FlexProps) => {
     };
 
     return (
-        <div className={classNames(cls.flex, mods, classes)}>{children}</div>
+        <div
+            className={classNames(cls.flex, mods, classes)}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...otherProps}
+        >
+            {children}
+        </div>
     );
 };
