@@ -104,6 +104,7 @@ module.exports = {
         'react/jsx-no-useless-fragment': [1, { allowExpressions: true }],
         'lines-between-class-members': 'off',
         'function-paren-newline': 'off',
+        'react/no-unstable-nested-components': 'warn',
         'eslint-correct-paths-plugin/path-checker': [2, { alias: '@' }],
         'eslint-correct-paths-plugin/layer-imports': [
             2,

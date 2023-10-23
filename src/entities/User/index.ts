@@ -9,3 +9,9 @@ export {
 } from './model/selectors/getUserRole/getUserRole';
 
 export { UserRole } from './model/consts/consts';
+export { saveJsonSettings } from './model/services/saveJsonSettings';
+
+export {
+    useJsonSettings,
+    getJsonSettings,
+} from './model/selectors/getUserMounted/jsonSettings';

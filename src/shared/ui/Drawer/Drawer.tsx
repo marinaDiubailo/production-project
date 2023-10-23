@@ -5,7 +5,7 @@ import {
     useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider';
 import { classNames } from '@/shared/lib/classNames/classNames';
-// import { useModal } from 'shared/lib/hooks/useModal/useModal';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
@@ -23,6 +23,8 @@ const height = window.innerHeight - 100;
 export const DrawerContent = memo((props: DrawerProps) => {
     const { Spring, Gesture } = useAnimationLibs();
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
+    const { theme } = useTheme();
+
     const { className, children, isOpen, onClose, lazy } = props;
 
     const openDrawer = useCallback(() => {
@@ -104,7 +106,13 @@ export const DrawerContent = memo((props: DrawerProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.drawer, {}, [className])}>
+            <div
+                className={classNames(cls.drawer, {}, [
+                    className,
+                    theme,
+                    'app-drawer',
+                ])}
+            >
                 <Overlay onClick={close} />
                 <Spring.a.div
                     className={cls.sheet}
