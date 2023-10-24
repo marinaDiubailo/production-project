@@ -57,7 +57,7 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
-        'react/jsx-max-props-per-line': [1, { maximum: 3 }],
+        'react/jsx-max-props-per-line': [1, { maximum: 4 }],
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'import/extensions': 'off',

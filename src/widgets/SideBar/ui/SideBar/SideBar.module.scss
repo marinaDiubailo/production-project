@@ -59,3 +59,16 @@
 .arrow-right::after {
     content: "\276F";
 }
+
+// redesighed
+
+.sidebar-redesigned {
+    background: var(--light-bg-redesigned);
+    width: 220px;
+    height: 100%;
+    border-radius: 32px;
+}
+
+.app-logo {
+    padding-top: 20px;
+}

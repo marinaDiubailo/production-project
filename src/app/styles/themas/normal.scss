@@ -1,4 +1,4 @@
-.app-light-theme {
+:root {
     --bg-color: #f9f4fb;
     --inverted-bg-color: #3e184d;
     --primary-color: #341541;
@@ -10,4 +10,15 @@
     --code-bg: #fff;
     --card-bg: #fff;
     --listbox-bg: #fff;
+
+    // redesigned
+    --dark-bg-redesigned: #fff;
+    --bg-redesigned: #eff5f6;
+    --light-bg-redesigned: #e2eef1;
+    --text-redesigned: #141c1f;
+    --hint-redesigned: #adbcc0;
+    --cancel-redesigned: #f77;
+    --save-redesigned: #62de85;
+    --icon-redesigned: #5ed3f3;
+    --accent-redesigned: #00c8ff;
 }

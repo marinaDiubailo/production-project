@@ -3,6 +3,8 @@
     "rules": {
         "scss/at-import-partial-extension-whitelist": ["scss"],
         "color-function-notation": ["legacy"],
-        "declaration-block-no-redundant-longhand-properties": null
+        "declaration-block-no-redundant-longhand-properties": null,
+        "alpha-value-notation": "number",
+        "number-max-precision": null
     }
 }
