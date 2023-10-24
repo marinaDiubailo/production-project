@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Counter } from '@/entities/Counter';
 import { Page } from '@/widgets/Page';
-import { StarRating } from '@/shared/ui/StarRating';
+import { StarRating } from '@/shared/ui/deprecated/StarRating';
 
 const MainPage = () => {
     const { t } = useTranslation('main');
