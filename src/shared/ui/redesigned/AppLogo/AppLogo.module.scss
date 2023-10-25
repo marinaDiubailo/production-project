@@ -17,6 +17,7 @@
     height: 300px;
     border-radius: 50%;
     opacity: 0.6;
+    pointer-events: none;
 }
 
 .gradient-small {
@@ -33,6 +34,7 @@
     );
     border-radius: 50%;
     opacity: 0.6;
+    pointer-events: none;
 }
 
 .app-logo {

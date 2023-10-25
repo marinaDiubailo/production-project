@@ -5,7 +5,7 @@ import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ProfileCard } from '@/entities/Profile';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {

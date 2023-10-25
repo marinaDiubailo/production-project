@@ -9,55 +9,42 @@
         width: 50px;
         height: 50px;
     }
-}
 
-.items {
-    margin: 70px 20px 0;
-}
-
-.switchers {
-    position: absolute;
-    bottom: 20px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.lang {
-    margin-left: 20px;
-}
-
-.collapsed {
-    width: var(--sidebar-width-collapsed);
+    .items {
+        margin: 70px 20px 0;
+    }
 
     .switchers {
-        flex-direction: column;
-        align-items: center;
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .lang {
-        margin-left: 0;
+        margin-left: 20px;
     }
-}
 
-.arrow {
-    position: absolute;
-    right: 40px;
-    top: 30px;
-}
+    .arrow {
+        position: absolute;
+        right: 40px;
+        top: 30px;
+    }
 
-.arrow-left,
-.arrow-right {
-    color: var(--bg-color);
-    font-size: var(--font-line-l);
-}
+    .arrow-left,
+    .arrow-right {
+        color: var(--bg-color);
+        font-size: var(--font-line-l);
+    }
 
-.arrow-left::after {
-    content: "\276E";
-}
+    .arrow-left::after {
+        content: "\276E";
+    }
 
-.arrow-right::after {
-    content: "\276F";
+    .arrow-right::after {
+        content: "\276F";
+    }
 }
 
 // redesighed
@@ -67,8 +54,53 @@
     width: 220px;
     height: 100%;
     border-radius: 32px;
+    position: relative;
+
+    .app-logo {
+        padding-top: 20px;
+    }
+
+    .items {
+        margin-top: 40px;
+    }
+
+    .arrow {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        z-index: 10;
+        transform: rotate(90deg);
+    }
+
+    .switchers {
+        position: absolute;
+        bottom: 40px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 16px;
+    }
 }
 
-.app-logo {
-    padding-top: 20px;
+.collapsed-redesigned {
+    width: 50px;
+
+    .items {
+        display: flex;
+        align-items: center;
+        margin-top: 60px;
+    }
+
+    .arrow {
+        transform: rotate(-90deg);
+    }
+
+    .switchers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lang {
+        margin-left: 20px;
+    }
 }

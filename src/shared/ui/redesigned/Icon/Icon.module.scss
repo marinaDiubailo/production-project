@@ -1,0 +1,15 @@
+.icon {
+    color: var(--icon-redesigned);
+}
+
+.button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+
+    &:hover .icon {
+        color: var(--accent-redesigned);
+    }
+}

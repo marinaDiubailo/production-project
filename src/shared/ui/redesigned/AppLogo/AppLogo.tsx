@@ -6,10 +6,11 @@ import cls from './AppLogo.module.scss';
 
 interface AppLogoProps {
     className?: string;
+    size?: number;
 }
 
 export const AppLogo = memo((props: AppLogoProps) => {
-    const { className } = props;
+    const { className, size = 50 } = props;
 
     return (
         <HStack
@@ -19,7 +20,12 @@ export const AppLogo = memo((props: AppLogoProps) => {
         >
             <div className={cls['gradient-big']} />
             <div className={cls['gradient-small']} />
-            <AppLogoSvg className={cls['app-logo']} />
+            <AppLogoSvg
+                width={size}
+                height={size}
+                color="black"
+                className={cls['app-logo']}
+            />
         </HStack>
     );
 });

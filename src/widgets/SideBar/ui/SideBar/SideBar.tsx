@@ -4,12 +4,14 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import ArrowIcon from '@/shared/assets/icons/redesigned/arrow-bottom.svg';
 import SideBarItem from '../SideBarItem/SideBarItem';
 import { getSideBarItems } from '../../model/selectors/getSideBarItems';
 import cls from './SideBar.module.scss';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
-import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
 
 interface SideBarProps {
     className?: string;
@@ -43,14 +45,29 @@ export const SideBar = memo(({ className }: SideBarProps) => {
                     data-testid="sidebar"
                     className={classNames(
                         cls['sidebar-redesigned'],
-                        { [cls.collapsed]: collapsed },
+                        { [cls['collapsed-redesigned']]: collapsed },
                         [className],
                     )}
                 >
-                    <AppLogo className={cls['app-logo']} />
+                    <AppLogo
+                        size={collapsed ? 30 : 50}
+                        className={cls['app-logo']}
+                    />
                     <VStack className={cls.items} gap="8" role="navigation">
                         {itemsList}
                     </VStack>
+                    <Icon
+                        data-testid="sidebar-toggle"
+                        type="button"
+                        onClick={toggleHandler}
+                        className={cls.arrow}
+                        Svg={ArrowIcon}
+                        clickable
+                    />
+                    <div className={cls.switchers}>
+                        <ThemeSwitcher />
+                        <LangSwitcher className={cls.lang} />
+                    </div>
                 </aside>
             }
             off={

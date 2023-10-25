@@ -4,7 +4,7 @@ import { classNames } from '../../../../../lib/classNames/classNames';
 import CheckIcon from '../../../../../assets/icons/check-mark.svg';
 import { DropdownDirection } from '../../../../../types/ui';
 import { Button } from '../../../Button/Button';
-import { HStack } from '../../../Stack';
+import { HStack } from '../../../../redesigned/Stack';
 import { Icon } from '../../../Icon/Icon';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';

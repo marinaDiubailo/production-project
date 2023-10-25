@@ -1,0 +1,45 @@
+.button {
+    text-align: center;
+    color: var(--text-redesigned);
+    padding: 6px 15px;
+
+    &:hover {
+        color: var(--accent-redesigned);
+    }
+}
+
+.clear {
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.outline {
+    background: none;
+    border-radius: 34px;
+}
+
+// size
+
+.m {
+    font: var(--font-m-redesigned);
+}
+
+.l {
+    font: var(--font-l-redesigned);
+}
+
+.xl {
+    font: var(--font-xl-redesigned);
+}
+
+// mods
+
+.disabled {
+    opacity: 0.7;
+}
+
+.full-width {
+    width: 100%;
+}
