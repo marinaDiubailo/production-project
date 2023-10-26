@@ -11,7 +11,7 @@
     position: absolute;
     z-index: 1000;
     border-radius: 12px;
-    border: 1px solid var(--dark-bg-redesigned);
+    box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
 }
 
 .option {
@@ -19,8 +19,6 @@
     display: flex;
 }
 
-.icon {
-    fill: green;
-    margin-left: 8px;
-    display: inline-block;
+.selected {
+    background: var(--light-bg-redesigned);
 }
