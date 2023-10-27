@@ -1,8 +1,10 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { ListBox } from '@/shared/ui/deprecated/Popup';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popup';
+import { ListBox } from '@/shared/ui/redesigned/Popup';
 import { Currency } from '../../model/types/currency';
+import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
 
 interface CurrencySelectProps {
     className?: string;
@@ -29,16 +31,22 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
         [onChange],
     );
 
+    const listBoxProps = {
+        className,
+        onChange: onChangeHandler,
+        items: options,
+        value,
+        defaulValue: t('Currency'),
+        readonly,
+        label: t('Currency'),
+        direction: 'top right' as const,
+    };
+
     return (
-        <ListBox
-            className={classNames('', {}, [className])}
-            onChange={onChangeHandler}
-            items={options}
-            value={value}
-            defaulValue={t('Валюта')}
-            readonly={readonly}
-            label={t('Валюта')}
-            direction="top right"
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<ListBox {...listBoxProps} />}
+            off={<ListBoxDeprecated {...listBoxProps} />}
         />
     );
 });

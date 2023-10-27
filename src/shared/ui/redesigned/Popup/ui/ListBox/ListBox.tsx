@@ -47,7 +47,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
 
     return (
         <HStack gap="4">
-            {label && <span>{`${label}>`}</span>}
+            {label && <span>{`${label}`}</span>}
             <HListbox
                 className={classNames('', {}, [className, popupCls.popup])}
                 disabled={readonly}

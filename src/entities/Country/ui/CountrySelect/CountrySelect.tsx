@@ -1,10 +1,11 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { t } from 'i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
 // import { Select } from 'shared/ui/Select/Select';
-import { ListBox } from '@/shared/ui/deprecated/Popup';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popup';
+import { ListBox } from '@/shared/ui/redesigned/Popup';
 import { Country } from '../../model/types/country';
+import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
 
 interface CountrySelectProps {
     className?: string;
@@ -14,10 +15,10 @@ interface CountrySelectProps {
 }
 
 const options = [
-    { value: Country.Belarus, content: t(Country.Belarus) },
-    { value: Country.Kazakhstan, content: t(Country.Kazakhstan) },
-    { value: Country.Russia, content: t(Country.Russia) },
-    { value: Country.Ukraine, content: t(Country.Ukraine) },
+    { value: Country.Belarus, content: Country.Belarus },
+    { value: Country.Kazakhstan, content: Country.Kazakhstan },
+    { value: Country.Russia, content: Country.Russia },
+    { value: Country.Ukraine, content: Country.Ukraine },
 ];
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
@@ -31,16 +32,22 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
         [onChange],
     );
 
+    const listBoxProps = {
+        className,
+        onChange: onChangeHandler,
+        items: options,
+        value,
+        defaulValue: t('Country'),
+        readonly,
+        direction: 'top right' as const,
+        label: t('Country'),
+    };
+
     return (
-        <ListBox
-            className={classNames('', {}, [className])}
-            onChange={onChangeHandler}
-            items={options}
-            value={value}
-            defaulValue={t('Страна')}
-            readonly={readonly}
-            direction="top right"
-            label={t('Страна')}
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<ListBox {...listBoxProps} />}
+            off={<ListBoxDeprecated {...listBoxProps} />}
         />
     );
 
