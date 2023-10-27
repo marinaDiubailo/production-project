@@ -13,6 +13,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: ButtonSize;
     children?: ReactNode;
     fullWidth?: boolean;
+    addonLeft?: ReactNode;
+    addonRight?: ReactNode;
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -23,12 +25,15 @@ export const Button = memo((props: ButtonProps) => {
         disabled,
         fullWidth,
         size = 'm',
+        addonLeft,
+        addonRight,
         ...otherProps
     } = props;
 
     const mods: Mods = {
         [cls.disabled]: disabled,
         [cls['full-width']]: fullWidth,
+        [cls['with-addon']]: Boolean(addonLeft) || Boolean(addonRight),
     };
 
     return (
@@ -43,7 +48,9 @@ export const Button = memo((props: ButtonProps) => {
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...otherProps}
         >
+            <div className={cls['addon-left']}>{addonLeft}</div>
             {children}
+            <div className={cls['addon-right']}>{addonRight}</div>
         </button>
     );
 });
