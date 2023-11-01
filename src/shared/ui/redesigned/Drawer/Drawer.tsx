@@ -6,9 +6,10 @@ import {
 } from '@/shared/lib/components/AnimationProvider';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { Portal } from '../../redesigned/Portal/Portal';
-import { Overlay } from '../../redesigned/Overlay/Overlay';
+import { Portal } from '../Portal/Portal';
+import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface DrawerProps {
     className?: string;
@@ -105,12 +106,16 @@ export const DrawerContent = memo((props: DrawerProps) => {
     // );
 
     return (
-        <Portal>
+        <Portal element={document.getElementById('app') ?? document.body}>
             <div
                 className={classNames(cls.drawer, {}, [
                     className,
                     theme,
-                    'app-drawer',
+                    toggleFeatures({
+                        name: 'isAppRedesigned',
+                        on: () => cls['drawer-new'],
+                        off: () => cls['drawer-old'],
+                    }),
                 ])}
             >
                 <Overlay onClick={close} />
@@ -139,11 +144,6 @@ const DrawerAsync = (props: DrawerProps) => {
 
     return <DrawerContent {...props} />;
 };
-
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 
 export const Drawer = (props: DrawerProps) => {
     return (
