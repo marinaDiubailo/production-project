@@ -6,7 +6,7 @@ import {
     ButtonTheme,
 } from '@/shared/ui/deprecated/Button';
 import { Button } from '@/shared/ui/redesigned/Button';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface LangSwitcherProps {
     className?: string;

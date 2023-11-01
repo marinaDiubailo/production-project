@@ -12,6 +12,6 @@ if (!layer || !layers.includes(layer)) {
 if (!sliceName) {
     throw new Error('Укажите название слайса');
 }
-console.log(`======Слайс ${sliceName}создан успешно в слое ${layer}======`);
+console.log(`======Слайс ${sliceName} создан успешно в слое ${layer}======`);
 
 createTemplate(layer, sliceName);

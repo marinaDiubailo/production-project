@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popup';
 import { ListBox } from '@/shared/ui/redesigned/Popup';
 import { Currency } from '../../model/types/currency';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features/components/ToggleFeatures/ToggleFeatures';
 
 interface CurrencySelectProps {
     className?: string;

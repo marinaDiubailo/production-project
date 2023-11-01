@@ -8,7 +8,7 @@ import {
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getUserAuthData } from '@/entities/User';
-import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import { SideBarItemType } from '../../model/types/sidebar';
 import cls from './SideBarItem.module.scss';

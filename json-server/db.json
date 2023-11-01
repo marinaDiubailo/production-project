@@ -892,7 +892,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app-dark-theme",
+        "theme": "app-light-theme",
         "isFirstVisit": true,
         "isArticlesPageWasOpen": true,
         "isAppRedesigned": true
@@ -959,8 +959,8 @@
       "first": "Marina",
       "last": "Diubailo",
       "age": 34,
-      "currency": "USD",
-      "country": "Kazakhstan",
+      "currency": "BYN",
+      "country": "Belarus",
       "city": "Mogilev",
       "username": "admin",
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
