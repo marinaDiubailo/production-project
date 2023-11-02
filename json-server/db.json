@@ -876,6 +876,12 @@
       "userId": "1",
       "text": "hello",
       "id": "pUE_wSj"
+    },
+    {
+      "articleId": "15",
+      "userId": "1",
+      "text": "хорошо",
+      "id": "ptwO-dk"
     }
   ],
   "users": [
@@ -1041,6 +1047,13 @@
       "rate": 5,
       "feedback": "Мне понравилась",
       "id": "mTnANRV"
+    },
+    {
+      "userId": "1",
+      "articleId": "15",
+      "rate": 5,
+      "feedback": "отличная статья. очень информативно. спасибо!",
+      "id": "Zf4O22G"
     }
   ],
   "profile-ratings": [

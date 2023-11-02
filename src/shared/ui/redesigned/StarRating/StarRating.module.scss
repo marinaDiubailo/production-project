@@ -1,0 +1,25 @@
+.star-rating {
+    display: flex;
+
+    .hovered {
+        fill: var(--primary-color);
+    }
+}
+
+.star-rating-redesigned {
+    .hovered {
+        fill: var(--icon-redesigned);
+    }
+}
+
+.star-icon {
+    cursor: pointer;
+}
+
+.is-selected {
+    cursor: auto;
+}
+
+.normal {
+    fill: none;
+}
