@@ -952,10 +952,9 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false,
-        "isAppRedesigned": false
+        "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app-light-theme",
         "isArticlesPageWasOpen": true
       },
       "avatar": ""

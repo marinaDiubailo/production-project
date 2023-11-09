@@ -24,7 +24,7 @@
 
 *::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background: var(--card-bg);
+    background: var(--light-bg-redesigned);
 }
 
 *::-webkit-scrollbar {
@@ -33,6 +33,23 @@
 }
 
 *::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--icon-redesigned);
+    border: 2px solid var(--accent-redesignedr);
+}
+
+.app *::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: var(--card-bg);
+}
+
+.app *::-webkit-scrollbar {
+    width: 12px;
+    height: 8px;
+}
+
+.app *::-webkit-scrollbar-thumb {
     border-radius: 10px;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: var(--inverted-primary-color);
