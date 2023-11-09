@@ -17,8 +17,10 @@ const App = () => {
     const mounted = useSelector(getUserMounted);
 
     useEffect(() => {
-        dispatch(initAuthData());
-    }, [dispatch]);
+        if (!mounted) {
+            dispatch(initAuthData());
+        }
+    }, [dispatch, mounted]);
 
     if (!mounted) {
         return <PageLoader />;
