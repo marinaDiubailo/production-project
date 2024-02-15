@@ -4,7 +4,7 @@ import { Theme } from '@/shared/const/theme';
 import { Skeleton } from './Skeleton';
 
 const meta = {
-    title: 'ui/Skeleton',
+    title: 'ui/redesigned/Skeleton',
     component: Skeleton,
     argTypes: {
         backgroundColor: { control: 'color' },

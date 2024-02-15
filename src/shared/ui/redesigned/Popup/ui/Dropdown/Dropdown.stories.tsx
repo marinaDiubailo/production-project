@@ -6,7 +6,7 @@ import { Button } from '../../../Button/Button';
 import { Dropdown } from './Dropdown';
 
 const meta = {
-    title: 'ui/Popup/Dropdown',
+    title: 'ui/redesigned/Popup/Dropdown',
     component: Dropdown,
     argTypes: {
         backgroundColor: { control: 'color' },

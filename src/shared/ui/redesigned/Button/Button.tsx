@@ -1,4 +1,9 @@
-import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
+import {
+    ButtonHTMLAttributes,
+    ForwardedRef,
+    forwardRef,
+    ReactNode,
+} from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
@@ -18,39 +23,47 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     color?: ButtonColor;
 }
 
-export const Button = memo((props: ButtonProps) => {
-    const {
-        className,
-        children,
-        variant = 'outline',
-        disabled,
-        fullWidth,
-        size = 'm',
-        addonLeft,
-        addonRight,
-        color = 'normal',
-        ...otherProps
-    } = props;
+export const Button = forwardRef(
+    (props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
+        const {
+            className,
+            children,
+            variant = 'outline',
+            disabled,
+            fullWidth,
+            size = 'm',
+            addonLeft,
+            addonRight,
+            color = 'normal',
+            ...otherProps
+        } = props;
 
-    const mods: Mods = {
-        [cls.disabled]: disabled,
-        [cls['full-width']]: fullWidth,
-        [cls['with-addon']]: Boolean(addonLeft) || Boolean(addonRight),
-    };
+        const mods: Mods = {
+            [cls.disabled]: disabled,
+            [cls['full-width']]: fullWidth,
+            [cls['with-addon']]: Boolean(addonLeft) || Boolean(addonRight),
+        };
 
-    const additionalClasses = [className, cls[variant], cls[size], cls[color]];
+        const additionalClasses = [
+            className,
+            cls[variant],
+            cls[size],
+            cls[color],
+        ];
 
-    return (
-        <button
-            type="button"
-            className={classNames(cls.button, mods, additionalClasses)}
-            disabled={disabled}
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...otherProps}
-        >
-            <div className={cls['addon-left']}>{addonLeft}</div>
-            {children}
-            <div className={cls['addon-right']}>{addonRight}</div>
-        </button>
-    );
-});
+        return (
+            <button
+                type="button"
+                className={classNames(cls.button, mods, additionalClasses)}
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...otherProps}
+                disabled={disabled}
+                ref={ref}
+            >
+                <div className={cls['addon-left']}>{addonLeft}</div>
+                {children}
+                <div className={cls['addon-right']}>{addonRight}</div>
+            </button>
+        );
+    },
+);

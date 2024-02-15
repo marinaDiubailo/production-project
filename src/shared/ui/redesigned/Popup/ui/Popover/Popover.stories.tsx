@@ -6,7 +6,7 @@ import { Button } from '../../../Button/Button';
 import { Popover } from './Popover';
 
 const meta = {
-    title: 'ui/Popup/Popover',
+    title: 'ui/redesigned/Popup/Popover',
     component: Popover,
     argTypes: {
         backgroundColor: { control: 'color' },

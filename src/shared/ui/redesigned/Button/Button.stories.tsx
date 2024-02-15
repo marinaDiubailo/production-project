@@ -4,7 +4,7 @@ import { Theme } from '@/shared/const/theme';
 import { Button } from './Button';
 
 const meta = {
-    title: 'ui/Button',
+    title: 'ui/redesigned/Button',
     component: Button,
     argTypes: {
         backgroundColor: { control: 'color' },

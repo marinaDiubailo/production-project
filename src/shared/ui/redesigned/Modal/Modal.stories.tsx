@@ -5,7 +5,7 @@ import { Theme } from '@/shared/const/theme';
 import { Modal } from './Modal';
 
 const meta = {
-    title: 'ui/Modal',
+    title: 'ui/redesigned/Modal',
     component: Modal,
     argTypes: {
         backgroundColor: { control: 'color' },

@@ -6,7 +6,7 @@ import { Text } from '../Text/Text';
 import { Card } from './Card';
 
 const meta = {
-    title: 'ui/Card',
+    title: 'ui/redesigned/Card',
     component: Card,
     argTypes: {
         backgroundColor: { control: 'color' },

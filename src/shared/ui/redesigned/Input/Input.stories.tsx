@@ -4,7 +4,7 @@ import { Theme } from '@/shared/const/theme';
 import { Input } from './Input';
 
 const meta = {
-    title: 'ui/Input',
+    title: 'ui/redesigned/Input',
     component: Input,
     argTypes: {
         backgroundColor: { control: 'color' },

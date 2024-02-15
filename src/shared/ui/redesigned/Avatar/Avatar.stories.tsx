@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from './Avatar';
-import AvatarImg from '../../assets/tests/storybook.jpg';
+import AvatarImg from '../../../assets/tests/storybook.jpg';
 
 const meta = {
-    title: 'ui/Avatar',
+    title: 'ui/redesigned/Avatar',
     component: Avatar,
     argTypes: {
         backgroundColor: { control: 'color' },

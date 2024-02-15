@@ -4,7 +4,7 @@ import { Theme } from '@/shared/const/theme';
 import { Text } from './Text';
 
 const meta = {
-    title: 'ui/Text',
+    title: 'ui/redesigned/Text',
     component: Text,
     argTypes: {
         backgroundColor: { control: 'color' },

@@ -4,7 +4,7 @@ import { Theme } from '@/shared/const/theme';
 import { Tabs } from './Tabs';
 
 const meta = {
-    title: 'ui/Tabs',
+    title: 'ui/redesigned/Tabs',
     component: Tabs,
     argTypes: {
         backgroundColor: { control: 'color' },

@@ -4,7 +4,7 @@ import { Theme } from '@/shared/const/theme';
 import { AppLink } from './AppLink';
 
 const meta = {
-    title: 'ui/AppLink',
+    title: 'ui/redesigned/AppLink',
     component: AppLink,
     argTypes: {
         backgroundColor: { control: 'color' },

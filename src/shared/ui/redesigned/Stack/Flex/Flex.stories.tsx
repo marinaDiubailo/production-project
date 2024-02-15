@@ -10,7 +10,7 @@ const style = {
 };
 
 const meta = {
-    title: 'ui/Flex',
+    title: 'ui/redesigned/Flex',
     component: Flex,
     argTypes: {
         backgroundColor: { control: 'color' },

@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { AppLogo } from './AppLogo';
 
 const meta = {
-    title: 'ui/AppLogo',
+    title: 'ui/redesigned/AppLogo',
     component: AppLogo,
     argTypes: {
         backgroundColor: { control: 'color' },

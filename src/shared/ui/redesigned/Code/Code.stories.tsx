@@ -4,7 +4,7 @@ import { Theme } from '@/shared/const/theme';
 import { Code } from './Code';
 
 const meta = {
-    title: 'ui/Code',
+    title: 'ui/redesigned/Code',
     component: Code,
     argTypes: {
         backgroundColor: { control: 'color' },

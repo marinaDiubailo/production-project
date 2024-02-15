@@ -31,15 +31,7 @@ export function buildPlugins({
             exclude: /node_modules/,
             failOnError: true,
         }),
-        new ForkTsCheckerWebpackPlugin({
-            typescript: {
-                diagnosticOptions: {
-                    semantic: true,
-                    syntactic: true,
-                },
-                mode: 'write-references',
-            },
-        }),
+        
     ];
 
     if (isDev) {
@@ -50,6 +42,15 @@ export function buildPlugins({
                 openAnalyzer: false,
             })
         );
+        plugins.push(new ForkTsCheckerWebpackPlugin({
+            typescript: {
+                diagnosticOptions: {
+                    semantic: true,
+                    syntactic: true,
+                },
+                mode: 'write-references',
+            },
+        }),)
     }
 
     if (isProd) {

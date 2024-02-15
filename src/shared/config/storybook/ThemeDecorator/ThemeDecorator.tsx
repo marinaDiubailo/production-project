@@ -8,12 +8,7 @@ export const ThemeDecorator =
     (theme: Theme): Decorator =>
     (Story) => (
         <ThemeProvider initialTheme={theme}>
-            <div
-                className={`app ${theme}`}
-                style={{
-                    color: 'var(--primary-color)',
-                }}
-            >
+            <div className={`app ${theme}`}>
                 <Story />
             </div>
         </ThemeProvider>

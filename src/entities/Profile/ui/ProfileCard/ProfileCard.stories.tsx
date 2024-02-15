@@ -5,6 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 import AvatarImg from '@/shared/assets/tests/storybook.jpg';
 import { ProfileCard } from './ProfileCard';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta = {
     title: 'entities/ProfileCard',
@@ -17,33 +18,40 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof ProfileCard>;
 
+const data = {
+    username: 'admin',
+    age: 48,
+    country: Country.Russia,
+    currency: Currency.RUB,
+    first: 'Ivan',
+    last: 'Ivanov',
+    city: 'Moscow',
+    avatar: AvatarImg,
+};
+
 export const Light: Story = {
     args: {
-        data: {
-            username: 'admin',
-            age: 48,
-            country: Country.Russia,
-            currency: Currency.RUB,
-            first: 'Ivan',
-            last: 'Ivanov',
-            city: 'Moscow',
-            avatar: AvatarImg,
-        },
+        data,
     },
 };
 
+export const LightRedesigned: Story = {
+    args: {
+        data,
+    },
+};
+LightRedesigned.decorators = [NewDesignDecorator];
+
+export const DarkRedesigned: Story = {
+    args: {
+        data,
+    },
+};
+DarkRedesigned.decorators = [NewDesignDecorator, ThemeDecorator(Theme.DARK)];
+
 export const Dark: Story = {
     args: {
-        data: {
-            username: 'admin',
-            age: 48,
-            country: Country.Russia,
-            currency: Currency.RUB,
-            first: 'Ivan',
-            last: 'Ivanov',
-            city: 'Moscow',
-            avatar: AvatarImg,
-        },
+        data,
     },
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
