@@ -1,42 +1,34 @@
-import { memo, ReactNode } from 'react';
+import { memo } from 'react';
 import { NavLink, LinkProps } from 'react-router-dom';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './AppLink.module.scss';
+import clsx from 'clsx';
+import s from './AppLink.module.scss';
 
 export type AppLinkVariant = 'primary' | 'secondary' | 'red';
 
-interface AppLinkProps extends LinkProps {
-    className?: string;
-    variant?: AppLinkVariant;
-    children?: ReactNode;
-    activeClassName?: string;
-}
+type AppLinkProps = {
+  variant?: AppLinkVariant;
+  activeClassName?: string;
+} & LinkProps;
 
 export const AppLink = memo((props: AppLinkProps) => {
-    const {
-        to,
-        className,
-        children,
-        variant = 'primary',
-        activeClassName = '',
-        ...otherProps
-    } = props;
+  const {
+    to,
+    className,
+    children,
+    variant = 'primary',
+    activeClassName = '',
+    ...otherProps
+  } = props;
 
-    return (
-        <NavLink
-            to={to}
-            className={({ isActive }) =>
-                classNames('', { [activeClassName]: isActive }, [
-                    className,
-                    cls[variant],
-                ])
-            }
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...otherProps}
-        >
-            {children}
-        </NavLink>
-    );
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        clsx(className, isActive && activeClassName, s[variant])
+      }
+      {...otherProps}
+    >
+      {children}
+    </NavLink>
+  );
 });
-
-// classNames('', {}, [className, cls[variant]])

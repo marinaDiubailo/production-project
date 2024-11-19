@@ -6,8 +6,8 @@ import { Button, ButtonTheme } from '../Button/Button';
 import cls from './Code.module.scss';
 
 interface CodeProps {
-    className?: string;
-    text: string;
+  className?: string;
+  text: string;
 }
 
 /**
@@ -16,20 +16,20 @@ interface CodeProps {
  */
 
 export const Code = memo(({ className, text }: CodeProps) => {
-    const copyHandler = useCallback(() => {
-        navigator.clipboard.writeText(text);
-    }, [text]);
+  const copyHandler = useCallback(() => {
+    navigator.clipboard.writeText(text);
+  }, [text]);
 
-    return (
-        <pre className={classNames(cls.code, {}, [className])}>
-            <Button
-                className={cls['copy-btn']}
-                theme={ButtonTheme.CLEAR}
-                onClick={copyHandler}
-            >
-                <CopyIcon className={cls.icon} />
-            </Button>
-            <code>{text}</code>
-        </pre>
-    );
+  return (
+    <pre className={classNames(cls.code, {}, [className])}>
+      <Button
+        className={cls['copy-btn']}
+        theme={ButtonTheme.CLEAR}
+        onClick={copyHandler}
+      >
+        <CopyIcon className={cls.icon} />
+      </Button>
+      <code>{text}</code>
+    </pre>
+  );
 });

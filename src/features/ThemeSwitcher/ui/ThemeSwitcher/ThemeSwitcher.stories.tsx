@@ -4,21 +4,21 @@ import { Theme } from '@/shared/const/theme';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 const meta = {
-    title: 'widget/ThemeSwitcher',
-    component: ThemeSwitcher,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'widget/ThemeSwitcher',
+  component: ThemeSwitcher,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as Meta<typeof ThemeSwitcher>;
 
 export default meta;
 type Story = StoryObj<typeof ThemeSwitcher>;
 
 export const Light: Story = {
-    args: {},
+  args: {},
 };
 
 export const Dark: Story = {
-    args: {},
+  args: {},
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

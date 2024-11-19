@@ -3,25 +3,25 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
 export enum ButtonTheme {
-    CLEAR = 'clear',
-    CLEAR_INVERTED = 'clear-inverted',
-    OUTLINE = 'outline',
-    OUTLINE_RED = 'outline-red',
+  CLEAR = 'clear',
+  CLEAR_INVERTED = 'clear-inverted',
+  OUTLINE = 'outline',
+  OUTLINE_RED = 'outline-red',
 }
 
 export enum ButtonSize {
-    M = 'size-m',
-    L = 'size-l',
-    XL = 'size-xl',
+  M = 'size-m',
+  L = 'size-l',
+  XL = 'size-xl',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    className?: string;
-    theme?: ButtonTheme;
-    disabled?: boolean;
-    size?: ButtonSize;
-    children?: ReactNode;
-    fullWidth?: boolean;
+  className?: string;
+  theme?: ButtonTheme;
+  disabled?: boolean;
+  size?: ButtonSize;
+  children?: ReactNode;
+  fullWidth?: boolean;
 }
 
 /**
@@ -30,34 +30,34 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
  */
 
 export const Button = memo((props: ButtonProps) => {
-    const {
+  const {
+    className,
+    children,
+    theme = ButtonTheme.OUTLINE,
+    disabled,
+    fullWidth,
+    size = ButtonSize.M,
+    ...otherProps
+  } = props;
+
+  const mods: Mods = {
+    [cls.disabled]: disabled,
+    [cls['full-width']]: fullWidth,
+  };
+
+  return (
+    <button
+      type="button"
+      className={classNames(cls.button, mods, [
         className,
-        children,
-        theme = ButtonTheme.OUTLINE,
-        disabled,
-        fullWidth,
-        size = ButtonSize.M,
-        ...otherProps
-    } = props;
-
-    const mods: Mods = {
-        [cls.disabled]: disabled,
-        [cls['full-width']]: fullWidth,
-    };
-
-    return (
-        <button
-            type="button"
-            className={classNames(cls.button, mods, [
-                className,
-                cls[theme],
-                cls[size],
-            ])}
-            disabled={disabled}
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...otherProps}
-        >
-            {children}
-        </button>
-    );
+        cls[theme],
+        cls[size],
+      ])}
+      disabled={disabled}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...otherProps}
+    >
+      {children}
+    </button>
+  );
 });

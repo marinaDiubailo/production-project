@@ -4,26 +4,21 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { AppLogo } from './AppLogo';
 
 const meta = {
-    title: 'ui/redesigned/AppLogo',
-    component: AppLogo,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'ui/redesigned/AppLogo',
+  component: AppLogo,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as Meta<typeof AppLogo>;
 
 export default meta;
 type Story = StoryObj<typeof AppLogo>;
 
 export const Light: Story = {
-    args: {},
+  args: {},
 };
 
 export const Dark: Story = {
-    args: {},
+  args: {},
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const Orange: Story = {
-    args: {},
-};
-Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

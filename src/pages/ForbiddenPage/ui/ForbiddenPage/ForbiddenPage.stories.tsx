@@ -4,26 +4,21 @@ import { Theme } from '@/shared/const/theme';
 import ForbiddenPage from './ForbiddenPage';
 
 const meta = {
-    title: 'pages/ForbiddenPage',
-    component: ForbiddenPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'pages/ForbiddenPage',
+  component: ForbiddenPage,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as Meta<typeof ForbiddenPage>;
 
 export default meta;
 type Story = StoryObj<typeof ForbiddenPage>;
 
 export const Light: Story = {
-    args: {},
+  args: {},
 };
 
 export const Dark: Story = {
-    args: {},
+  args: {},
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const Orange: Story = {
-    args: {},
-};
-Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

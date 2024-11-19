@@ -1,11 +1,14 @@
 .article-view-selector {
-    .not-selected {
-        fill: var(--secondary-color);
-    }
+  .not-selected {
+    fill: var(--secondary-color);
+  }
 }
 
 .article-view-selector-redesigned {
-    .not-selected {
-        color: var(--light-bg-redesigned);
-    }
+  width: fit-content;
+  padding: 8px 16px;
+
+  .not-selected {
+    color: var(--light-bg-redesigned);
+  }
 }

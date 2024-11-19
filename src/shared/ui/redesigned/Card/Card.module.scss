@@ -1,47 +1,48 @@
 .card {
-    padding: 24px;
+  padding: 24px;
+  box-shadow: var(--box-shadow);
 }
 
 .normal {
-    background: var(--dark-bg-redesigned);
+  background: var(--dark-bg-redesigned);
 }
 
 .light {
-    background: var(--light-bg-redesigned);
+  background: var(--light-bg-redesigned);
 }
 
 .outlined {
-    border: 1px solid var(--accent-redesigned);
+  border: 1px solid var(--accent-redesigned);
 }
 
 .max {
-    width: 100%;
+  width: 100%;
 }
 
 .gap-0 {
-    padding: 0;
+  padding: 0;
 }
 
 .gap-8 {
-    padding: 8px;
+  padding: 8px;
 }
 
 .gap-16 {
-    padding: 16px;
+  padding: 16px;
 }
 
 .gap-24 {
-    padding: 24px;
+  padding: 24px;
 }
 
 .round-12 {
-    border-radius: 12px;
+  border-radius: var(--radius-s);
 }
 
 .round-20 {
-    border-radius: 20px;
+  border-radius: var(--radius-m);
 }
 
 .round-40 {
-    border-radius: 40px;
+  border-radius: var(--radius-l);
 }

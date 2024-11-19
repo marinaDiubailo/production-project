@@ -4,21 +4,21 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { CountrySelect } from './CountrySelect';
 
 const meta = {
-    title: 'entities/CountrySelect',
-    component: CountrySelect,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'entities/CountrySelect',
+  component: CountrySelect,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as Meta<typeof CountrySelect>;
 
 export default meta;
 type Story = StoryObj<typeof CountrySelect>;
 
 export const Light: Story = {
-    args: {},
+  args: {},
 };
 
 export const Dark: Story = {
-    args: {},
+  args: {},
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

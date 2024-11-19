@@ -5,14 +5,14 @@ import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/Articl
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 export const renderArticleBlock = (block: AtricleBlock) => {
-    switch (block.type) {
-        case ArticleBlockType.CODE:
-            return <ArticleCodeBlockComponent key={block.id} block={block} />;
-        case ArticleBlockType.IMAGE:
-            return <ArticleImageBlockComponent key={block.id} block={block} />;
-        case ArticleBlockType.TEXT:
-            return <ArticleTextBlockComponent key={block.id} block={block} />;
-        default:
-            return null;
-    }
+  switch (block.type) {
+    case ArticleBlockType.CODE:
+      return <ArticleCodeBlockComponent key={block.id} block={block} />;
+    case ArticleBlockType.IMAGE:
+      return <ArticleImageBlockComponent key={block.id} block={block} />;
+    case ArticleBlockType.TEXT:
+      return <ArticleTextBlockComponent key={block.id} block={block} />;
+    default:
+      return null;
+  }
 };

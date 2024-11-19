@@ -5,40 +5,40 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { NavBar } from './NavBar';
 
 const meta = {
-    title: 'widget/NavBar',
-    component: NavBar,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'widget/NavBar',
+  component: NavBar,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as Meta<typeof NavBar>;
 
 export default meta;
 type Story = StoryObj<typeof NavBar>;
 
 export const Light: Story = {
-    args: {},
+  args: {},
 };
 Light.decorators = [
-    StoreDecorator({
-        user: {
-            authData: {},
-        },
-    }),
+  StoreDecorator({
+    user: {
+      authData: {},
+    },
+  }),
 ];
 
 export const Dark: Story = {
-    args: {},
+  args: {},
 };
 Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-        user: {
-            authData: {},
-        },
-    }),
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    user: {
+      authData: {},
+    },
+  }),
 ];
 
 export const NoAuthDark: Story = {
-    args: {},
+  args: {},
 };
 NoAuthDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

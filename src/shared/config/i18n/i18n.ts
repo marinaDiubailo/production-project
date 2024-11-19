@@ -5,19 +5,20 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 const __IS_DEV__ = process.env.NODE_ENV === 'development';
 
-i18n.use(Backend)
-    .use(LanguageDetector)
-    .use(initReactI18next)
-    .init({
-        fallbackLng: 'ru',
-        debug: __IS_DEV__,
+i18n
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: 'ru',
+    debug: __IS_DEV__,
 
-        interpolation: {
-            escapeValue: false, // not needed for react as it escapes by default
-        },
-        backend: {
-            loadPath: '/locales/{{lng}}/{{ns}}.json',
-        },
-    });
+    interpolation: {
+      escapeValue: false, // not needed for react as it escapes by default
+    },
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
+  });
 
 export default i18n;

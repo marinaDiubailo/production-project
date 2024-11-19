@@ -1,7 +1,7 @@
 {
-    "Login": "Войти",
-    "Username": "Имя пользователя",
-    "Password": "Пароль",
-    "Authorization Form": "Форма авторизации",
-    "Incorrect": "Неверный логин или пароль"
+  "Login": "Войти",
+  "Username": "Имя пользователя",
+  "Password": "Пароль",
+  "Authorization Form": "Форма авторизации",
+  "Incorrect": "Неверный логин или пароль"
 }

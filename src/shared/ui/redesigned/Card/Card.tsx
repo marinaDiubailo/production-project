@@ -7,52 +7,48 @@ export type CardPadding = '0' | '8' | '16' | '24';
 export type CardBorder = 'round-12' | 'round-20' | 'round-40';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
-    className?: string;
-    children: ReactNode;
-    variant?: CardVariant;
-    max?: boolean;
-    padding?: CardPadding;
-    border?: CardBorder;
+  className?: string;
+  children: ReactNode;
+  variant?: CardVariant;
+  max?: boolean;
+  padding?: CardPadding;
+  border?: CardBorder;
 }
 
 const mapPaddingToClass: Record<CardPadding, string> = {
-    0: 'gap-0',
-    8: 'gap-8',
-    16: 'gap-16',
-    24: 'gap-24',
+  0: 'gap-0',
+  8: 'gap-8',
+  16: 'gap-16',
+  24: 'gap-24',
 };
 
 export const Card = memo((props: CardProps) => {
-    const {
-        className,
-        children,
-        max,
-        padding = '8',
-        variant = 'normal',
-        border = 'round-12',
-        ...otherProps
-    } = props;
+  const {
+    className,
+    children,
+    max,
+    padding = '8',
+    variant = 'normal',
+    border = 'round-12',
+    ...otherProps
+  } = props;
 
-    const paddingClass = mapPaddingToClass[padding];
+  const paddingClass = mapPaddingToClass[padding];
 
-    const additionalClasses = [
-        className,
-        cls[variant],
-        cls[paddingClass],
-        cls[border],
-    ];
+  const additionalClasses = [
+    className,
+    cls[variant],
+    cls[paddingClass],
+    cls[border],
+  ];
 
-    return (
-        <div
-            className={classNames(
-                cls.card,
-                { [cls.max]: max },
-                additionalClasses,
-            )}
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...otherProps}
-        >
-            {children}
-        </div>
-    );
+  return (
+    <div
+      className={classNames(cls.card, { [cls.max]: max }, additionalClasses)}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...otherProps}
+    >
+      {children}
+    </div>
+  );
 });

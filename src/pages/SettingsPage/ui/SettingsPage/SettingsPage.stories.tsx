@@ -4,26 +4,21 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import SettingsPage from './SettingsPage';
 
 const meta = {
-    title: 'pages/SettingsPage',
-    component: SettingsPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'pages/SettingsPage',
+  component: SettingsPage,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as Meta<typeof SettingsPage>;
 
 export default meta;
 type Story = StoryObj<typeof SettingsPage>;
 
 export const Light: Story = {
-    args: {},
+  args: {},
 };
 
 export const Dark: Story = {
-    args: {},
+  args: {},
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const Orange: Story = {
-    args: {},
-};
-Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

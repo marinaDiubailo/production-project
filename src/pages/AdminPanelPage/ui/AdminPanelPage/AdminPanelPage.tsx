@@ -6,21 +6,21 @@ import { Page } from '@/widgets/Page';
 // import cls from './AdminPanelPage.module.scss';
 
 interface AdminPanelPageProps {
-    className?: string;
+  className?: string;
 }
 
 const AdminPanelPage = memo((props: AdminPanelPageProps) => {
-    const { className } = props;
-    // const { t } = useTranslation();
+  const { className } = props;
+  // const { t } = useTranslation();
 
-    return (
-        <Page
-            data-testid="AdminPanelPage"
-            className={classNames('', {}, [className])}
-        >
-            Admin panel
-        </Page>
-    );
+  return (
+    <Page
+      data-testid="AdminPanelPage"
+      className={classNames('', {}, [className])}
+    >
+      Admin panel
+    </Page>
+  );
 });
 
 export default AdminPanelPage;

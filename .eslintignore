@@ -1,3 +1,6 @@
 src/app/types/global.d.ts
 scripts
-config/babel
+json-server
+extractedTranslations
+cypress
+build

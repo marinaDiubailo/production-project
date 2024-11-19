@@ -4,26 +4,21 @@ import { Theme } from '@/shared/const/theme';
 import { EditableProfileCard } from './EditableProfileCard';
 
 const meta = {
-    title: 'features/EditableProfileCard',
-    component: EditableProfileCard,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'features/EditableProfileCard',
+  component: EditableProfileCard,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as Meta<typeof EditableProfileCard>;
 
 export default meta;
 type Story = StoryObj<typeof EditableProfileCard>;
 
 export const Light: Story = {
-    args: {},
+  args: {},
 };
 
 export const Dark: Story = {
-    args: {},
+  args: {},
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const Orange: Story = {
-    args: {},
-};
-Orange.decorators = [ThemeDecorator(Theme.ORANGE)];

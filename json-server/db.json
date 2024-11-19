@@ -898,10 +898,10 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app-light-theme",
         "isFirstVisit": true,
         "isArticlesPageWasOpen": true,
-        "isAppRedesigned": true
+        "isAppRedesigned": true,
+        "theme": "app-light-theme"
       },
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
     },
@@ -964,9 +964,9 @@
   "profile": [
     {
       "id": "1",
-      "first": "Marina",
+      "first": "Marinadzo",
       "last": "Diubailo",
-      "age": 34,
+      "age": 35,
       "currency": "BYN",
       "country": "Belarus",
       "city": "Mogilev",

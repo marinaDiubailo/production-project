@@ -1,54 +1,24 @@
-.link {
-    display: block;
-    margin-left: 10px;
-    opacity: 1;
-}
-
 .item {
-    display: flex;
-    align-items: center;
-
-    // padding: 5px;
-    // margin-top: 5px;
-
-    &:hover {
-        transform: scale(1.01);
-    }
-}
-
-.icon {
-    fill: var(--inverted-primary-color);
-}
-
-.collapsed {
-    .link {
-        opacity: 0;
-        transition: opacity 0.2s ease 0s;
-        width: 0;
-        margin-left: 0;
-    }
-}
-
-// redesigned
-
-.item-redesigned {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 0 16px;
-}
-
-.collapsed-redesigned {
-    padding: 0 8px;
-
-    .link {
-        opacity: 0;
-        width: 0;
-        margin-left: 0;
-    }
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
 }
 
 .active {
-    background: linear-gradient(89.97deg, rgba(94, 211, 243, 0.3) 1.15%, rgba(94, 211, 243, 0) 99.97%);
-    border-left: 2px solid var(--accent-redesigned);
+  background: linear-gradient(89.97deg, rgba(94, 211, 243, 0.3) 1.15%, rgba(94, 211, 243, 0) 99.97%);
+  border-left: 2px solid var(--accent-redesigned);
+}
+
+@media screen and (width <= 1240px) {
+  .item[data-collapsed="true"] {
+    padding: 0 8px;
+
+    .link {
+      opacity: 0;
+      width: 0;
+      margin-left: 0;
+      height: 0;
+    }
+  }
 }

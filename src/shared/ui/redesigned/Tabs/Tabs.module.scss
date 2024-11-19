@@ -1,9 +1,18 @@
 .tabs {
-    display: flex;
-    gap: 8px;
-    cursor: pointer;
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px;
+  background-color: var(--bg-card-secondary);
+  border-radius: var(--radius-s);
 }
 
-.selected {
-    padding: 8px 16px;
+.item {
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--accent-redesigned);
+  }
 }

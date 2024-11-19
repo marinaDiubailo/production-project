@@ -11,33 +11,32 @@ import i18n from '../../src/shared/config/i18n/i18n';
 initialize();
 
 const preview: Preview = {
-    parameters: {
-        actions: { argTypesRegex: '^on[A-Z].*' },
-        controls: {
-            matchers: {
-                color: /(background|color)$/i,
-                date: /Date$/,
-            },
-        },
-        i18n,
-        layout: 'fullscreen',
-        themes: {
-            default: 'light',
-            list: [
-                { name: 'light', class: Theme.LIGHT, color: '#f9f4fb' },
-                { name: 'dark', class: Theme.DARK, color: '#3e184d' },
-                { name: 'orange', class: Theme.ORANGE, color: '#fbf7f4' },
-            ],
-        },
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
     },
-    decorators: [
-        mswDecorator,
-        RouterDecorator,
-        StyleDecorator,
-        ThemeDecorator(Theme.LIGHT),
-        SuspenseDecorator,
-        FeatureFlagsDecorator({}),
-    ],
+    i18n,
+    layout: 'fullscreen',
+    themes: {
+      default: 'light',
+      list: [
+        { name: 'light', class: Theme.LIGHT, color: '#f9f4fb' },
+        { name: 'dark', class: Theme.DARK, color: '#3e184d' },
+      ],
+    },
+  },
+  decorators: [
+    mswDecorator,
+    RouterDecorator,
+    StyleDecorator,
+    ThemeDecorator(Theme.LIGHT),
+    SuspenseDecorator,
+    FeatureFlagsDecorator({}),
+  ],
 };
 
 export default preview;

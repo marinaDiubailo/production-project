@@ -5,61 +5,61 @@ import { Theme } from '@/shared/const/theme';
 import LoginForm from './LoginForm';
 
 const meta = {
-    title: 'features/LoginForm',
-    component: LoginForm,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
+  title: 'features/LoginForm',
+  component: LoginForm,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 } as Meta<typeof LoginForm>;
 
 export default meta;
 type Story = StoryObj<typeof LoginForm>;
 
 export const Light: Story = {
-    args: {},
+  args: {},
 };
 Light.decorators = [
-    StoreDecorator({
-        loginForm: {
-            username: 'Storybook Storybook',
-            password: '123456789',
-        },
-    }),
+  StoreDecorator({
+    loginForm: {
+      username: 'Storybook Storybook',
+      password: '123456789',
+    },
+  }),
 ];
 
 export const Dark: Story = {
-    args: {},
+  args: {},
 };
 Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-        loginForm: {
-            username: 'Storybook Storybook',
-            password: '123456789',
-        },
-    }),
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    loginForm: {
+      username: 'Storybook Storybook',
+      password: '123456789',
+    },
+  }),
 ];
 
 export const WithError: Story = {
-    args: {},
+  args: {},
 };
 WithError.decorators = [
-    StoreDecorator({
-        loginForm: {
-            username: 'Storybook Storybook',
-            password: '123456789',
-            error: 'an error occured',
-        },
-    }),
+  StoreDecorator({
+    loginForm: {
+      username: 'Storybook Storybook',
+      password: '123456789',
+      error: 'an error occured',
+    },
+  }),
 ];
 
 export const Loading: Story = {
-    args: {},
+  args: {},
 };
 Loading.decorators = [
-    StoreDecorator({
-        loginForm: {
-            isLoading: true,
-        },
-    }),
+  StoreDecorator({
+    loginForm: {
+      isLoading: true,
+    },
+  }),
 ];

@@ -1,90 +1,79 @@
-.addon-left svg,
-.addon-right svg {
-    color: var(--hint-redesigned);
-}
-
 .button {
-    text-align: center;
-    color: var(--text-redesigned);
-    padding: 6px 16px;
-    display: flex;
-    align-items: center;
+  text-align: center;
+  color: var(--text-redesigned);
+  border-radius: var(--radius-m);
+  padding: 6px 16px;
+  gap: 6px;
+  display: flex;
+  align-items: center;
+  transition:
+    background-color 0.3s ease,
+    opacity 0.3 ease,
+    border-color 0.3 ease;
 
-    &:hover {
-        color: var(--accent-redesigned);
-
-        .addon-left svg,
-        .addon-right svg {
-            color: var(--accent-redesigned);
-        }
-    }
-}
-
-.with-addon {
-    padding: 0 16px;
-}
-
-.addon-left,
-.addon-right {
-    display: flex;
+  &:focus-visible {
+    outline: 2px solid var(--color-slate-600);
+    outline-offset: 1px;
+  }
 }
 
 .clear {
-    padding: 0;
-    border: none;
-    outline: none;
-    background: none;
+  padding: 0;
+  border: none;
+  background: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .outline {
-    background: none;
-    border-radius: 34px;
-    border: 2px solid var(--icon-redesigned);
+  background: none;
+  border: 2px solid var(--icon-redesigned);
 
-    &:hover {
-        border: 2px solid var(--accent-redesigned);
-    }
+  &:hover {
+    border-color: var(--accent-redesigned);
+  }
 
-    &.normal {
-        border: 2px solid var(--icon-redesigned);
-    }
+  &.error {
+    border: 2px solid var(--cancel-redesigned);
+  }
 
-    &.error {
-        border: 2px solid var(--cancel-redesigned);
-    }
-
-    &.success {
-        border: 2px solid var(--save-redesigned);
-    }
+  &.success {
+    border: 2px solid var(--save-redesigned);
+  }
 }
 
 .filled {
-    background: var(--light-bg-redesigned);
-    border: none;
-    outline: none;
-    border-radius: 34px;
+  color: var(--color-sky-50);
+  background-color: var(--color-sky-600);
+  outline: none;
+
+  &:hover {
+    background-color: var(--color-sky-700);
+  }
 }
 
 // size
 
 .m {
-    font: var(--font-m-redesigned);
+  font: var(--font-m-redesigned);
 }
 
 .l {
-    font: var(--font-l-redesigned);
+  font: var(--font-l-redesigned);
 }
 
 .xl {
-    font: var(--font-xl-redesigned);
+  font: var(--font-xl-redesigned);
 }
 
 // mods
 
 .disabled {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .full-width {
-    width: 100%;
+  width: 100%;
 }

@@ -5,28 +5,23 @@ import { Theme } from '@/shared/const/theme';
 import AddNewCommentForm from './AddNewCommentForm';
 
 const meta = {
-    title: 'features/AddNewCommentForm',
-    component: AddNewCommentForm,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-        onSendComment: { action: 'onSendComment' },
-    },
+  title: 'features/AddNewCommentForm',
+  component: AddNewCommentForm,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+    onSendComment: { action: 'onSendComment' },
+  },
 } as Meta<typeof AddNewCommentForm>;
 
 export default meta;
 type Story = StoryObj<typeof AddNewCommentForm>;
 
 export const Light: Story = {
-    args: {},
+  args: {},
 };
 Light.decorators = [StoreDecorator({})];
 
-export const Orange: Story = {
-    args: {},
-};
-Orange.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator({})];
-
 export const Dark: Story = {
-    args: {},
+  args: {},
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

@@ -1,0 +1,89 @@
+.content {
+  position: fixed;
+  z-index: 40;
+  top: 16px;
+  bottom: 16px;
+  left: 16px;
+  background: var(--bg-sidebar);
+  width: 220px;
+  border-radius: 32px;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.items {
+  margin-top: 40px;
+}
+
+.arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 50;
+  transform: rotate(90deg);
+}
+
+.switchers {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 16px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animate-in {
+  0% {
+    transform: translate3d(-16px, 0, 0);
+  }
+}
+
+@keyframes animate-out {
+  100% {
+    transform: translate3d(-16px, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .content {
+    &[data-state="open"] {
+      animation:
+        animate-in 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        fade-in 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    &[data-state="closed"] {
+      animation:
+        animate-out 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        fade-out 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  }
+
+  .overlay {
+    &[data-state="open"] {
+      animation: fade-in 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    &[data-state="closed"] {
+      animation: fade-out 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  }
+}

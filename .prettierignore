@@ -1,7 +1,9 @@
 # Ignore artifacts:
 build
+cypress
 coverage
 node_modules
+json-server
 *.html
 *.css
 *.scss
