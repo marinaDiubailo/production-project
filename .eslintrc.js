@@ -64,6 +64,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'react/no-array-index-key': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-max-props-per-line': [1, { maximum: 4 }],
     'react/function-component-definition': 'off',

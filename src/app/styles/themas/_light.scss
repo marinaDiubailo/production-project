@@ -11,7 +11,7 @@
   --card-bg: #fff;
   --listbox-bg: #fff;
 
-  // redesigned
+  // * redesigned */
   --dark-bg-redesigned: var(--color-light-100);
 
   // --bg-redesigned: linear-gradient(
@@ -27,17 +27,34 @@
 
   --bg-redesigned: var(--color-slate-100);
   --bg-sidebar: var(--color-light-100);
-  --bg-card-secondary: var(--color-slate-300);
   --bg-input: var(--color-slate-200);
-  --light-bg-redesigned: var(--color-slate-200);
-  --text-redesigned: var(--color-slate-950);
+  --light-bg-redesigned: var(--color-light-100);
   --hint-redesigned: var(--color-slate-500);
   --cancel-redesigned: #f77;
   --save-redesigned: #62de85;
-  --icon-redesigned: var(--color-sky-400);
+  --icon-redesigned: var(--color-sky-600);
   --accent-redesigned: var(--color-sky-500);
   --box-shadow: 0 2px 3px rgba(148, 163, 184, 0.165);
   --box-shadow-color: rgba(0, 0, 0, 0.1);
   --card-border: 1px solid var(--color-slate-200);
   --input-border: 1px solid var(--color-slate-300);
+
+  // new
+  --bg-primary: var(--color-slate-100);
+  --bg-header: var(--color-slate-700);
+  --color-accent: var(--color-sky-600);
+  --color-accent-hover: var(--color-sky-500);
+
+  /* navbar */
+  --bg-navbar: var(--color-slate-50);
+  --navbar-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  --navbar-border: 1px solid var(--color-slate-200);
+
+  /* card */
+  --bg-card-primary: var(--color-light-100);
+  --bg-card-secondary: var(--color-slate-100);
+
+  /* text */
+  --color-text-primary: var(--color-slate-950);
+  --color-text-secondary: var(--color-slate-600);
 }

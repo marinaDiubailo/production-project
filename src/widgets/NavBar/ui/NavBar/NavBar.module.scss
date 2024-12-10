@@ -1,28 +1,55 @@
 .navbar {
-    width: 100%;
-    height: var(--navbar-height);
-    background: var(--inverted-bg-color);
-    display: flex;
-    align-items: center;
-    padding: 20px;
+  width: 100%;
+  height: var(--navbar-height);
+  background: var(--inverted-bg-color);
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }
 
 .links,
 .actions {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .main-link {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .app-name {
-    width: var(--sidebar-width);
-    margin-left: 15px;
+  width: var(--sidebar-width);
+  margin-left: 15px;
 }
 
-// redesigned
-
+// * redesigned
 .navbar-redesigned {
-    padding: 16px;
+  width: 100%;
+  background-color: var(--bg-navbar);
+  box-shadow: var(--navbar-shadow);
+  border-bottom: var(--navbar-border);
+  position: sticky;
+  height: var(--navbar-height);
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links-container {
+  display: flex;
+  gap: 16px;
+}
+
+.actions-redesigned {
+  display: flex;
+  gap: 8px;
+}
+
+.link-redesigned {
+  color: var(--color-text-primary);
 }

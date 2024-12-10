@@ -1,21 +1,40 @@
+.listbox {
+  width: 100%;
+}
+
 .trigger {
-  padding: 0 8px 0 16px;
+  padding: 4px 8px;
+  background-color: var(--bg-card-primary);
   font-size: 0.875rem;
+  transition: transform 0.3s ease;
+}
+
+.icon {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+
+  [data-headlessui-state="open"] & {
+    transform: rotate(180deg);
+  }
 }
 
 .options {
-  background: var(--dark-bg-redesigned);
+  background: var(--bg-card-primary);
+  border: 2px solid var(--color-accent);
   position: absolute;
   z-index: 1000;
   border-radius: var(--radius-s);
+  width: 100%;
 }
 
 .option {
-  padding: 10px 20px;
+  padding: 6px 12px;
   cursor: pointer;
   display: flex;
+  font-size: 0.875rem;
 }
 
+.active,
 .selected {
-  background: var(--light-bg-redesigned);
+  background: var(--bg-card-secondary);
 }

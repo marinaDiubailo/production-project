@@ -41,8 +41,8 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
           <Card
             key={tab.value}
             className={s.item}
-            variant={isSelected ? 'light' : 'normal'}
-            border="round-40"
+            variant={isSelected ? 'secondary' : 'primary'}
+            border="round-l"
             onClick={clickHandler(tab.value)}
           >
             {tab.content}

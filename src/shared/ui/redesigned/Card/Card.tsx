@@ -1,54 +1,45 @@
-import { HTMLAttributes, memo, ReactNode } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './Card.module.scss';
+import React from 'react';
+import type { PolymorphProps } from '@/shared/types/polymorph';
+import s from './Card.module.scss';
+import clsx from 'clsx';
 
-export type CardVariant = 'normal' | 'outlined' | 'light';
-export type CardPadding = '0' | '8' | '16' | '24';
-export type CardBorder = 'round-12' | 'round-20' | 'round-40';
+export type CardVariant = 'primary' | 'secondary';
+export type CardBorder = 'round-s' | 'round-m' | 'round-l';
 
-interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  className?: string;
-  children: ReactNode;
+export type CardProps = {
   variant?: CardVariant;
   max?: boolean;
-  padding?: CardPadding;
   border?: CardBorder;
-}
-
-const mapPaddingToClass: Record<CardPadding, string> = {
-  0: 'gap-0',
-  8: 'gap-8',
-  16: 'gap-16',
-  24: 'gap-24',
 };
 
-export const Card = memo((props: CardProps) => {
+type TagComponent = <T extends React.ElementType>(
+  props: PolymorphProps<T, CardProps>,
+) => React.ReactNode;
+
+export const Card: TagComponent = <T extends React.ElementType = 'div'>(
+  props: PolymorphProps<T>,
+) => {
   const {
+    as: Component = 'div',
     className,
     children,
     max,
-    padding = '8',
-    variant = 'normal',
-    border = 'round-12',
-    ...otherProps
+    variant = 'primary',
+    border = 'round-m',
+    ...rest
   } = props;
 
-  const paddingClass = mapPaddingToClass[padding];
-
-  const additionalClasses = [
+  const classNames = clsx(
+    s.card,
+    s[variant],
+    s[border],
+    max && s.max,
     className,
-    cls[variant],
-    cls[paddingClass],
-    cls[border],
-  ];
+  );
 
   return (
-    <div
-      className={classNames(cls.card, { [cls.max]: max }, additionalClasses)}
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...otherProps}
-    >
+    <Component className={classNames} {...rest}>
       {children}
-    </div>
+    </Component>
   );
-});
+};

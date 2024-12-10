@@ -1,6 +1,5 @@
 {
   "name": "react-blog",
-  "homepage": "https://github.com/marinaDiubailo/react-blog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -19,9 +18,7 @@
     "test:e2e": "cypress open",
     "sb": "storybook dev -p 6006 -c ./config/storybook ",
     "sb:build": "storybook build -c ./config/storybook ",
-    "toggle": "ts-node ./scripts/remove-feature.ts",
-    "predeploy": "npm run build:prod",
-    "deploy": "gh-pages -d build"
+    "toggle": "ts-node ./scripts/remove-feature.ts"
   },
   "keywords": [],
   "author": "",
@@ -77,7 +74,6 @@
     "eslint-plugin-unused-imports": "3.0.0",
     "file-loader": "6.2.0",
     "fork-ts-checker-webpack-plugin": "9.0.0",
-    "gh-pages": "^6.2.0",
     "html-webpack-plugin": "5.5.3",
     "husky": "8.0.0",
     "identity-obj-proxy": "3.0.0",

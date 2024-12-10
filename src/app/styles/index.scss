@@ -1,8 +1,10 @@
-@import "./reset";
-@import "./variables/global";
-@import "./themas/colors";
-@import "./themas/dark";
-@import "./themas/normal";
+@forward "colors";
+@forward "boilerplate";
+@forward "typography";
+@forward "dimensions";
+@forward "global";
+@forward "themas/dark";
+@forward "themas/light";
 
 .app {
   font: var(--font-m);
@@ -12,11 +14,11 @@
 }
 
 .app-redesigned {
-  background: var(--bg-redesigned);
-  min-height: 100vh;
-  min-width: 360px;
+  height: 100%;
+  width: 100%;
+  background: var(--bg-primary);
   font: var(--font-m-redesigned);
-  color: var(--text-redesigned);
+  color: var(--color-text-primary);
 }
 
 .content-page {

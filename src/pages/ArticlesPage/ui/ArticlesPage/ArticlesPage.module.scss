@@ -1,19 +1,13 @@
 .articles-page {
   min-height: 100%;
-
-  .list {
-    margin-top: 46px;
-  }
 }
 
 .right {
   display: flex;
-  border-radius: var(--radius-s);
-  padding: 16px;
-  background-color: var(--light-bg-redesigned);
   flex-direction: column;
   gap: 16px;
   z-index: 50;
+  padding: 8px;
 }
 
 @media screen and (width <= 972px) {

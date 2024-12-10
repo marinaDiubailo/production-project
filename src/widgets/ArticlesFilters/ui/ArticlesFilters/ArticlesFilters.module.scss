@@ -4,6 +4,7 @@
   flex-direction: column;
   gap: 16px;
   position: relative;
+  padding: 0;
 }
 
 .searchButton {
@@ -50,13 +51,12 @@
 
 @media screen and (width <= 972px) {
   .root {
+    flex-grow: 1;
     flex-direction: row;
     align-items: center;
     gap: 16px;
-    width: unset;
-    flex-grow: 1;
+    width: fit-content;
     background: transparent;
-    padding: 16px 0;
     box-shadow: none;
   }
 
@@ -66,13 +66,13 @@
 
   .searchButton {
     display: flex;
-    color: var(--icon-redesigned);
     justify-content: center;
     align-items: center;
     width: 50px;
-    background-color: var(--color-slate-800);
-    border: 1px solid var(--color-slate-950);
-    border-radius: var(--radius-m);
+    background-color: var(--bg-card-secondary);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-s);
+    color: var(--color-accent);
 
     svg {
       width: 36px;
@@ -88,11 +88,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-slate-800);
-    border: 1px solid var(--color-slate-950);
-    border-radius: var(--radius-m);
-    color: var(--icon-redesigned);
+    background-color: var(--bg-card-secondary);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-s);
+    color: var(--color-accent);
     height: 36px;
     padding: 0 16px;
+  }
+
+  .sortSelector {
+    flex-grow: 1;
   }
 }

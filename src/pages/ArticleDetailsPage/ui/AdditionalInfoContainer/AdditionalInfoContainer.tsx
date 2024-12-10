@@ -21,8 +21,8 @@ export const AdditionalInfoContainer = memo(
 
     return (
       <Card
-        padding="24"
-        border="round-20"
+        variant="secondary"
+        border="round-m"
         className={classNames(cls['additional-info-container'], {}, [
           className,
         ])}

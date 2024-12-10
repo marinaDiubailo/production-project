@@ -54,8 +54,18 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
   return (
     <div className={classNames(s.sortSelector, {}, [className])}>
       <span className={s.label}>{t('Sort by')}</span>
-      <ListBox items={sortFieldOptions} value={sort} onChange={onChangeSort} />
-      <ListBox items={orderOptions} value={order} onChange={onChangeOrder} />
+      <ListBox
+        items={sortFieldOptions}
+        value={sort}
+        onChange={onChangeSort}
+        className={s.select}
+      />
+      <ListBox
+        items={orderOptions}
+        value={order}
+        onChange={onChangeOrder}
+        className={s.select}
+      />
     </div>
   );
 });

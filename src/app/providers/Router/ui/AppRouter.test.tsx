@@ -29,12 +29,12 @@ describe('AppRouter.test', () => {
     expect(page).toBeInTheDocument();
   });
 
-  test('Redirect to the home page for an unauthorized user', async () => {
+  test('Redirect to the about page for an unauthorized user', async () => {
     componentRender(<AppRouter />, {
       route: getRouteProfile('1'),
     });
 
-    const page = await screen.findByTestId('MainPage');
+    const page = await screen.findByTestId('AboutPage');
 
     expect(page).toBeInTheDocument();
   });

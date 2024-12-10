@@ -1,48 +1,28 @@
 .card {
-  padding: 24px;
   box-shadow: var(--box-shadow);
+  padding: 16px;
 }
 
-.normal {
-  background: var(--dark-bg-redesigned);
+.primary {
+  background: var(--bg-card-primary);
 }
 
-.light {
-  background: var(--light-bg-redesigned);
-}
-
-.outlined {
-  border: 1px solid var(--accent-redesigned);
+.secondary {
+  background: var(--bg-card-secondary);
 }
 
 .max {
   width: 100%;
 }
 
-.gap-0 {
-  padding: 0;
-}
-
-.gap-8 {
-  padding: 8px;
-}
-
-.gap-16 {
-  padding: 16px;
-}
-
-.gap-24 {
-  padding: 24px;
-}
-
-.round-12 {
+.round-s {
   border-radius: var(--radius-s);
 }
 
-.round-20 {
+.round-m {
   border-radius: var(--radius-m);
 }
 
-.round-40 {
+.round-l {
   border-radius: var(--radius-l);
 }

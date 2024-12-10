@@ -32,7 +32,8 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
 
   return (
     <Card
-      border="round-40"
+      border="round-l"
+      variant="secondary"
       className={classNames(cls['article-view-selector-redesigned'], {}, [
         className,
       ])}

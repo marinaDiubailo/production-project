@@ -100,6 +100,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
         sort={sort}
         onChangeOrder={onChangeOrder}
         onChangeSort={onChangeSort}
+        className={cls.sortSelector}
       />
     </Card>
   );

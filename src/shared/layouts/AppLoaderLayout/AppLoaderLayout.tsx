@@ -1,11 +1,15 @@
-import { memo } from 'react';
 import { HStack, VStack, Skeleton } from '@/shared/ui';
 import { MainLayout } from '../MainLayout';
 import cls from './AppLoaderLayout.module.scss';
 
-export const AppLoaderLayout = memo(() => {
+export const AppLoaderLayout = () => {
   return (
     <MainLayout
+      navbar={
+        <HStack className={cls.header}>
+          <Skeleton width={40} height={40} border="50%" />
+        </HStack>
+      }
       header={
         <HStack className={cls.header}>
           <Skeleton width={40} height={40} border="50%" />
@@ -21,7 +25,6 @@ export const AppLoaderLayout = memo(() => {
           <Skeleton width="80%" height="40%" border="16px" />
         </VStack>
       }
-      sidebar={<Skeleton border="32px" width={220} height="100%" />}
     />
   );
-});
+};

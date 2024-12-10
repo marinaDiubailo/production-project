@@ -14,7 +14,7 @@ export const DetailsContainer = memo((props: DetailsContainerProps) => {
   if (!id) return null;
 
   return (
-    <Card max border="round-20" className={className} padding="24">
+    <Card max border="round-m" className={className} padding="24">
       <ArticleDetails id={id} />
     </Card>
   );

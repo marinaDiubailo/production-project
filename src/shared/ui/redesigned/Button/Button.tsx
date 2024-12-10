@@ -4,7 +4,7 @@ import s from './Button.module.scss';
 
 export type ButtonVariant = 'clear' | 'outline' | 'filled';
 export type ButtonColor = 'normal' | 'success' | 'error';
-export type ButtonSize = 'm' | 'l' | 'xl';
+export type ButtonSize = 'm' | 'l' | 'xl' | 's';
 
 export type ButtonProps = {
   className?: string;
@@ -20,7 +20,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const {
       className,
       children,
-      variant = 'outline',
+      variant = 'filled',
       disabled,
       fullWidth,
       size = 'm',
@@ -29,6 +29,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     } = props;
 
     const classNames = clsx(
+      s.button,
       className,
       s[variant],
       s[size],

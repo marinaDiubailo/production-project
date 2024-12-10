@@ -29,17 +29,17 @@ export const Dark: Story = {
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const LightOutlined: Story = {
+export const LightSecondary: Story = {
   args: {
     children: <Text text="Hello, vorld!" title="HELLO" />,
-    variant: 'outlined',
+    variant: 'secondary',
   },
 };
 
-export const DarkOutlined: Story = {
+export const DarkSecondary: Story = {
   args: {
     children: <Text text="Hello, world!" title="HELLO" />,
-    variant: 'outlined',
+    variant: 'secondary',
   },
 };
-DarkOutlined.decorators = [ThemeDecorator(Theme.DARK)];
+DarkSecondary.decorators = [ThemeDecorator(Theme.DARK)];

@@ -5,12 +5,22 @@
   gap: 8px;
 }
 
+.select {
+  width: 100%;
+}
+
 @media screen and (width <= 972px) {
   .sortSelector {
     flex-direction: row;
+    gap: 16px;
   }
 
   .label {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
+    text-align: end;
+  }
+
+  .select {
+    width: fit-content;
   }
 }

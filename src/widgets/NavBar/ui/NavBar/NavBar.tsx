@@ -1,24 +1,26 @@
 /* eslint-disable indent */
-import { memo, useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { LoginModal } from '@/features/AuthByUserName';
-import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { Button, HStack } from '@/shared/ui';
+import { Button, Container } from '@/shared/ui';
 import { getUserAuthData } from '@/entities/User';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
+import clsx from 'clsx';
 
-import cls from './NavBar.module.scss';
+import s from './NavBar.module.scss';
+import { getRouteAbout, getRouteArticles } from '@/shared/const/router';
 
 interface NavbarProps {
   className?: string;
 }
 
-export const NavBar = memo(({ className }: NavbarProps) => {
+export const NavBar = ({ className }: NavbarProps) => {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
-  const { t } = useTranslation('translation');
+  const { t } = useTranslation('header');
   const authData = useSelector(getUserAuthData);
 
   const onCloseModal = useCallback(() => {
@@ -29,26 +31,43 @@ export const NavBar = memo(({ className }: NavbarProps) => {
     setIsAuthOpen(true);
   }, []);
 
-  const mainClass = cls['navbar-redesigned'];
+  let actions;
 
   if (authData) {
-    return (
-      <header className={classNames(mainClass, {}, [className])}>
-        <HStack gap="16" className={cls.actions}>
-          <NotificationButton />
-          <AvatarDropdown />
-        </HStack>
-      </header>
+    actions = (
+      <div className={s['actions-redesigned']}>
+        <NotificationButton />
+        <AvatarDropdown />
+      </div>
+    );
+  } else {
+    actions = (
+      <div className={s['actions-redesigned']}>
+        <Button onClick={onShowModal}>{t('Log in')}</Button>
+        {isAuthOpen && (
+          <LoginModal isOpen={isAuthOpen} onClose={onCloseModal} />
+        )}
+      </div>
     );
   }
 
   return (
-    <header className={classNames(mainClass, {}, [className])}>
-      <Button variant="clear" className={cls.links} onClick={onShowModal}>
-        {t('Log in')}
-      </Button>
-
-      {isAuthOpen && <LoginModal isOpen={isAuthOpen} onClose={onCloseModal} />}
-    </header>
+    <div className={clsx(s['navbar-redesigned'], [className])}>
+      <Container as={'nav'} className={s['navbar-container']}>
+        <ul className={s['links-container']}>
+          <li>
+            <NavLink to={getRouteAbout()} className={s['link-redesigned']}>
+              {t('about')}{' '}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={getRouteArticles()} className={s['link-redesigned']}>
+              {t('articles')}
+            </NavLink>
+          </li>
+        </ul>
+        {actions}
+      </Container>
+    </div>
   );
-});
+};

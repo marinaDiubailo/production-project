@@ -36,7 +36,7 @@ export const EditableProfileCardHeader = memo(
     }, [dispatch]);
 
     return (
-      <Card border="round-20" max padding="24">
+      <Card border="round-m" max>
         <HStack
           justify="between"
           max

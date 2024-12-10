@@ -49,9 +49,8 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
     ) as ArticleTextBlock;
 
     return (
-      <li style={{ padding: '16px' }}>
+      <li>
         <Card
-          padding="24"
           max
           data-testid="ArticleListItem"
           className={classNames(cls['article-list-item'], {}, [
@@ -93,7 +92,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
   }
 
   return (
-    <li style={{ padding: '18px' }}>
+    <li>
       <AppLink
         data-testid="ArticleListItem"
         target={target}
@@ -103,7 +102,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
           cls[view],
         ])}
       >
-        <Card className={cls.card} border="round-12" padding="8">
+        <Card className={cls.card} border="round-s">
           <AppImage
             fallback={<Skeleton width={200} height={200} />}
             src={article.img}

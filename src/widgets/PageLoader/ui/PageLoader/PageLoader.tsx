@@ -1,4 +1,4 @@
-import { Loader } from '@/shared/ui';
+import { Spinner } from '@/shared/ui';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './PageLoader.module.scss';
 
@@ -9,7 +9,7 @@ interface PageLoaderProps {
 export const PageLoader = ({ className }: PageLoaderProps) => {
   return (
     <div className={classNames(cls['page-loader'], {}, [className])}>
-      <Loader />
+      <Spinner />
     </div>
   );
 };

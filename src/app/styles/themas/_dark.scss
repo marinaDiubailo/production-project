@@ -11,8 +11,8 @@
   --card-bg: #5b2371;
   --listbox-bg: #5b2371;
 
-  // redesigned
-  --dark-bg-redesigned: var(--color-slate-900);
+  // * redesigned */
+  --dark-bg-redesigned: var(--color-slate-700);
   --bg-redesigned: linear-gradient(
     to top right,
     var(--color-slate-700) 0%,
@@ -22,17 +22,34 @@
     rgb(14, 23, 42) 100%
   );
   --bg-sidebar: var(--color-slate-950);
-  --bg-card-secondary: var(--color-slate-400);
   --bg-input: var(--color-slate-800);
   --light-bg-redesigned: var(--color-slate-700);
-  --text-redesigned: var(--color-slate-100);
   --hint-redesigned: var(--color-slate-400);
   --cancel-redesigned: #d95757;
   --save-redesigned: #6cd98b;
-  --icon-redesigned: var(--color-sky-400);
+  --icon-redesigned: var(--color-sky-500);
   --accent-redesigned: var(--color-sky-500);
   --box-shadow: 0 2px 3px #1e293bc0;
   --box-shadow-color: rgba(255, 249, 249, 0.1);
   --card-border: 1px solid var(--color-slate-800);
   --input-border: 1px solid var(--color-slate-700);
+
+  // new
+  --bg-primary: var(--color-slate-900);
+  --bg-header: var(--color-slate-900);
+  --color-accent: var(--color-sky-500);
+  --color-accent-hover: var(--color-sky-600);
+
+  /* navbar */
+  --bg-navbar: var(--color-slate-800);
+  --navbar-shadow: none;
+  --navbar-border: 1px solid var(--color-slate-600);
+
+  /* card */
+  --bg-card-primary: var(--color-slate-800);
+  --bg-card-secondary: var(--color-slate-700);
+
+  /* text */
+  --color-text-primary: var(--color-slate-100);
+  --color-text-secondary: var(--color-slate-400);
 }

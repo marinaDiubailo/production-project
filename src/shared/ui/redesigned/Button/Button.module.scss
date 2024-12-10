@@ -1,11 +1,12 @@
 .button {
   text-align: center;
-  color: var(--text-redesigned);
-  border-radius: var(--radius-m);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-s);
   padding: 6px 16px;
   gap: 6px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   transition:
     background-color 0.3s ease,
     opacity 0.3 ease,
@@ -29,10 +30,10 @@
 
 .outline {
   background: none;
-  border: 2px solid var(--icon-redesigned);
+  border: 2px solid var(--color-accent);
 
   &:hover {
-    border-color: var(--accent-redesigned);
+    border-color: var(--color-accent-hover);
   }
 
   &.error {
@@ -55,6 +56,10 @@
 }
 
 // size
+
+.s {
+  font: var(--font-s-redesigned);
+}
 
 .m {
   font: var(--font-m-redesigned);

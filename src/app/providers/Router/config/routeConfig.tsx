@@ -1,5 +1,4 @@
 import { AboutPage } from '@/pages/AboutPage';
-import { MainPage } from '@/pages/MainPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ArticlesPage } from '@/pages/ArticlesPage';
@@ -17,7 +16,6 @@ import {
   getRouteArticleEdit,
   getRouteArticles,
   getRouteForbidden,
-  getRouteMain,
   getRouteProfile,
   getRouteSettings,
 } from '@/shared/const/router';
@@ -25,10 +23,10 @@ import { AppRouteProps } from '@/shared/types/router';
 import { SettingsPage } from '@/pages/SettingsPage';
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
-  [AppRoutes.MAIN]: {
-    path: getRouteMain(),
-    element: <MainPage />,
-  },
+  // [AppRoutes.MAIN]: {
+  //   path: getRouteMain(),
+  //   element: <MainPage />,
+  // },
   [AppRoutes.ABOUT]: {
     path: getRouteAbout(),
     element: <AboutPage />,
@@ -41,12 +39,10 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.ARTICLES]: {
     path: getRouteArticles(),
     element: <ArticlesPage />,
-    authOnly: true,
   },
   [AppRoutes.ARTICLE_DETAILS]: {
     path: getRouteArticleDetails(':id'),
     element: <ArticleDetailsPage />,
-    authOnly: true,
   },
   [AppRoutes.ARTICLE_CREATE]: {
     path: getRouteArticleCreate(),

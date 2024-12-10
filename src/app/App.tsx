@@ -2,7 +2,6 @@ import { memo, Suspense, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { NavBar } from '@/widgets/NavBar';
-import { SideBar } from '@/widgets/SideBar';
 import { getUserMounted, initAuthData } from '@/entities/User';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -10,7 +9,8 @@ import { MainLayout } from '@/shared/layouts/MainLayout';
 import { AppRouter } from './providers/Router';
 import { useAppToolbar } from './lib/useAppToolbar';
 import { withTheme } from './providers/ThemeProvider/ui/withTheme';
-import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { Header } from '@/widgets/Header';
+import { PageLoader } from '@/widgets/PageLoader';
 
 const App = memo(() => {
   const { theme } = useTheme();
@@ -31,7 +31,7 @@ const App = memo(() => {
   if (isLoading) {
     return (
       <div id="app" className={classNames('app-redesigned', {}, [theme])}>
-        <AppLoaderLayout />
+        <PageLoader />
       </div>
     );
   }
@@ -40,10 +40,9 @@ const App = memo(() => {
     <div id="app" className={classNames('app-redesigned', {}, [theme])}>
       <Suspense fallback="">
         <MainLayout
-          header={<NavBar />}
+          navbar={<NavBar />}
           content={<AppRouter />}
-          sidebar={<SideBar />}
-          toolbar={toolbar}
+          header={<Header />}
         />
       </Suspense>
     </div>

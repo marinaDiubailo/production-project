@@ -51,7 +51,7 @@ const AddNewCommentForm = memo(
 
     return (
       <DynamicModuleLoader reducers={reducers}>
-        <Card padding="24" border="round-40" max>
+        <Card border="round-l" max>
           <HStack
             data-testid="AddNewCommentForm"
             gap="16"

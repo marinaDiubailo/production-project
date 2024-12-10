@@ -18,6 +18,7 @@ import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
 import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 import cls from './ArticlesPage.module.scss';
+import { Card } from '@/shared/ui';
 
 interface ArticlesPageProps {
   className?: string;
@@ -40,10 +41,10 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
   });
 
   const right = (
-    <div className={cls.right}>
+    <Card className={cls.right} border="round-s">
       <ViewSelectorContainer />
       <FiltersContainer />
-    </div>
+    </Card>
   );
 
   const content = (

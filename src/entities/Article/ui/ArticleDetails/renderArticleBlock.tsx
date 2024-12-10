@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { ArticleBlockType } from '../../model/consts/consts';
 import { AtricleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';

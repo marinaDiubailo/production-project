@@ -9,6 +9,7 @@ import popupCls from '../../styles/popup.module.scss';
 import { Icon } from '../../../Icon/Icon';
 import ArrowIcon from '../../../../../assets/icons/redesigned/arrow-bottom.svg';
 import cls from './ListBox.module.scss';
+import clsx from 'clsx';
 
 export interface ListBoxItem<T extends string> {
   value: T;
@@ -24,6 +25,7 @@ export interface ListBoxProps<T extends string> {
   onChange: (value: T) => void;
   readonly?: boolean;
   direction?: DropdownDirection;
+  triggerClassName?: string;
   label?: string;
 }
 
@@ -35,6 +37,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
     defaultValue,
     onChange,
     readonly,
+    triggerClassName,
     direction = 'bottom right',
     label,
   } = props;
@@ -46,18 +49,23 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
   }, [items, value]);
 
   return (
-    <HStack gap="4">
-      {label && <span>{`${label}`}</span>}
+    <HStack gap="4" className={clsx(className)}>
+      {label && <label>{`${label}`}</label>}
       <HListbox
-        className={classNames('', {}, [className, popupCls.popup])}
+        className={clsx(popupCls.popup, cls.listbox)}
         disabled={readonly}
         as={'div'}
         value={value}
         onChange={onChange}
       >
-        <HListbox.Button as={Button} variant="clear" className={cls.trigger}>
+        <HListbox.Button
+          as={Button}
+          fullWidth
+          variant="outline"
+          className={clsx(cls.trigger, triggerClassName)}
+        >
           {selectedItem?.content ?? defaultValue}
-          {<Icon Svg={ArrowIcon} />}
+          {<Icon Svg={ArrowIcon} width={20} height={20} className={cls.icon} />}
         </HListbox.Button>
         <HListbox.Options
           className={classNames(cls.options, {}, optionsClasses)}
@@ -72,7 +80,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
               {({ active, selected }) => (
                 <li
                   className={classNames(cls.option, {
-                    [popupCls.active]: active,
+                    [cls.active]: active,
                     [popupCls.disabled]: item.disabled,
                     [cls.selected]: selected,
                   })}

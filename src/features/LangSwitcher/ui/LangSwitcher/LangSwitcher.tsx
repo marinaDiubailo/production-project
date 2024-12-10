@@ -1,22 +1,19 @@
-import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Icon } from '@/shared/ui';
+import Globe from '@/shared/assets/icons/redesigned/globe.svg';
+import s from './LangSwitcher.module.scss';
 
-import { Button } from '@/shared/ui';
-
-interface LangSwitcherProps {
-  className?: string;
-}
-
-export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
-  const { t, i18n } = useTranslation();
+export const LangSwitcher = () => {
+  const { t, i18n } = useTranslation('header');
 
   const toggleHandler = async () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
   };
 
   return (
-    <Button variant="clear" onClick={toggleHandler}>
-      {t('Язык')}
-    </Button>
+    <button onClick={toggleHandler} className={s.button}>
+      <Icon Svg={Globe} width={16} height={16} aria-hidden />
+      {t('lang')}
+    </button>
   );
-});
+};

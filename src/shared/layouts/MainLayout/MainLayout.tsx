@@ -1,26 +1,24 @@
-import { memo, ReactElement } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './MainLayout.module.scss';
+/* eslint-disable i18next/no-literal-string */
+import React from 'react';
 
-interface MainLayoutProps {
-  className?: string;
-  header: ReactElement;
-  content: ReactElement;
-  sidebar: ReactElement;
-  toolbar?: ReactElement;
-}
+import s from './MainLayout.module.scss';
+import clsx from 'clsx';
+import { Container } from '@/shared/ui';
 
-export const MainLayout = memo((props: MainLayoutProps) => {
-  const { className, header, content, sidebar, toolbar } = props;
+type Props = {
+  navbar: React.ReactElement;
+  header: React.ReactElement;
+  content: React.ReactElement;
+};
+
+export const MainLayout = (props: Props) => {
+  const { navbar, content, header } = props;
 
   return (
-    <div className={classNames(cls.main, {}, [className])}>
-      <div className={cls.sidebar}>{sidebar}</div>
-      <div className={cls.content}>{content}</div>
-      {/* <div className={cls.rightbar}>
-        <div className={cls.header}>{header}</div>
-        <div className={cls.toolbar}>{toolbar}</div>
-      </div> */}
+    <div className={clsx(s.root)}>
+      {header}
+      {navbar}
+      <Container className={s.content}>{content}</Container>
     </div>
   );
-});
+};

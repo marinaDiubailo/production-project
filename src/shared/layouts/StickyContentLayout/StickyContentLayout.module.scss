@@ -1,5 +1,6 @@
 .layout {
   display: grid;
+  height: 100%;
   gap: 8px;
   grid-template-areas: "content right";
   grid-template-columns: 1fr min-content;
@@ -7,15 +8,12 @@
 
 .content {
   grid-area: content;
-  max-width: 1200px;
-  justify-self: center;
-  width: 100%;
 }
 
 .right {
   grid-area: right;
   position: sticky;
-  top: 16px;
+  top: calc(var(--navbar-height) + 16px);
   height: fit-content;
 }
 
@@ -28,6 +26,6 @@
   }
 
   .right {
-    top: 0;
+    top: var(--navbar-height);
   }
 }

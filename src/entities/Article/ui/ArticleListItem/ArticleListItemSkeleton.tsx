@@ -32,7 +32,7 @@ export const ArticleListItemSkeleton = memo(
       );
       return (
         <div className={classNames(mainClass, {}, [className, cls[view]])}>
-          <Card border="round-40" className={cls.card}>
+          <Card border="round-m" className={cls.card}>
             {cardContent}
           </Card>
         </div>
@@ -56,7 +56,7 @@ export const ArticleListItemSkeleton = memo(
 
     return (
       <div className={classNames(mainClass, {}, [className, cls[view]])}>
-        <Card border="round-12" className={cls.card}>
+        <Card border="round-s" className={cls.card}>
           {cardContent}
         </Card>
       </div>

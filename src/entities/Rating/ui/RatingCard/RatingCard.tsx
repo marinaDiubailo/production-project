@@ -113,13 +113,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
   );
 
   return (
-    <Card
-      data-testid="RatingCard"
-      className={className}
-      padding="24"
-      border="round-40"
-      max
-    >
+    <Card data-testid="RatingCard" className={className} border="round-l" max>
       {content}
     </Card>
   );

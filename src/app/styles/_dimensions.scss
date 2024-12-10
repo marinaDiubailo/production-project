@@ -1,0 +1,17 @@
+:root {
+  --sidebar-width: 300px;
+  --sidebar-width-collapsed: 80px;
+
+  /* borders */
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --radius-l: 12px;
+
+  /* z-indices  */
+  --modal-z-index: 1000;
+  --overlay-z-index: 100;
+
+  // * redesigned
+  --header-height: 56px;
+  --navbar-height: 56px;
+}
